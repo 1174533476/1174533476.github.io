@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2016/03/14/hello-world/</loc>
+    <loc>http://jellygogo.com/2013/07/14/hello-world/</loc>
     
-    <lastmod>2016-03-14T12:58:31.841Z</lastmod>
+    <lastmod>2016-03-15T16:15:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://jellygogo.com/2016/03/16/testnew/</loc>
+    
+    <lastmod>2016-03-15T08:05:19.852Z</lastmod>
     
   </url>
   
