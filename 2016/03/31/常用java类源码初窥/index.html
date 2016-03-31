@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>常用java类源码初窥 | JellyGoGo Blog | 扯淡,发呆,思考之处</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="java,源码,数据结构">
+  <meta name="description" content="包括内容:java常用类源码,java源码中常用数据结构此篇博客用来记录我对java基础在源码上面的认识,不定时填坑
+1.List系列List系列常用的实现类是LinkedList和ArrayList
+ArrayList内部使用一个数组来实现List
+private transient Object[] elementData;
+Java的serialization提供了一种持久化对象实例的机制。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用java类源码初窥">
+<meta property="og:url" content="http://jellygogo.com/2016/03/31/常用java类源码初窥/index.html">
+<meta property="og:site_name" content="JellyGoGo Blog">
+<meta property="og:description" content="包括内容:java常用类源码,java源码中常用数据结构此篇博客用来记录我对java基础在源码上面的认识,不定时填坑
+1.List系列List系列常用的实现类是LinkedList和ArrayList
+ArrayList内部使用一个数组来实现List
+private transient Object[] elementData;
+Java的serialization提供了一种持久化对象实例的机制。">
+<meta property="og:updated_time" content="2016-03-31T08:08:49.428Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常用java类源码初窥">
+<meta name="twitter:description" content="包括内容:java常用类源码,java源码中常用数据结构此篇博客用来记录我对java基础在源码上面的认识,不定时填坑
+1.List系列List系列常用的实现类是LinkedList和ArrayList
+ArrayList内部使用一个数组来实现List
+private transient Object[] elementData;
+Java的serialization提供了一种持久化对象实例的机制。">
+  
+    <link rel="alternative" href="/atom.xml" title="JellyGoGo Blog" type="application/atom+xml">
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner">
+  <a href="javascript:;" class="header-icon waves-circle-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="./" class="avatar"><img src="/img/logo.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">Gordon Young</h5>
+        <a href="mailto:undefined" title="yangguodong1995@gmail.com" class="mail">yangguodong1995@gmail.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <ul class="nav">
+    
+        <li class="waves-block">
+          <a href="/"  >
+            <i class="icon icon-lg icon-home"></i>
+            Home
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/archives"  >
+            <i class="icon icon-lg icon-archives"></i>
+            Archives
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/tags"  >
+            <i class="icon icon-lg icon-tags"></i>
+            Tags
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="https://github.com/1174533476" target="_blank" >
+            <i class="icon icon-lg icon-github"></i>
+            Github
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="https://www.facebook.com/anikaarnoldrujc" target="_blank" >
+            <i class="icon icon-lg icon-facebook"></i>
+            Facebook
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/about"  >
+            <i class="icon icon-lg icon-link"></i>
+            about
+          </a>
+        </li>
+    
+  </ul>
+
+  <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>JellyGoGo Blog &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-circle-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">常用java类源码初窥</div>
+        
+        <a href="javascript:;" class="header-icon waves-circle-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">常用java类源码初窥</h1>
+    <h5 class="subtitle">2016-03-31</h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      
+  <article id="post-常用java类源码初窥" class="article article-type-post" itemscope itemprop="blogPost">
+    
+      <div class="post-meat flex-row">
+        <div class="flex-col">
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/源码/">源码</a></li></ul>
+</div>
+      </div>
+      <div class="post-body">
+
+        <aside class="post-widget" id="post-widget">
+
+          
+          <div class="post-share" id="post-share" data-title="常用java类源码初窥" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/03/31/常用java类源码初窥/index.html">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+          
+
+          
+          <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-List系列"><span class="post-toc-text">1.List系列</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ArrayList"><span class="post-toc-text">ArrayList</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LinkedList"><span class="post-toc-text">LinkedList</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-Map系列"><span class="post-toc-text">2.Map系列</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HashMap"><span class="post-toc-text">HashMap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TreeMap"><span class="post-toc-text">TreeMap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LinkedHashMap"><span class="post-toc-text">LinkedHashMap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ConcurrentHashMap"><span class="post-toc-text">ConcurrentHashMap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于HashMap和hashTable"><span class="post-toc-text">关于HashMap和hashTable </span></a></li></ol></li></ol>
+          </nav>
+          
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" itemprop="postContent"><p>包括内容:java常用类源码,java源码中常用数据结构<br>此篇博客用来记录我对java基础在源码上面的认识,不定时填坑</p>
+<h1 id="1-List系列"><a href="#1-List系列" class="headerlink" title="1.List系列"></a>1.List系列</h1><p>List系列常用的实现类是LinkedList和ArrayList</p>
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p>内部使用一个数组来实现List</p>
+<blockquote><p>private transient Object[] elementData;</p>
+<p>Java的serialization提供了一种持久化对象实例的机制。当持久化对象时，可能有一个特殊的对象数据成员，我们不想<br>用serialization机制来保存它。为了在一个特定对象的一个域上关闭serialization，可以在这个域前加上关键字transient。<br>transient是Java语言的关键字，用来表示一个域不是该对象串行化的一部分。当一个对象被串行化的时候，transient型变量的值不包括在串行化的表示中，然而非transient型的变量是被包括进去的<br>转自:<a href="http://www.blogjava.net/fhtdy2004/archive/2009/06/20/286112.html" target="_blank" rel="external">http://www.blogjava.net/fhtdy2004/archive/2009/06/20/286112.html</a></p>
+</blockquote>
+<p>ArrayList中插入一个元素需要将此元素后面的都往后移动,<br><blockquote><p>public void add(int index, E element) {<br>        rangeCheckForAdd(index);</p>
+<pre><code>    ensureCapacityInternal(size + 1);  // Increments modCount!!
+    System.arraycopy(elementData, index, elementData, index + 1,
+                     size - index);
+    elementData[index] = element;
+    size++;
+}
+</code></pre><p>关于System.arraycopy()  <a href="http://xuyuanshuaaa.iteye.com/blog/1046621" target="_blank" rel="external">http://xuyuanshuaaa.iteye.com/blog/1046621</a></p>
+<p>ArrayList中删除元素时,并不会将内部的elementData变小</p>
+</blockquote></p>
+<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><p>内部使用内部对象存储,<br>public class LinkedList<e><br>    extends AbstractSequentialList<e><br>    implements List<e>, Deque<e>, Cloneable, java.io.Serializable</e></e></e></e></p>
+<p>如果有大量随机访问对象的需求,就使用ArrayList,如果有大量插入删除使用LinkedList</p>
+<h1 id="2-Map系列"><a href="#2-Map系列" class="headerlink" title="2.Map系列"></a>2.Map系列</h1><p>几个常用Map实现类:HashMap TreeMap LinkedHashMap ConcurrentHashMap</p>
+<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p> 使用数组和链表实现,在HashMap中使用一个数组,内部的hash()计算出hash值一样的数放入同一个Entry中,Entry中使用链表存储</p>
+<pre><code> transient Entry&lt;K,V&gt;[] table = (Entry&lt;K,V&gt;[]) EMPTY_TABLE;
+ static class Entry&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; {
+    final K key;
+    V value;
+    Entry&lt;K,V&gt; next;
+    int hash;
+}
+</code></pre><p>HashMap其实就是一个Entry数组，Entry对象中包含了键和值，其中next也是一个Entry对象，它就是用来处理hash冲突的，形成一个链表。</p>
+<p>关于HashMap很贴切的解释 <a href="http://www.cnblogs.com/ITtangtang/p/3948406.html" target="_blank" rel="external">http://www.cnblogs.com/ITtangtang/p/3948406.html</a> 包含loadFactor加载因子的内容</p>
+<h2 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h2><p>Tree内部使用二叉树(红黑树)来存储key-value<br>(先开个坑,有空再填)<br><a href="http://blog.csdn.net/chenssy/article/details/26668941" target="_blank" rel="external">http://blog.csdn.net/chenssy/article/details/26668941</a> </p>
+<h2 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h2><p>LinkedHashMap继承自HashMap,在HashMap基础上面增加了TreeMap的顺序输出功能,</p>
+<pre><code>// Entry中,增加了next
+static class Entry&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; {
+    final K key;
+    V value;
+    Entry&lt;K,V&gt; next;
+    int hash;
+}
+public V put(K key, V value) {
+    if (table == EMPTY_TABLE) {
+        inflateTable(threshold);
+    }
+    if (key == null)
+        return putForNullKey(value);
+    int hash = hash(key);
+    int i = indexFor(hash, table.length);
+    for (Entry&lt;K,V&gt; e = table[i]; e != null; e = e.next) {
+        Object k;
+        if (e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k))) {
+            V oldValue = e.value;
+            e.value = value;
+            e.recordAccess(this);//&lt;----------
+            return oldValue;
+        }
+    }
+
+    modCount++;
+    addEntry(hash, key, value, i);
+    return null;
+}
+//LinkedHashMap中重载了recordAccess这个方法.
+//recordAccess中标记了
+    void recordAccess(HashMap&lt;K,V&gt; m) {
+        LinkedHashMap&lt;K,V&gt; lm = (LinkedHashMap&lt;K,V&gt;)m;
+        if (lm.accessOrder) {
+            lm.modCount++;
+            remove();
+            addBefore(lm.header);
+        }
+    }
+</code></pre><h2 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h2><p>这是一个线程安全的HashMap,在Collection中也提供了线程安全类<br>    public static <k,v> Map<k,v> synchronizedMap(Map<k,v> m) {<br>        return new SynchronizedMap<k,v>(m);<br>     }<br>SynchronizedMap中所有的方法都加上了synchronized,保证了方法的同步,但在使用中仍然会有安全问题<br>ConcurrentHashMap中使用了,锁分段技术具体细节刨个坑,以后再填</k,v></k,v></k,v></k,v></p>
+<p><a href="http://blog.csdn.net/madun/article/details/6326337" target="_blank" rel="external">http://blog.csdn.net/madun/article/details/6326337</a></p>
+<h2 id="关于HashMap和hashTable"><a href="#关于HashMap和hashTable" class="headerlink" title="关于HashMap和hashTable "></a>关于HashMap和hashTable </h2><p>HashMap中key和value都可以是null,而在hashtable中key和value都不能是null<br>hashtable是线程安全的,但是效率低下,全局使用了一把锁,当其他线程访问时,容易堵塞</p>
+</div>
+
+            
+<nav class="post-nav flex-row">
+  <div class="flex-col waves-block prev">
+    
+  </div>
+  <div class="flex-col waves-block next">
+    
+      <a href="/2016/03/17/Hadoop气象数据下载小程序/" title="Hadoop气象数据下载小程序" id="post-next" class="post-nav-link">
+        <span class="article-nav-title">下一篇</span>
+        <i class="icon icon-chevron-right"></i>
+      </a>
+    
+  </div>
+
+</nav>
+
+
+
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="常用java类源码初窥" data-title="常用java类源码初窥" data-url="http://jellygogo.com/2016/03/31/常用java类源码初窥/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"jellygogo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+        </div>
+
+      </div>
+
+    
+
+  </article>
+
+
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-circle-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<div class="global-share" id="global-share" data-title="常用java类源码初窥" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/03/31/常用java类源码初窥/index.html">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/javascript">
+var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cspan id='cnzz_stat_icon_1257998795' style='display:none' %3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257998795%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+
+
+
+</body>
+</html>

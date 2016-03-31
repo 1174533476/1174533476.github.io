@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jellygogo.com/"/>
-  <updated>2016-03-17T07:42:48.718Z</updated>
+  <updated>2016-03-31T08:08:49.428Z</updated>
   <id>http://jellygogo.com/</id>
   
   <author>
@@ -14,6 +14,104 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常用java类源码初窥</title>
+    <link href="http://jellygogo.com/2016/03/31/%E5%B8%B8%E7%94%A8java%E7%B1%BB%E6%BA%90%E7%A0%81%E5%88%9D%E7%AA%A5/"/>
+    <id>http://jellygogo.com/2016/03/31/常用java类源码初窥/</id>
+    <published>2016-03-31T13:54:00.000Z</published>
+    <updated>2016-03-31T08:08:49.428Z</updated>
+    
+    <content type="html">&lt;p&gt;包括内容:java常用类源码,java源码中常用数据结构&lt;br&gt;此篇博客用来记录我对java基础在源码上面的认识,不定时填坑&lt;/p&gt;
+&lt;h1 id=&quot;1-List系列&quot;&gt;&lt;a href=&quot;#1-List系列&quot; class=&quot;headerlink&quot; title=&quot;1.List系列&quot;&gt;&lt;/a&gt;1.List系列&lt;/h1&gt;&lt;p&gt;List系列常用的实现类是LinkedList和ArrayList&lt;/p&gt;
+&lt;h2 id=&quot;ArrayList&quot;&gt;&lt;a href=&quot;#ArrayList&quot; class=&quot;headerlink&quot; title=&quot;ArrayList&quot;&gt;&lt;/a&gt;ArrayList&lt;/h2&gt;&lt;p&gt;内部使用一个数组来实现List&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;private transient Object[] elementData;&lt;/p&gt;
+&lt;p&gt;Java的serialization提供了一种持久化对象实例的机制。当持久化对象时，可能有一个特殊的对象数据成员，我们不想&lt;br&gt;用serialization机制来保存它。为了在一个特定对象的一个域上关闭serialization，可以在这个域前加上关键字transient。&lt;br&gt;transient是Java语言的关键字，用来表示一个域不是该对象串行化的一部分。当一个对象被串行化的时候，transient型变量的值不包括在串行化的表示中，然而非transient型的变量是被包括进去的&lt;br&gt;转自:&lt;a href=&quot;http://www.blogjava.net/fhtdy2004/archive/2009/06/20/286112.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.blogjava.net/fhtdy2004/archive/2009/06/20/286112.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;ArrayList中插入一个元素需要将此元素后面的都往后移动,&lt;br&gt;&lt;blockquote&gt;&lt;p&gt;public void add(int index, E element) {&lt;br&gt;        rangeCheckForAdd(index);&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    ensureCapacityInternal(size + 1);  // Increments modCount!!
+    System.arraycopy(elementData, index, elementData, index + 1,
+                     size - index);
+    elementData[index] = element;
+    size++;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;关于System.arraycopy()  &lt;a href=&quot;http://xuyuanshuaaa.iteye.com/blog/1046621&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xuyuanshuaaa.iteye.com/blog/1046621&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ArrayList中删除元素时,并不会将内部的elementData变小&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/p&gt;
+&lt;h2 id=&quot;LinkedList&quot;&gt;&lt;a href=&quot;#LinkedList&quot; class=&quot;headerlink&quot; title=&quot;LinkedList&quot;&gt;&lt;/a&gt;LinkedList&lt;/h2&gt;&lt;p&gt;内部使用内部对象存储,&lt;br&gt;public class LinkedList&lt;e&gt;&lt;br&gt;    extends AbstractSequentialList&lt;e&gt;&lt;br&gt;    implements List&lt;e&gt;, Deque&lt;e&gt;, Cloneable, java.io.Serializable&lt;/e&gt;&lt;/e&gt;&lt;/e&gt;&lt;/e&gt;&lt;/p&gt;
+&lt;p&gt;如果有大量随机访问对象的需求,就使用ArrayList,如果有大量插入删除使用LinkedList&lt;/p&gt;
+&lt;h1 id=&quot;2-Map系列&quot;&gt;&lt;a href=&quot;#2-Map系列&quot; class=&quot;headerlink&quot; title=&quot;2.Map系列&quot;&gt;&lt;/a&gt;2.Map系列&lt;/h1&gt;&lt;p&gt;几个常用Map实现类:HashMap TreeMap LinkedHashMap ConcurrentHashMap&lt;/p&gt;
+&lt;h2 id=&quot;HashMap&quot;&gt;&lt;a href=&quot;#HashMap&quot; class=&quot;headerlink&quot; title=&quot;HashMap&quot;&gt;&lt;/a&gt;HashMap&lt;/h2&gt;&lt;p&gt; 使用数组和链表实现,在HashMap中使用一个数组,内部的hash()计算出hash值一样的数放入同一个Entry中,Entry中使用链表存储&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; transient Entry&amp;lt;K,V&amp;gt;[] table = (Entry&amp;lt;K,V&amp;gt;[]) EMPTY_TABLE;
+ static class Entry&amp;lt;K,V&amp;gt; implements Map.Entry&amp;lt;K,V&amp;gt; {
+    final K key;
+    V value;
+    Entry&amp;lt;K,V&amp;gt; next;
+    int hash;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;HashMap其实就是一个Entry数组，Entry对象中包含了键和值，其中next也是一个Entry对象，它就是用来处理hash冲突的，形成一个链表。&lt;/p&gt;
+&lt;p&gt;关于HashMap很贴切的解释 &lt;a href=&quot;http://www.cnblogs.com/ITtangtang/p/3948406.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/ITtangtang/p/3948406.html&lt;/a&gt; 包含loadFactor加载因子的内容&lt;/p&gt;
+&lt;h2 id=&quot;TreeMap&quot;&gt;&lt;a href=&quot;#TreeMap&quot; class=&quot;headerlink&quot; title=&quot;TreeMap&quot;&gt;&lt;/a&gt;TreeMap&lt;/h2&gt;&lt;p&gt;Tree内部使用二叉树(红黑树)来存储key-value&lt;br&gt;(先开个坑,有空再填)&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/chenssy/article/details/26668941&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/chenssy/article/details/26668941&lt;/a&gt; &lt;/p&gt;
+&lt;h2 id=&quot;LinkedHashMap&quot;&gt;&lt;a href=&quot;#LinkedHashMap&quot; class=&quot;headerlink&quot; title=&quot;LinkedHashMap&quot;&gt;&lt;/a&gt;LinkedHashMap&lt;/h2&gt;&lt;p&gt;LinkedHashMap继承自HashMap,在HashMap基础上面增加了TreeMap的顺序输出功能,&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Entry中,增加了next
+static class Entry&amp;lt;K,V&amp;gt; implements Map.Entry&amp;lt;K,V&amp;gt; {
+    final K key;
+    V value;
+    Entry&amp;lt;K,V&amp;gt; next;
+    int hash;
+}
+public V put(K key, V value) {
+    if (table == EMPTY_TABLE) {
+        inflateTable(threshold);
+    }
+    if (key == null)
+        return putForNullKey(value);
+    int hash = hash(key);
+    int i = indexFor(hash, table.length);
+    for (Entry&amp;lt;K,V&amp;gt; e = table[i]; e != null; e = e.next) {
+        Object k;
+        if (e.hash == hash &amp;amp;&amp;amp; ((k = e.key) == key || key.equals(k))) {
+            V oldValue = e.value;
+            e.value = value;
+            e.recordAccess(this);//&amp;lt;----------
+            return oldValue;
+        }
+    }
+
+    modCount++;
+    addEntry(hash, key, value, i);
+    return null;
+}
+//LinkedHashMap中重载了recordAccess这个方法.
+//recordAccess中标记了
+    void recordAccess(HashMap&amp;lt;K,V&amp;gt; m) {
+        LinkedHashMap&amp;lt;K,V&amp;gt; lm = (LinkedHashMap&amp;lt;K,V&amp;gt;)m;
+        if (lm.accessOrder) {
+            lm.modCount++;
+            remove();
+            addBefore(lm.header);
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;ConcurrentHashMap&quot;&gt;&lt;a href=&quot;#ConcurrentHashMap&quot; class=&quot;headerlink&quot; title=&quot;ConcurrentHashMap&quot;&gt;&lt;/a&gt;ConcurrentHashMap&lt;/h2&gt;&lt;p&gt;这是一个线程安全的HashMap,在Collection中也提供了线程安全类&lt;br&gt;    public static &lt;k,v&gt; Map&lt;k,v&gt; synchronizedMap(Map&lt;k,v&gt; m) {&lt;br&gt;        return new SynchronizedMap&lt;k,v&gt;(m);&lt;br&gt;     }&lt;br&gt;SynchronizedMap中所有的方法都加上了synchronized,保证了方法的同步,但在使用中仍然会有安全问题&lt;br&gt;ConcurrentHashMap中使用了,锁分段技术具体细节刨个坑,以后再填&lt;/k,v&gt;&lt;/k,v&gt;&lt;/k,v&gt;&lt;/k,v&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/madun/article/details/6326337&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/madun/article/details/6326337&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;关于HashMap和hashTable&quot;&gt;&lt;a href=&quot;#关于HashMap和hashTable&quot; class=&quot;headerlink&quot; title=&quot;关于HashMap和hashTable &quot;&gt;&lt;/a&gt;关于HashMap和hashTable &lt;/h2&gt;&lt;p&gt;HashMap中key和value都可以是null,而在hashtable中key和value都不能是null&lt;br&gt;hashtable是线程安全的,但是效率低下,全局使用了一把锁,当其他线程访问时,容易堵塞&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;包括内容:java常用类源码,java源码中常用数据结构&lt;br&gt;此篇博客用来记录我对java基础在源码上面的认识,不定时填坑&lt;/p&gt;
+&lt;h1 id=&quot;1-List系列&quot;&gt;&lt;a href=&quot;#1-List系列&quot; class=&quot;headerlink&quot; title=&quot;1.List
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
+    
+      <category term="源码" scheme="http://jellygogo.com/tags/%E6%BA%90%E7%A0%81/"/>
+    
+      <category term="数据结构" scheme="http://jellygogo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>Hadoop气象数据下载小程序</title>

@@ -123,6 +123,116 @@
   <ul class="post-list">
   
     <li class="post-list-item">
+  <article id="post-常用java类源码初窥" class="article article-type-post" itemscope itemprop="blogPost">
+    
+      
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/03/31/常用java类源码初窥/">常用java类源码初窥</a>
+    </h3>
+  
+
+
+
+      <div class="post-meat flex-row">
+        <div class="flex-col">
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/源码/">源码</a></li></ul>
+</div>
+        <time datetime="2016-03-31T13:54:00.000Z" itemprop="datePublished" class="post-tiem">
+  2016-03-31
+</time>
+      </div>
+      <div class="post-content" itemprop="postContent" >
+        
+          <p>包括内容:java常用类源码,java源码中常用数据结构<br>此篇博客用来记录我对java基础在源码上面的认识,不定时填坑</p>
+<h1 id="1-List系列"><a href="#1-List系列" class="headerlink" title="1.List系列"></a>1.List系列</h1><p>List系列常用的实现类是LinkedList和ArrayList</p>
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p>内部使用一个数组来实现List</p>
+<blockquote><p>private transient Object[] elementData;</p>
+<p>Java的serialization提供了一种持久化对象实例的机制。当持久化对象时，可能有一个特殊的对象数据成员，我们不想<br>用serialization机制来保存它。为了在一个特定对象的一个域上关闭serialization，可以在这个域前加上关键字transient。<br>transient是Java语言的关键字，用来表示一个域不是该对象串行化的一部分。当一个对象被串行化的时候，transient型变量的值不包括在串行化的表示中，然而非transient型的变量是被包括进去的<br>转自:<a href="http://www.blogjava.net/fhtdy2004/archive/2009/06/20/286112.html" target="_blank" rel="external">http://www.blogjava.net/fhtdy2004/archive/2009/06/20/286112.html</a></p>
+</blockquote>
+<p>ArrayList中插入一个元素需要将此元素后面的都往后移动,<br><blockquote><p>public void add(int index, E element) {<br>        rangeCheckForAdd(index);</p>
+<pre><code>    ensureCapacityInternal(size + 1);  // Increments modCount!!
+    System.arraycopy(elementData, index, elementData, index + 1,
+                     size - index);
+    elementData[index] = element;
+    size++;
+}
+</code></pre><p>关于System.arraycopy()  <a href="http://xuyuanshuaaa.iteye.com/blog/1046621" target="_blank" rel="external">http://xuyuanshuaaa.iteye.com/blog/1046621</a></p>
+<p>ArrayList中删除元素时,并不会将内部的elementData变小</p>
+</blockquote></p>
+<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><p>内部使用内部对象存储,<br>public class LinkedList<e><br>    extends AbstractSequentialList<e><br>    implements List<e>, Deque<e>, Cloneable, java.io.Serializable</e></e></e></e></p>
+<p>如果有大量随机访问对象的需求,就使用ArrayList,如果有大量插入删除使用LinkedList</p>
+<h1 id="2-Map系列"><a href="#2-Map系列" class="headerlink" title="2.Map系列"></a>2.Map系列</h1><p>几个常用Map实现类:HashMap TreeMap LinkedHashMap ConcurrentHashMap</p>
+<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p> 使用数组和链表实现,在HashMap中使用一个数组,内部的hash()计算出hash值一样的数放入同一个Entry中,Entry中使用链表存储</p>
+<pre><code> transient Entry&lt;K,V&gt;[] table = (Entry&lt;K,V&gt;[]) EMPTY_TABLE;
+ static class Entry&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; {
+    final K key;
+    V value;
+    Entry&lt;K,V&gt; next;
+    int hash;
+}
+</code></pre><p>HashMap其实就是一个Entry数组，Entry对象中包含了键和值，其中next也是一个Entry对象，它就是用来处理hash冲突的，形成一个链表。</p>
+<p>关于HashMap很贴切的解释 <a href="http://www.cnblogs.com/ITtangtang/p/3948406.html" target="_blank" rel="external">http://www.cnblogs.com/ITtangtang/p/3948406.html</a> 包含loadFactor加载因子的内容</p>
+<h2 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h2><p>Tree内部使用二叉树(红黑树)来存储key-value<br>(先开个坑,有空再填)<br><a href="http://blog.csdn.net/chenssy/article/details/26668941" target="_blank" rel="external">http://blog.csdn.net/chenssy/article/details/26668941</a> </p>
+<h2 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h2><p>LinkedHashMap继承自HashMap,在HashMap基础上面增加了TreeMap的顺序输出功能,</p>
+<pre><code>// Entry中,增加了next
+static class Entry&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; {
+    final K key;
+    V value;
+    Entry&lt;K,V&gt; next;
+    int hash;
+}
+public V put(K key, V value) {
+    if (table == EMPTY_TABLE) {
+        inflateTable(threshold);
+    }
+    if (key == null)
+        return putForNullKey(value);
+    int hash = hash(key);
+    int i = indexFor(hash, table.length);
+    for (Entry&lt;K,V&gt; e = table[i]; e != null; e = e.next) {
+        Object k;
+        if (e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k))) {
+            V oldValue = e.value;
+            e.value = value;
+            e.recordAccess(this);//&lt;----------
+            return oldValue;
+        }
+    }
+
+    modCount++;
+    addEntry(hash, key, value, i);
+    return null;
+}
+//LinkedHashMap中重载了recordAccess这个方法.
+//recordAccess中标记了
+    void recordAccess(HashMap&lt;K,V&gt; m) {
+        LinkedHashMap&lt;K,V&gt; lm = (LinkedHashMap&lt;K,V&gt;)m;
+        if (lm.accessOrder) {
+            lm.modCount++;
+            remove();
+            addBefore(lm.header);
+        }
+    }
+</code></pre><h2 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h2><p>这是一个线程安全的HashMap,在Collection中也提供了线程安全类<br>    public static <k,v> Map<k,v> synchronizedMap(Map<k,v> m) {<br>        return new SynchronizedMap<k,v>(m);<br>     }<br>SynchronizedMap中所有的方法都加上了synchronized,保证了方法的同步,但在使用中仍然会有安全问题<br>ConcurrentHashMap中使用了,锁分段技术具体细节刨个坑,以后再填</k,v></k,v></k,v></k,v></p>
+<p><a href="http://blog.csdn.net/madun/article/details/6326337" target="_blank" rel="external">http://blog.csdn.net/madun/article/details/6326337</a></p>
+<h2 id="关于HashMap和hashTable"><a href="#关于HashMap和hashTable" class="headerlink" title="关于HashMap和hashTable "></a>关于HashMap和hashTable </h2><p>HashMap中key和value都可以是null,而在hashtable中key和value都不能是null<br>hashtable是线程安全的,但是效率低下,全局使用了一把锁,当其他线程访问时,容易堵塞</p>
+
+        
+      </div>
+      <div class="post-footer clearfix">
+        <a href="/2016/03/31/常用java类源码初窥/" class="post-more waves-button-light">MORE</a>
+      </div>
+    
+
+  </article>
+
+
+</li>
+  
+    <li class="post-list-item">
   <article id="post-Hadoop气象数据下载小程序" class="article article-type-post" itemscope itemprop="blogPost">
     
       
