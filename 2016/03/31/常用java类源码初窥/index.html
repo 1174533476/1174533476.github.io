@@ -6,7 +6,7 @@
   <title>常用java类源码初窥 | JellyGoGo Blog | 扯淡,发呆,思考之处</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="java,源码,数据结构">
+  <meta name="keywords" content="java,数据结构,源码">
   <meta name="description" content="包括内容:java常用类源码,java源码中常用数据结构此篇博客用来记录我对java基础在源码上面的认识,不定时填坑
 1.List系列List系列常用的实现类是LinkedList和ArrayList
 ArrayList内部使用一个数组来实现List
@@ -21,7 +21,7 @@ Java的serialization提供了一种持久化对象实例的机制。">
 ArrayList内部使用一个数组来实现List
 private transient Object[] elementData;
 Java的serialization提供了一种持久化对象实例的机制。">
-<meta property="og:updated_time" content="2016-03-31T08:08:49.428Z">
+<meta property="og:updated_time" content="2016-04-03T09:03:20.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用java类源码初窥">
 <meta name="twitter:description" content="包括内容:java常用类源码,java源码中常用数据结构此篇博客用来记录我对java基础在源码上面的认识,不定时填坑
@@ -185,7 +185,7 @@ Java的serialization提供了一种持久化对象实例的机制。">
 
           
           <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-List系列"><span class="post-toc-text">1.List系列</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ArrayList"><span class="post-toc-text">ArrayList</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LinkedList"><span class="post-toc-text">LinkedList</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-Map系列"><span class="post-toc-text">2.Map系列</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HashMap"><span class="post-toc-text">HashMap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TreeMap"><span class="post-toc-text">TreeMap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LinkedHashMap"><span class="post-toc-text">LinkedHashMap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ConcurrentHashMap"><span class="post-toc-text">ConcurrentHashMap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于HashMap和hashTable"><span class="post-toc-text">关于HashMap和hashTable </span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-List系列"><span class="post-toc-text">1.List系列</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ArrayList"><span class="post-toc-text">ArrayList</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LinkedList"><span class="post-toc-text">LinkedList</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-Map系列"><span class="post-toc-text">2.Map系列</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HashMap"><span class="post-toc-text">HashMap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TreeMap"><span class="post-toc-text">TreeMap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LinkedHashMap"><span class="post-toc-text">LinkedHashMap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ConcurrentHashMap"><span class="post-toc-text">ConcurrentHashMap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于HashMap和hashTable"><span class="post-toc-text">关于HashMap和hashTable </span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#WeakHashMap"><span class="post-toc-text">WeakHashMap</span></a></li></ol></li></ol>
           </nav>
           
         </aside>
@@ -265,11 +265,18 @@ public V put(K key, V value) {
 </code></pre><h2 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h2><p>这是一个线程安全的HashMap,在Collection中也提供了线程安全类<br>    public static <k,v> Map<k,v> synchronizedMap(Map<k,v> m) {<br>        return new SynchronizedMap<k,v>(m);<br>     }<br>SynchronizedMap中所有的方法都加上了synchronized,保证了方法的同步,但在使用中仍然会有安全问题<br>ConcurrentHashMap中使用了,锁分段技术具体细节刨个坑,以后再填</k,v></k,v></k,v></k,v></p>
 <p><a href="http://blog.csdn.net/madun/article/details/6326337" target="_blank" rel="external">http://blog.csdn.net/madun/article/details/6326337</a></p>
 <h2 id="关于HashMap和hashTable"><a href="#关于HashMap和hashTable" class="headerlink" title="关于HashMap和hashTable "></a>关于HashMap和hashTable </h2><p>HashMap中key和value都可以是null,而在hashtable中key和value都不能是null<br>hashtable是线程安全的,但是效率低下,全局使用了一把锁,当其他线程访问时,容易堵塞</p>
+<h2 id="WeakHashMap"><a href="#WeakHashMap" class="headerlink" title="WeakHashMap"></a>WeakHashMap</h2><p>Map总结(HashMap, Hashtable, TreeMap, WeakHashMap等使用场景)  <a href="http://www.chawenti.com/articles/20110.html" target="_blank" rel="external">http://www.chawenti.com/articles/20110.html</a></p>
+<p>2016-4-3 参考书籍:java程序员成功面试秘籍(书名感觉挺low的,但是里面还是有一定东西的)</p>
 </div>
 
             
 <nav class="post-nav flex-row">
   <div class="flex-col waves-block prev">
+    
+      <a href="/2016/04/04/收藏的博客与收藏的知识点链接/" title="小知识点相关文章链接" id="post-prev" class="post-nav-link">
+        <i class="icon icon-chevron-left"></i>
+        <span class="article-nav-title">上一篇</span>
+      </a>
     
   </div>
   <div class="flex-col waves-block next">

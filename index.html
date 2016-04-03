@@ -123,6 +123,48 @@
   <ul class="post-list">
   
     <li class="post-list-item">
+  <article id="post-收藏的博客与收藏的知识点链接" class="article article-type-post" itemscope itemprop="blogPost">
+    
+      
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/04/04/收藏的博客与收藏的知识点链接/">小知识点相关文章链接</a>
+    </h3>
+  
+
+
+
+      <div class="post-meat flex-row">
+        <div class="flex-col">
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大数据/">大数据</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/相关链接/">相关链接</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+</div>
+        <time datetime="2016-04-03T17:14:30.000Z" itemprop="datePublished" class="post-tiem">
+  2016-04-03
+</time>
+      </div>
+      <div class="post-content" itemprop="postContent" >
+        
+          <h1 id="一些我经常看的博客"><a href="#一些我经常看的博客" class="headerlink" title="一些我经常看的博客"></a>一些我经常看的博客</h1><h2 id="http-cmsblogs-com"><a href="#http-cmsblogs-com" class="headerlink" title="http://cmsblogs.com/"></a><a href="http://cmsblogs.com/" target="_blank" rel="external">http://cmsblogs.com/</a></h2><p>一个关于java技术的博客,有干货的地方,博主的态度十分积极<br>标签:有java提高篇的内容 java并发 设计模式<br>2016-4-3非常赞赏博主的那种学习的态度,博主开通这个博客的时间大约就是我大学入学的时间(2013),现在我也要面临毕业(还有一年毕业),希望我能有博主一样的勤奋和态度.<br>博主关于java的一些基础问题的总结很适合我个人对于基础的加强,并发部分一直还没有好好的学习,接下来的一段时间,我要参考博主java与设计模式方面的博文,为接下来暑期的实习再温习下基础知识.</p>
+<h2 id="http-www-imys-net"><a href="#http-www-imys-net" class="headerlink" title="http://www.imys.net/"></a><a href="http://www.imys.net/" target="_blank" rel="external">http://www.imys.net/</a></h2><p>一个前端开发者的博客,我现在用的hexo的主题就是博主发布的,虽然我不做前端,但还是收藏了.</p>
+<p>一些平时遇到的,感觉有用的好文章链接,很多都是一个零散感觉很有用的知识点,不需要单写博客来学习,所以在此记录下这些链接,以备后面查阅</p>
+<h1 id="Java相关"><a href="#Java相关" class="headerlink" title="Java相关"></a>Java相关</h1><p>Java WeakReference 弱引用 WeakHashMap  <a href="http://www.tuicool.com/articles/imyueq" target="_blank" rel="external">http://www.tuicool.com/articles/imyueq</a> (testcode:testcode20160403 )</p>
+<p>分割线=======================================<br>下面是代码========================================<br>    //testcode20160403<br>    package com.jellygogo.basejava;<br>    import java.lang.ref.WeakReference;<br>    public class WeakReferenceTest {<br>        public static void main(String[] args) {<br>            WeakReference<weakstring> w = new WeakReference(new WeakString());<br>            StrongString s1 = new StrongString();<br>            StrongString s2 = new StrongString();<br>            int i=0;<br>            while(true){<br>                if(w.get()!=null){<br>                    System.out.println(“test”+(i++));<br>                }else{<br>                    System.out.println(“end weakReference is NULL”);<br>                    break;<br>                }<br>            }<br>            System.out.println(w.get());<br>            System.out.println(s1);<br>            System.out.println(s2);<br>        }<br>    }<br>    class WeakString{<br>        public String s = “ssssssss1”;<br>        public String toString() {<br>            return “s1”;<br>        }<br>    }<br>    class StrongString{<br>        public String s = “ssssssss2”;<br>        public String toString() {<br>            return “s2”;<br>        }<br>    }</weakstring></p>
+
+        
+      </div>
+      <div class="post-footer clearfix">
+        <a href="/2016/04/04/收藏的博客与收藏的知识点链接/" class="post-more waves-button-light">MORE</a>
+      </div>
+    
+
+  </article>
+
+
+</li>
+  
+    <li class="post-list-item">
   <article id="post-常用java类源码初窥" class="article article-type-post" itemscope itemprop="blogPost">
     
       
@@ -219,6 +261,8 @@ public V put(K key, V value) {
 </code></pre><h2 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h2><p>这是一个线程安全的HashMap,在Collection中也提供了线程安全类<br>    public static <k,v> Map<k,v> synchronizedMap(Map<k,v> m) {<br>        return new SynchronizedMap<k,v>(m);<br>     }<br>SynchronizedMap中所有的方法都加上了synchronized,保证了方法的同步,但在使用中仍然会有安全问题<br>ConcurrentHashMap中使用了,锁分段技术具体细节刨个坑,以后再填</k,v></k,v></k,v></k,v></p>
 <p><a href="http://blog.csdn.net/madun/article/details/6326337" target="_blank" rel="external">http://blog.csdn.net/madun/article/details/6326337</a></p>
 <h2 id="关于HashMap和hashTable"><a href="#关于HashMap和hashTable" class="headerlink" title="关于HashMap和hashTable "></a>关于HashMap和hashTable </h2><p>HashMap中key和value都可以是null,而在hashtable中key和value都不能是null<br>hashtable是线程安全的,但是效率低下,全局使用了一把锁,当其他线程访问时,容易堵塞</p>
+<h2 id="WeakHashMap"><a href="#WeakHashMap" class="headerlink" title="WeakHashMap"></a>WeakHashMap</h2><p>Map总结(HashMap, Hashtable, TreeMap, WeakHashMap等使用场景)  <a href="http://www.chawenti.com/articles/20110.html" target="_blank" rel="external">http://www.chawenti.com/articles/20110.html</a></p>
+<p>2016-4-3 参考书籍:java程序员成功面试秘籍(书名感觉挺low的,但是里面还是有一定东西的)</p>
 
         
       </div>
@@ -248,7 +292,7 @@ public V put(K key, V value) {
 
       <div class="post-meat flex-row">
         <div class="flex-col">
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/">Hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/">Hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大数据/">大数据</a></li></ul>
 </div>
         <time datetime="2016-03-17T14:18:26.000Z" itemprop="datePublished" class="post-tiem">
   2016-03-17

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jellygogo.com/"/>
-  <updated>2016-03-31T08:08:49.428Z</updated>
+  <updated>2016-04-03T17:14:30.000Z</updated>
   <id>http://jellygogo.com/</id>
   
   <author>
@@ -16,11 +16,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>小知识点相关文章链接</title>
+    <link href="http://jellygogo.com/2016/04/04/%E6%94%B6%E8%97%8F%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%8E%E6%94%B6%E8%97%8F%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9%E9%93%BE%E6%8E%A5/"/>
+    <id>http://jellygogo.com/2016/04/04/收藏的博客与收藏的知识点链接/</id>
+    <published>2016-04-03T17:14:30.000Z</published>
+    <updated>2016-04-03T17:14:30.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;一些我经常看的博客&quot;&gt;&lt;a href=&quot;#一些我经常看的博客&quot; class=&quot;headerlink&quot; title=&quot;一些我经常看的博客&quot;&gt;&lt;/a&gt;一些我经常看的博客&lt;/h1&gt;&lt;h2 id=&quot;http-cmsblogs-com&quot;&gt;&lt;a href=&quot;#http-cmsblogs-com&quot; class=&quot;headerlink&quot; title=&quot;http://cmsblogs.com/&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://cmsblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://cmsblogs.com/&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;一个关于java技术的博客,有干货的地方,博主的态度十分积极&lt;br&gt;标签:有java提高篇的内容 java并发 设计模式&lt;br&gt;2016-4-3非常赞赏博主的那种学习的态度,博主开通这个博客的时间大约就是我大学入学的时间(2013),现在我也要面临毕业(还有一年毕业),希望我能有博主一样的勤奋和态度.&lt;br&gt;博主关于java的一些基础问题的总结很适合我个人对于基础的加强,并发部分一直还没有好好的学习,接下来的一段时间,我要参考博主java与设计模式方面的博文,为接下来暑期的实习再温习下基础知识.&lt;/p&gt;
+&lt;h2 id=&quot;http-www-imys-net&quot;&gt;&lt;a href=&quot;#http-www-imys-net&quot; class=&quot;headerlink&quot; title=&quot;http://www.imys.net/&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://www.imys.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.imys.net/&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;一个前端开发者的博客,我现在用的hexo的主题就是博主发布的,虽然我不做前端,但还是收藏了.&lt;/p&gt;
+&lt;p&gt;一些平时遇到的,感觉有用的好文章链接,很多都是一个零散感觉很有用的知识点,不需要单写博客来学习,所以在此记录下这些链接,以备后面查阅&lt;/p&gt;
+&lt;h1 id=&quot;Java相关&quot;&gt;&lt;a href=&quot;#Java相关&quot; class=&quot;headerlink&quot; title=&quot;Java相关&quot;&gt;&lt;/a&gt;Java相关&lt;/h1&gt;&lt;p&gt;Java WeakReference 弱引用 WeakHashMap  &lt;a href=&quot;http://www.tuicool.com/articles/imyueq&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.tuicool.com/articles/imyueq&lt;/a&gt; (testcode:testcode20160403 )&lt;/p&gt;
+&lt;p&gt;分割线=======================================&lt;br&gt;下面是代码========================================&lt;br&gt;    //testcode20160403&lt;br&gt;    package com.jellygogo.basejava;&lt;br&gt;    import java.lang.ref.WeakReference;&lt;br&gt;    public class WeakReferenceTest {&lt;br&gt;        public static void main(String[] args) {&lt;br&gt;            WeakReference&lt;weakstring&gt; w = new WeakReference(new WeakString());&lt;br&gt;            StrongString s1 = new StrongString();&lt;br&gt;            StrongString s2 = new StrongString();&lt;br&gt;            int i=0;&lt;br&gt;            while(true){&lt;br&gt;                if(w.get()!=null){&lt;br&gt;                    System.out.println(“test”+(i++));&lt;br&gt;                }else{&lt;br&gt;                    System.out.println(“end weakReference is NULL”);&lt;br&gt;                    break;&lt;br&gt;                }&lt;br&gt;            }&lt;br&gt;            System.out.println(w.get());&lt;br&gt;            System.out.println(s1);&lt;br&gt;            System.out.println(s2);&lt;br&gt;        }&lt;br&gt;    }&lt;br&gt;    class WeakString{&lt;br&gt;        public String s = “ssssssss1”;&lt;br&gt;        public String toString() {&lt;br&gt;            return “s1”;&lt;br&gt;        }&lt;br&gt;    }&lt;br&gt;    class StrongString{&lt;br&gt;        public String s = “ssssssss2”;&lt;br&gt;        public String toString() {&lt;br&gt;            return “s2”;&lt;br&gt;        }&lt;br&gt;    }&lt;/weakstring&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一些我经常看的博客&quot;&gt;&lt;a href=&quot;#一些我经常看的博客&quot; class=&quot;headerlink&quot; title=&quot;一些我经常看的博客&quot;&gt;&lt;/a&gt;一些我经常看的博客&lt;/h1&gt;&lt;h2 id=&quot;http-cmsblogs-com&quot;&gt;&lt;a href=&quot;#http-cms
+    
+    </summary>
+    
+    
+      <category term="相关链接" scheme="http://jellygogo.com/tags/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5/"/>
+    
+      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
+    
+      <category term="算法" scheme="http://jellygogo.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://jellygogo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="数据库" scheme="http://jellygogo.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="大数据" scheme="http://jellygogo.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>常用java类源码初窥</title>
     <link href="http://jellygogo.com/2016/03/31/%E5%B8%B8%E7%94%A8java%E7%B1%BB%E6%BA%90%E7%A0%81%E5%88%9D%E7%AA%A5/"/>
     <id>http://jellygogo.com/2016/03/31/常用java类源码初窥/</id>
     <published>2016-03-31T13:54:00.000Z</published>
-    <updated>2016-03-31T08:08:49.428Z</updated>
+    <updated>2016-04-03T09:03:20.356Z</updated>
     
     <content type="html">&lt;p&gt;包括内容:java常用类源码,java源码中常用数据结构&lt;br&gt;此篇博客用来记录我对java基础在源码上面的认识,不定时填坑&lt;/p&gt;
 &lt;h1 id=&quot;1-List系列&quot;&gt;&lt;a href=&quot;#1-List系列&quot; class=&quot;headerlink&quot; title=&quot;1.List系列&quot;&gt;&lt;/a&gt;1.List系列&lt;/h1&gt;&lt;p&gt;List系列常用的实现类是LinkedList和ArrayList&lt;/p&gt;
@@ -95,6 +130,8 @@ public V put(K key, V value) {
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;ConcurrentHashMap&quot;&gt;&lt;a href=&quot;#ConcurrentHashMap&quot; class=&quot;headerlink&quot; title=&quot;ConcurrentHashMap&quot;&gt;&lt;/a&gt;ConcurrentHashMap&lt;/h2&gt;&lt;p&gt;这是一个线程安全的HashMap,在Collection中也提供了线程安全类&lt;br&gt;    public static &lt;k,v&gt; Map&lt;k,v&gt; synchronizedMap(Map&lt;k,v&gt; m) {&lt;br&gt;        return new SynchronizedMap&lt;k,v&gt;(m);&lt;br&gt;     }&lt;br&gt;SynchronizedMap中所有的方法都加上了synchronized,保证了方法的同步,但在使用中仍然会有安全问题&lt;br&gt;ConcurrentHashMap中使用了,锁分段技术具体细节刨个坑,以后再填&lt;/k,v&gt;&lt;/k,v&gt;&lt;/k,v&gt;&lt;/k,v&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/madun/article/details/6326337&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/madun/article/details/6326337&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;关于HashMap和hashTable&quot;&gt;&lt;a href=&quot;#关于HashMap和hashTable&quot; class=&quot;headerlink&quot; title=&quot;关于HashMap和hashTable &quot;&gt;&lt;/a&gt;关于HashMap和hashTable &lt;/h2&gt;&lt;p&gt;HashMap中key和value都可以是null,而在hashtable中key和value都不能是null&lt;br&gt;hashtable是线程安全的,但是效率低下,全局使用了一把锁,当其他线程访问时,容易堵塞&lt;/p&gt;
+&lt;h2 id=&quot;WeakHashMap&quot;&gt;&lt;a href=&quot;#WeakHashMap&quot; class=&quot;headerlink&quot; title=&quot;WeakHashMap&quot;&gt;&lt;/a&gt;WeakHashMap&lt;/h2&gt;&lt;p&gt;Map总结(HashMap, Hashtable, TreeMap, WeakHashMap等使用场景)  &lt;a href=&quot;http://www.chawenti.com/articles/20110.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.chawenti.com/articles/20110.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2016-4-3 参考书籍:java程序员成功面试秘籍(书名感觉挺low的,但是里面还是有一定东西的)&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -107,9 +144,9 @@ public V put(K key, V value) {
     
       <category term="java" scheme="http://jellygogo.com/tags/java/"/>
     
-      <category term="源码" scheme="http://jellygogo.com/tags/%E6%BA%90%E7%A0%81/"/>
-    
       <category term="数据结构" scheme="http://jellygogo.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="源码" scheme="http://jellygogo.com/tags/%E6%BA%90%E7%A0%81/"/>
     
   </entry>
   
@@ -118,7 +155,7 @@ public V put(K key, V value) {
     <link href="http://jellygogo.com/2016/03/17/Hadoop%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     <id>http://jellygogo.com/2016/03/17/Hadoop气象数据下载小程序/</id>
     <published>2016-03-17T14:18:26.000Z</published>
-    <updated>2016-03-17T07:42:48.718Z</updated>
+    <updated>2016-03-17T14:41:22.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;Hadoop气象数据下载小程序&quot;&gt;&lt;a href=&quot;#Hadoop气象数据下载小程序&quot; class=&quot;headerlink&quot; title=&quot;Hadoop气象数据下载小程序&quot;&gt;&lt;/a&gt;Hadoop气象数据下载小程序&lt;/h1&gt;&lt;h2 id=&quot;写小程序的原因&quot;&gt;&lt;a href=&quot;#写小程序的原因&quot; class=&quot;headerlink&quot; title=&quot;写小程序的原因&quot;&gt;&lt;/a&gt;写小程序的原因&lt;/h2&gt;&lt;p&gt;在学习Hadoop学习指南时,遇到了&lt;a href=&quot;ftp://www1.ncdc.noaa.gov/pub/data/noaa&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ftp&lt;/a&gt;下载链接不能下载的原因,于是去找&lt;a href=&quot;http://www1.ncdc.noaa.gov/pub/data/noaa&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http下载&lt;/a&gt;的链接,但是使用迅雷批量下载时遇到了文件限制,在每个年份的文件夹下大约有1W-3W个文件,但是迅雷批量下载一次只能下载1000个连接,遂自己写了短代码,来自己下载&lt;/p&gt;
 &lt;p&gt;顺便这段时间再看代码整洁之道,我试下尽我所能写出书什么样的代码&lt;/p&gt;
@@ -285,9 +322,11 @@ public String getRoot() {
     </summary>
     
     
-      <category term="Hadoop" scheme="http://jellygogo.com/tags/Hadoop/"/>
-    
       <category term="java" scheme="http://jellygogo.com/tags/java/"/>
+    
+      <category term="大数据" scheme="http://jellygogo.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="Hadoop" scheme="http://jellygogo.com/tags/Hadoop/"/>
     
   </entry>
   
