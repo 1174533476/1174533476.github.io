@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jellygogo.com/"/>
-  <updated>2016-04-07T08:39:01.584Z</updated>
+  <updated>2016-04-07T08:47:31.170Z</updated>
   <id>http://jellygogo.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Demo</title>
+    <title>MRunit combiner partitioner</title>
     <link href="http://jellygogo.com/2016/04/07/MRunit%20combiner%20partitioner%20/"/>
     <id>http://jellygogo.com/2016/04/07/MRunit combiner partitioner /</id>
     <published>2016-04-07T15:50:55.000Z</published>
-    <updated>2016-04-07T08:39:01.584Z</updated>
+    <updated>2016-04-07T08:47:31.170Z</updated>
     
     <content type="html">&lt;p&gt;在maven中使用MRunit测试框架搭建了个mapreduce程序,里面使用了combiner和partitioner&lt;br&gt;并使用了 org.apache.hadoop.util.Tool&lt;br&gt;实现了找出对应年份的最大值,&lt;br&gt;        //数据样例&lt;br&gt;        1995 65&lt;br&gt;        1965 21&lt;br&gt;        1995 62&lt;br&gt;为了验证使用combiner和不适用combiner的不同,所以写了个生成数据的小程序&lt;br&gt;    package com.jellygogo.basejava;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;import java.io.File;
