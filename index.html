@@ -123,14 +123,14 @@
   <ul class="post-list">
   
     <li class="post-list-item">
-  <article id="post-收藏的博客与收藏的知识点链接" class="article article-type-post" itemscope itemprop="blogPost">
+  <article id="mapreduce-MRunit combiner partitioner " class="article article-type-mapreduce" itemscope itemprop="blogPost">
     
       
 
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/04/04/收藏的博客与收藏的知识点链接/">小知识点相关文章链接</a>
+      <a class="post-title-link" href="/2016/04/07/MRunit combiner partitioner /">Demo</a>
     </h3>
   
 
@@ -138,24 +138,311 @@
 
       <div class="post-meat flex-row">
         <div class="flex-col">
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大数据/">大数据</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/相关链接/">相关链接</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MRunit/">MRunit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tool/">Tool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/combiner/">combiner</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mapreduce/">mapreduce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/partitioner/">partitioner</a></li></ul>
 </div>
-        <time datetime="2016-04-03T17:14:30.000Z" itemprop="datePublished" class="post-tiem">
-  2016-04-03
+        <time datetime="2016-04-07T15:50:55.000Z" itemprop="datePublished" class="post-tiem">
+  2016-04-07
 </time>
       </div>
       <div class="post-content" itemprop="postContent" >
         
-          <h1 id="一些我经常看的博客"><a href="#一些我经常看的博客" class="headerlink" title="一些我经常看的博客"></a>一些我经常看的博客</h1><h2 id="http-cmsblogs-com"><a href="#http-cmsblogs-com" class="headerlink" title="http://cmsblogs.com/"></a><a href="http://cmsblogs.com/" target="_blank" rel="external">http://cmsblogs.com/</a></h2><p>一个关于java技术的博客,有干货的地方,博主的态度十分积极<br>标签:有java提高篇的内容 java并发 设计模式<br>2016-4-3非常赞赏博主的那种学习的态度,博主开通这个博客的时间大约就是我大学入学的时间(2013),现在我也要面临毕业(还有一年毕业),希望我能有博主一样的勤奋和态度.<br>博主关于java的一些基础问题的总结很适合我个人对于基础的加强,并发部分一直还没有好好的学习,接下来的一段时间,我要参考博主java与设计模式方面的博文,为接下来暑期的实习再温习下基础知识.</p>
-<h2 id="http-www-imys-net"><a href="#http-www-imys-net" class="headerlink" title="http://www.imys.net/"></a><a href="http://www.imys.net/" target="_blank" rel="external">http://www.imys.net/</a></h2><p>一个前端开发者的博客,我现在用的hexo的主题就是博主发布的,虽然我不做前端,但还是收藏了.</p>
-<p>一些平时遇到的,感觉有用的好文章链接,很多都是一个零散感觉很有用的知识点,不需要单写博客来学习,所以在此记录下这些链接,以备后面查阅</p>
-<h1 id="Java相关"><a href="#Java相关" class="headerlink" title="Java相关"></a>Java相关</h1><p>Java WeakReference 弱引用 WeakHashMap  <a href="http://www.tuicool.com/articles/imyueq" target="_blank" rel="external">http://www.tuicool.com/articles/imyueq</a> (testcode:testcode20160403 )</p>
-<p>分割线=======================================<br>下面是代码========================================<br>    //testcode20160403<br>    package com.jellygogo.basejava;<br>    import java.lang.ref.WeakReference;<br>    public class WeakReferenceTest {<br>        public static void main(String[] args) {<br>            WeakReference<weakstring> w = new WeakReference(new WeakString());<br>            StrongString s1 = new StrongString();<br>            StrongString s2 = new StrongString();<br>            int i=0;<br>            while(true){<br>                if(w.get()!=null){<br>                    System.out.println(“test”+(i++));<br>                }else{<br>                    System.out.println(“end weakReference is NULL”);<br>                    break;<br>                }<br>            }<br>            System.out.println(w.get());<br>            System.out.println(s1);<br>            System.out.println(s2);<br>        }<br>    }<br>    class WeakString{<br>        public String s = “ssssssss1”;<br>        public String toString() {<br>            return “s1”;<br>        }<br>    }<br>    class StrongString{<br>        public String s = “ssssssss2”;<br>        public String toString() {<br>            return “s2”;<br>        }<br>    }</weakstring></p>
+          <p>在maven中使用MRunit测试框架搭建了个mapreduce程序,里面使用了combiner和partitioner<br>并使用了 org.apache.hadoop.util.Tool<br>实现了找出对应年份的最大值,<br>        //数据样例<br>        1995 65<br>        1965 21<br>        1995 62<br>为了验证使用combiner和不适用combiner的不同,所以写了个生成数据的小程序<br>    package com.jellygogo.basejava;</p>
+<pre><code>import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+public class MaxNumOfYearTest implements Runnable{
+    public static final int ONEFILEMAXLINE = 100000;
+    public static final int STARTFILE = 0 ;
+    public static final int ENDFILE = 1;
+    public int num;
+    public MaxNumOfYearTest(int num) {
+        super();
+        this.num = num;
+    }
+    public static void main(String[] args) {
+        for(int i=STARTFILE;i&lt;ENDFILE;i++){
+            Thread thread = new Thread(new MaxNumOfYearTest(i));
+            thread.start();
+        }
+    }
+    public void run() {
+        // TODO Auto-generated method stub
+        File file = new File(&quot;C:\\Users\\Administrator\\Desktop\\笔记\\testdata\\test&quot;+num+&quot;.txt&quot;);
+        FileWriter b =null;
+        try {
+            b= new FileWriter(file);
+            for(int i = 0;i&lt;ONEFILEMAXLINE;i++){
+                int randomYear = 1900 + (int)(Math.random()*100);
+                int randomNum = (int)(Math.random()*100);
+                b.write(randomYear+&quot; &quot;+randomNum+&quot;\n&quot;);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e);
+        }finally{
+            try {
+                b.close();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    }
+}
+</code></pre><p>下面是对应的源码</p>
+<p>pom.xml</p>
+<pre><code>    &lt;project xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;  
+     xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;  
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;  
+    &lt;groupId&gt;com.jellygogo.ToolTest&lt;/groupId&gt;  
+    &lt;artifactId&gt;ToolTest&lt;/artifactId&gt;  
+    &lt;packaging&gt;jar&lt;/packaging&gt;    
+    &lt;name&gt;ToolTest&lt;/name&gt;  
+    &lt;url&gt;http://maven.apache.org&lt;/url&gt;  
+    &lt;properties&gt;  
+    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;  
+    &lt;/properties&gt;
+    &lt;dependencies&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;  
+            &lt;artifactId&gt;hadoop-common&lt;/artifactId&gt;  
+            &lt;version&gt;2.5.2&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;  
+            &lt;artifactId&gt;hadoop-hdfs&lt;/artifactId&gt;  
+            &lt;version&gt;2.5.2&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;  
+            &lt;artifactId&gt;hadoop-client&lt;/artifactId&gt;  
+            &lt;version&gt;2.5.2&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;junit&lt;/groupId&gt;  
+            &lt;artifactId&gt;junit&lt;/artifactId&gt;  
+            &lt;version&gt;4.10&lt;/version&gt;  
+            &lt;scope&gt;test&lt;/scope&gt;  
+        &lt;/dependency&gt;  
+
+        &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.mrunit&lt;/groupId&gt;
+        &lt;artifactId&gt;mrunit&lt;/artifactId&gt;
+        &lt;version&gt;0.9.0-incubating&lt;/version&gt;
+        &lt;classifier&gt;hadoop2&lt;/classifier&gt; 
+        &lt;/dependency&gt;
+
+    &lt;/dependencies&gt;  
+    &lt;version&gt;3.0&lt;/version&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+                &lt;version&gt;3.3&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;source&gt;1.7&lt;/source&gt;
+                    &lt;target&gt;1.7&lt;/target&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+&lt;/project&gt;  
+</code></pre><p>ToolTest.java</p>
+<pre><code>package com.jellygogo.hadoop;    
+import java.io.IOException;    
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.conf.Configured;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.JobConf;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Partitioner;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
+import org.apache.hadoop.util.Tool;
+import org.apache.hadoop.util.ToolRunner;    
+public class ToolTest extends Configured implements Tool {        
+    public int run(String[] arg0) throws Exception {
+        Job job = Job.getInstance(getConf());
+        job.setJarByClass(ToolTest.class);
+        job.setInputFormatClass(TextInputFormat.class);
+        job.setOutputFormatClass(TextOutputFormat.class);    
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(Text.class);
+        FileInputFormat.setInputPaths(job, new Path(arg0[0]));
+        FileOutputFormat.setOutputPath(job, new Path(arg0[1]));
+        job.setMapperClass(MapperTest.class);
+        job.setReducerClass(ReduceTest.class);
+        job.setCombinerClass(CTest.class);
+        job.setNumReduceTasks(5);
+        job.setPartitionerClass(MyPartitioner.class);
+        if (job.waitForCompletion(true))
+            return 0;
+        else
+            return 1;
+    }
+    public static void main(String[] args) {
+        Configuration configuration = new Configuration();
+        try {
+            ToolRunner.run(new ToolTest(), args);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e);
+        }
+    }
+}
+class ReduceTest extends Reducer&lt;Text, Text, Text, Text&gt; {
+    protected void reduce(Text arg0, Iterable&lt;Text&gt; arg1, Reducer&lt;Text, Text, Text, Text&gt;.Context arg2)
+            throws IOException, InterruptedException {
+        int max = 0;
+        for (Text t : arg1) {
+            String intString = t.toString();
+            int thisvalue = Integer.valueOf(intString);
+            if (thisvalue &gt; max)
+                max = thisvalue;
+        }
+        arg2.write(arg0, new Text(max + &quot;&quot;));
+    }
+}
+class MapperTest extends Mapper&lt;LongWritable, Text, Text, Text&gt; {
+    protected void map(LongWritable key, Text value, Mapper&lt;LongWritable, Text, Text, Text&gt;.Context context)
+            throws IOException, InterruptedException {
+        String v = value.toString();
+        if (v != null &amp;&amp; v.length() &gt; 5) {
+            context.write(new Text(value.toString().substring(0, 4)),
+                    new Text(value.toString().substring(5, v.length())));
+        }
+    }
+}
+class CTest extends Reducer&lt;Text, Text, Text, Text&gt; {
+    protected void reduce(Text arg0, Iterable&lt;Text&gt; arg1, Reducer&lt;Text, Text, Text, Text&gt;.Context arg2)
+            throws IOException, InterruptedException {
+        int max = 0;
+        for (Text t : arg1) {
+            String intString = t.toString();
+            int thisvalue = Integer.valueOf(intString);
+            if (thisvalue &gt; max)
+                max = thisvalue;
+        }
+        arg2.write(arg0, new Text(max + &quot;&quot;));
+    }
+}
+
+class MyPartitioner extends Partitioner{
+    public int getPartition(Object key, Object value, int numPartitions) {
+        // TODO Auto-generated method stub
+        int result = 0;
+        if (key.toString().startsWith(&quot;1&quot;)) {  
+            result = 0 % numPartitions;  
+        } else if (key.toString().startsWith(&quot;2&quot;)) {  
+            result = 1 % numPartitions;  
+        }else {
+            result = 3 % numPartitions; 
+        }
+        return result;
+    }
+}
+</code></pre><p>MR2Test.java</p>
+<pre><code>package com.jellygogo.hadoop;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mrunit.mapreduce.MapDriver;
+import org.apache.hadoop.mrunit.mapreduce.MapReduceDriver;
+import org.apache.hadoop.mrunit.mapreduce.ReduceDriver;
+import org.apache.hadoop.mrunit.types.Pair;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import junit.framework.TestCase;
+public class MR2Test extends TestCase{
+
+    private Mapper&lt;LongWritable, Text, Text, Text&gt; mapper;
+    private Reducer reducer;
+    private MapDriver&lt;LongWritable, Text, Text, Text&gt; mapDirver;
+    private ReduceDriver reduceDirver;
+    private MapReduceDriver rdDirver; 
+    @Test
+    public void testMap(){
+        mapper = new MapperTest();
+        reducer = new ReduceTest();
+        mapDirver = new MapDriver&lt;&gt;(mapper);
+        reduceDirver = new ReduceDriver&lt;&gt;(reducer);
+        rdDirver = new MapReduceDriver&lt;&gt;(mapper, reducer);
+        mapDirver.withInput(new LongWritable(1L), new Text(&quot;1995 56&quot;));
+        mapDirver.withOutput( new Text(&quot;1995&quot;), new Text(&quot;56&quot;));
+        mapDirver.runTest();
+    }
+    @Test
+    public void testReduceOneValue(){
+        mapper = new MapperTest();
+        reducer = new ReduceTest();
+        mapDirver = new MapDriver&lt;&gt;(mapper);
+        reduceDirver = new ReduceDriver&lt;&gt;(reducer);
+        rdDirver = new MapReduceDriver&lt;&gt;(mapper, reducer);
+        List&lt;Text&gt; list = new ArrayList&lt;Text&gt;();
+        list.add(new Text(&quot;1&quot;));
+        list.add(new Text(&quot;5&quot;));
+        list.add(new Text(&quot;4&quot;));
+        reduceDirver.withInput(new Text(&quot;1995&quot;), list);
+        reduceDirver.withOutput( new Text(&quot;1995&quot;), new Text(&quot;5&quot;));
+//        try {
+//            List&lt;Pair&gt; l = reduceDirver.run();
+//            System.out.println(&quot;testReduceOneValue=====&quot;);
+//            for(Pair o:l)
+//                System.out.println(o);
+//        } catch (IOException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+    }
+    @Test
+    public void testMapReduce(){
+        mapper = new MapperTest();
+        reducer = new ReduceTest();
+        mapDirver = new MapDriver&lt;&gt;(mapper);
+        reduceDirver = new ReduceDriver&lt;&gt;(reducer);
+        rdDirver = new MapReduceDriver&lt;&gt;(mapper, reducer);
+        rdDirver.withInput(new LongWritable(1L), new Text(&quot;1995 5&quot;));
+        rdDirver.withInput(new LongWritable(2L), new Text(&quot;1995 6&quot;));
+        rdDirver.withInput(new LongWritable(3L), new Text(&quot;1996 10&quot;));
+        rdDirver.withInput(new LongWritable(5L), new Text(&quot;1996 1&quot;));
+        rdDirver.withInput(new LongWritable(6L), new Text(&quot;1994 100&quot;));
+        rdDirver.withInput(new LongWritable(7L), new Text(&quot;1996 2&quot;));
+        rdDirver.withOutput( new Text(&quot;1994&quot;), new Text(&quot;100&quot;));
+        rdDirver.withOutput( new Text(&quot;1995&quot;), new Text(&quot;6&quot;));
+        rdDirver.withOutput( new Text(&quot;1996&quot;), new Text(&quot;10&quot;));
+//        withoutput应该按照key排序输入
+//        (1994, 100)
+//        (1995, 6)
+//        (1996, 10)
+        rdDirver.runTest();
+    }
+
+}
+</code></pre><p>第一次测试时,没有加job.setCombinerClass(CTest.class) 这一句,没有使用combiner<br>得出结果如下:</p>
+<blockquote><p>Map-Reduce Framework<br>               Map input records=100000<br>               Map output records=100000<br>               Map output bytes=789913<br>               Map output materialized bytes=989925<br>               Input split bytes=103<br>               Combine input records=0<br>               Combine output records=0<br>               Reduce input groups=100<br>               Reduce shuffle bytes=989925<br>               Reduce input records=100000<br>               Reduce output records=100<br>               Spilled Records=200000<br>               Shuffled Maps =2<br>               Failed Shuffles=0<br>               Merged Map outputs=2<br>               GC time elapsed (ms)=487<br>               CPU time spent (ms)=6770<br>               Physical memory (bytes) snapshot=383012864<br>               Virtual memory (bytes) snapshot=6227005440<br>               Total committed heap usage (bytes)=157134848</p>
+</blockquote>
+<p>使用combiner之后</p>
+<blockquote><p>Map-Reduce Framework<br>             Map input records=100000<br>             Map output records=100000<br>             Map output bytes=789913<br>             Map output materialized bytes=1012<br>             Input split bytes=103<br>             Combine input records=100000<br>             Combine output records=100<br>             Reduce input groups=100<br>             Reduce shuffle bytes=1012<br>             Reduce input records=100<br>             Reduce output records=100<br>             Spilled Records=200<br>             Shuffled Maps =2<br>             Failed Shuffles=0<br>             Merged Map outputs=2<br>             GC time elapsed (ms)=444<br>             CPU time spent (ms)=4860<br>             Physical memory (bytes) snapshot=392232960<br>             Virtual memory (bytes) snapshot=6227005440<br>             Total committed heap usage (bytes)=156102656</p>
+</blockquote>
+<p>可以对比出<br>                Combine input records=0<br>                Combine output records=0<br>与<br>                Combine input records=100000<br>                Combine output records=100</p>
+<p>Combiner相关链接 <a href="http://www.tuicool.com/articles/qAzUjav" target="_blank" rel="external">http://www.tuicool.com/articles/qAzUjav</a><br>partitioner相关链接 <a href="http://www.cnblogs.com/xwdreamer/archive/2011/10/27/2296943.html" target="_blank" rel="external">http://www.cnblogs.com/xwdreamer/archive/2011/10/27/2296943.html</a></p>
 
         
       </div>
       <div class="post-footer clearfix">
-        <a href="/2016/04/04/收藏的博客与收藏的知识点链接/" class="post-more waves-button-light">MORE</a>
+        <a href="/2016/04/07/MRunit combiner partitioner /" class="post-more waves-button-light">MORE</a>
       </div>
     
 
