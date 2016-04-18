@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jellygogo.com/"/>
-  <updated>2016-04-07T08:47:31.170Z</updated>
+  <updated>2016-04-13T05:45:26.445Z</updated>
   <id>http://jellygogo.com/</id>
   
   <author>
@@ -16,11 +16,350 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hive学习</title>
+    <link href="http://jellygogo.com/2016/04/13/hiveLearn/"/>
+    <id>http://jellygogo.com/2016/04/13/hiveLearn/</id>
+    <published>2016-04-13T12:50:55.000Z</published>
+    <updated>2016-04-13T05:45:26.445Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;Hive学习笔记&quot;&gt;&lt;a href=&quot;#Hive学习笔记&quot; class=&quot;headerlink&quot; title=&quot;Hive学习笔记&quot;&gt;&lt;/a&gt;Hive学习笔记&lt;/h1&gt;&lt;h2 id=&quot;hive基础操作&quot;&gt;&lt;a href=&quot;#hive基础操作&quot; class=&quot;headerlink&quot; title=&quot;hive基础操作&quot;&gt;&lt;/a&gt;hive基础操作&lt;/h2&gt;&lt;p&gt;hive导入数据方法:&lt;a href=&quot;http://blog.csdn.net/lifuxiangcaohui/article/details/40588929&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/lifuxiangcaohui/article/details/40588929&lt;/a&gt;&lt;br&gt;    hive&amp;gt; dfs -cat hdfs://h1:9000/user/grip/word.txt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hive&amp;gt; create database test;
+OK
+Time taken: 8.764 seconds
+
+hive&amp;gt; use test;
+OK
+Time taken: 1.91 seconds
+
+hive&amp;gt;
+hive&amp;gt; set hivevar:v=name;
+hive&amp;gt; create table tabletest(id int,${hivevar:v} string) ROW FORMAT DELIMITED FIELDS TERMINATED BY &amp;apos;\t&amp;apos; ;
+OK
+Time taken: 15.879 seconds
+
+hive&amp;gt; describe tabletest;
+OK
+id                      int                                    
+name                    string                                 
+Time taken: 4.328 seconds, Fetched: 2 row(s)
+
+[grip@h1 tData]$ cat hivedata.txt
+101     jelly
+102     gogo
+
+hive (test)&amp;gt; load data local inpath &amp;quot;/home/grip/tData/hivedata.txt&amp;quot; into table tabletest;
+Loading data to table test.tabletest
+OK
+Time taken: 2.252 seconds
+hive (test)&amp;gt; select * from tabletest;
+OK
+101     jelly
+102     gogo
+Time taken: 0.569 seconds, Fetched: 2 row(s)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;wordcount-hive-Demo&quot;&gt;&lt;a href=&quot;#wordcount-hive-Demo&quot; class=&quot;headerlink&quot; title=&quot;wordcount hive Demo&quot;&gt;&lt;/a&gt;wordcount hive Demo&lt;/h2&gt;&lt;p&gt;create database wordcount;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Hive学习笔记&quot;&gt;&lt;a href=&quot;#Hive学习笔记&quot; class=&quot;headerlink&quot; title=&quot;Hive学习笔记&quot;&gt;&lt;/a&gt;Hive学习笔记&lt;/h1&gt;&lt;h2 id=&quot;hive基础操作&quot;&gt;&lt;a href=&quot;#hive基础操作&quot; class=&quot;head
+    
+    </summary>
+    
+    
+      <category term="hadoop" scheme="http://jellygogo.com/tags/hadoop/"/>
+    
+      <category term="hive" scheme="http://jellygogo.com/tags/hive/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用排序算法总结</title>
+    <link href="http://jellygogo.com/2016/04/08/%E5%B8%B8%E7%94%A8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"/>
+    <id>http://jellygogo.com/2016/04/08/常用排序算法总结/</id>
+    <published>2016-04-07T17:06:26.000Z</published>
+    <updated>2016-04-18T04:22:12.804Z</updated>
+    
+    <content type="html">&lt;p&gt;常用的排序算法我知道的有9种&lt;br&gt;在whuslei博客中发现这么一张图片能概括这9种算法.&lt;br&gt;&lt;img src=&quot;/img/2016/04/001.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这些算法主要比较的是时间复杂性,稳定性,和实现的复杂度&lt;br&gt;稳定性，就是有两个相同的元素，排序先后的相对位置是否变化，主要用在排序时有多个排序规则的情况下。在插入排序中，K1是已排序部分中的元素，当K2和K1比较时，直接插到K1的后面(没有必要插到K1的前面，这样做还需要移动！！)&lt;/p&gt;
+&lt;h1 id=&quot;直接插入排序法&quot;&gt;&lt;a href=&quot;#直接插入排序法&quot; class=&quot;headerlink&quot; title=&quot;直接插入排序法&quot;&gt;&lt;/a&gt;直接插入排序法&lt;/h1&gt;&lt;p&gt;陆续将一个记录插入到前面已经排好序的有序表中, 从而得到一个新的,记录数增1的有序表&lt;br&gt;算法时间复杂度。&lt;br&gt;最好的情况下：正序有序(从小到大)，这样只需要比较n次，不需要移动。因此时间复杂度为O(n)&lt;br&gt;最坏的情况下：逆序有序,这样每一个元素就需要比较n次，共有n个元素，因此实际复杂度为O(n­2)&lt;br&gt;平均情况下：O(n­2)&lt;br&gt;可以在原来存储的数组上面直接排序&lt;/p&gt;
+&lt;p&gt;插入排序是稳定的。&lt;/p&gt;
+&lt;p&gt;时间复杂度也为O(n^2), 比冒泡法和选择排序的性能要更好一些&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public class InsertionSort {
+
+    public static LinkedList&amp;lt;Integer&amp;gt; sort(LinkedList&amp;lt;Integer&amp;gt; in){
+        if(in.size()==1||in.size()==0)
+            return in;
+        for(int i=1;i&amp;lt;in.size();i++){
+            if(in.get(i)&amp;lt;in.get(0)){
+                move(in,in.get(i),0,i);
+            }
+            if(in.get(i)&amp;lt;in.get(i-1)){
+                for(int j=0;j&amp;lt;i;j++){
+                    if(in.get(j)&amp;lt;=in.get(i)&amp;amp;&amp;amp;in.get(j+1)&amp;gt;=in.get(i)){
+                        move(in,in.get(i),j+1,i);
+                        break;
+                    }
+                }
+            }
+        }
+        return in;
+    }
+    public static void move(LinkedList&amp;lt;Integer&amp;gt; in,int value,int start,int end){
+        int tmp = value;
+        for(int i = start;i&amp;lt;end;i++){
+            int ttmp = in.get(i);
+            in.set(i, tmp);
+            tmp = ttmp;
+        }
+        in.set(end, tmp);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;直接选择排序&quot;&gt;&lt;a href=&quot;#直接选择排序&quot; class=&quot;headerlink&quot; title=&quot;直接选择排序&quot;&gt;&lt;/a&gt;直接选择排序&lt;/h1&gt;&lt;p&gt;通过n-i次关键字之间的比较,从n-i+1 个记录中选择关键字最小的记录,并和第i(1&amp;lt;=i&amp;lt;=n)个记录交换之&lt;br&gt;尽管与冒泡排序同为O(n^2),但简单选择排序的性能要略优于冒泡排序&lt;br&gt;最好情况下：交换0次，但是每次都要找到最小的元素，因此大约必须遍历N&lt;em&gt;N次，因此为O(N&lt;/em&gt;N)。减少了交换次数！&lt;br&gt;最坏情况下，平均情况下：O(N*N)&lt;br&gt;由于每次都是选取未排序序列A中的最小元素x与A中的第一个元素交换，因此跨距离了，很可能破坏了元素间的相对位置，因此选择排序是不稳定的！&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package com.jellygogo.sort;
+import java.util.LinkedList;
+public class SelectSort {
+    public static LinkedList&amp;lt;Integer&amp;gt; sort(LinkedList&amp;lt;Integer&amp;gt; in){
+        int min ;
+        int postion;
+        for(int i=0;i&amp;lt;in.size();i++){
+            min=in.get(i);
+            postion = i;
+            for(int j=i+1;j&amp;lt;in.size();j++){
+                if(min&amp;gt;in.get(j)){
+                    min = in.get(j);
+                    postion = j;
+                }
+            }
+            in.set(postion,in.get(i));
+            in.set(i, min);
+        }
+        return in;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;冒泡算法&quot;&gt;&lt;a href=&quot;#冒泡算法&quot; class=&quot;headerlink&quot; title=&quot;冒泡算法&quot;&gt;&lt;/a&gt;冒泡算法&lt;/h1&gt;&lt;p&gt;通过无序区中相邻记录关键字间的比较和位置的交换,使关键字最小的记录如气泡一般逐渐往上“漂浮”直至“水面”。&lt;br&gt;时间复杂度&lt;br&gt;最好情况下：正序有序，则只需要比较n次。故，为O(n)&lt;br&gt;最坏情况下:  逆序有序，则需要比较(n-1)+(n-2)+……+1，故，为O(N*N)&lt;br&gt;排序过程中只交换相邻两个元素的位置。因此，当两个数相等时，是没必要交换两个数的位置的。所以，它们的相对位置并没有改变，冒泡排序算法是稳定的！&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package com.jellygogo.sort;
+import java.util.LinkedList;
+public class BubbleSort {
+    public static LinkedList&amp;lt;Integer&amp;gt; sort(LinkedList&amp;lt;Integer&amp;gt; in){
+        for(int i=0;i&amp;lt;in.size();i++){
+            for(int j=0;j&amp;lt;in.size()-1;j++){
+                if(in.get(j)&amp;gt;=in.get(j+1)){
+                    int tmp = in.get(j);
+                    in.set(j, in.get(j+1));
+                    in.set(j+1, tmp) ;
+                }
+            }
+        }
+        return in;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;改进思路1：设置标志位，明显如果有一趟没有发生交换（flag = false)，说明排序已经完成&lt;br&gt;改进思路2：记录一轮下来标记的最后位置，下次从头部遍历到这个位置就Ok&lt;br&gt;实现代码:&lt;/p&gt;
+&lt;h1 id=&quot;希尔排序&quot;&gt;&lt;a href=&quot;#希尔排序&quot; class=&quot;headerlink&quot; title=&quot;希尔排序&quot;&gt;&lt;/a&gt;希尔排序&lt;/h1&gt;&lt;p&gt;希尔排序的实质就是分组插入排序，该方法又称缩小增量排序&lt;br&gt;参考博客 &lt;a href=&quot;http://blog.csdn.net/morewindows/article/details/6668714&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/morewindows/article/details/6668714&lt;/a&gt;&lt;br&gt;    package com.jellygogo.sort;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import java.util.LinkedList;
+
+public class ShellSort {
+
+    public static LinkedList&amp;lt;Integer&amp;gt; sort(LinkedList&amp;lt;Integer&amp;gt; in){
+        int len=in.size()/2;
+        while(len&amp;gt;=1){
+            for(int k=0;k&amp;lt;len;k++){
+                for(int i=len;i&amp;lt;in.size();i+=len){
+                    if(in.get(i)&amp;lt;in.get(0)){
+                        InsertionSort. move(in,in.get(i),0,i,len);
+                    }
+                    if(in.get(i)&amp;lt;in.get(i-1)){
+                        for(int j=0;j&amp;lt;i;j++){
+                            if(in.get(j)&amp;lt;=in.get(i)&amp;amp;&amp;amp;in.get(j+1)&amp;gt;=in.get(i)){
+                                InsertionSort.move(in,in.get(i),j+1,i,len);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            if(len==1)
+                break;
+            len=len/2;
+        }
+        return in;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h1&gt;&lt;p&gt;它是由冒泡排序改进而来的。在待排序的n个记录中任取一个记录(通常取第一个记录),把该记录放入适当位置后,数据序列被此记录划分成两部分。所有关键字比该记录关键字小的记录放置在前一部分,所有比它大的记录放置在后一部分,并把该记录排在这两部分的中间(称为该记录归位),这个过程称作一趟快速排序&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package com.jellygogo.sort;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class QuickSort {
+
+    public static List&amp;lt;Integer&amp;gt; sort(LinkedList&amp;lt;Integer&amp;gt; in,int start ,int end) {
+        // [5, 1, 3, 2, 6]
+        if(start==end)
+            return in;
+        int mid = in.get(start);
+        int left=start;
+        int right=end-1;
+        for(int i = start+1;i&amp;lt;end&amp;amp;&amp;amp;right&amp;gt;=left;i++){
+            if(in.get(i)&amp;lt;=mid){
+                int tmp = in.get(i);
+                in.set(i,in.get(left));
+                in.set(left,tmp);
+                left++;
+            }else{
+                int tmp = in.get(i);
+                in.set(i,in.get(right));
+                in.set(right,tmp);
+                right--;
+            }
+        }
+        sort(in,start,left);
+        sort(in,left+1,end);
+        return in;
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;堆排序&quot;&gt;&lt;a href=&quot;#堆排序&quot; class=&quot;headerlink&quot; title=&quot;堆排序&quot;&gt;&lt;/a&gt;堆排序&lt;/h1&gt;&lt;p&gt;分治算法:分治算法由两部分组成&lt;br&gt;分:递归解决较小问题(部分除外)&lt;br&gt;治:从子问题的解,构建原问题的解&lt;br&gt;&lt;a href=&quot;http://dsbryz.iteye.com/blog/1182056&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://dsbryz.iteye.com/blog/1182056&lt;/a&gt;&lt;br&gt;堆排序的思想是利用数据结构–堆。具体的实现细节： &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;构建一个最大堆。对于给定的包含有n个元素的数组A[n]，构建一个最大堆（最大堆的特性是，某个节点的值最多和其父节点的值一样大。这样，堆中的最大元素存放在根节点中；并且，在以某一个节点为根的子树中，各节点的值都不大于该子树根节点的值）。从最底下的子树开始，调整这个堆结构，使其满足最大堆的特性。当为了满足最大堆特性时，堆结构发生变化，此时递归调整对应的子树。 &lt;/li&gt;
+&lt;li&gt;堆排序算法，每次取出该最大堆的根节点（因为根节点是最大的），同时，取最末尾的叶子节点来作为根节点，从此根节点开始调整堆，使其满足最大堆的特性。 &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;重复上一步操作，直到堆的大小由n个元素降到2个。 &lt;/p&gt;
+&lt;p&gt; package com.jellygogo.sort;&lt;/p&gt;
+&lt;p&gt; import java.util.Arrays;&lt;br&gt; import java.util.LinkedList;&lt;br&gt; import java.util.List;&lt;/p&gt;
+&lt;p&gt; public class HeapSort {&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public static List&amp;lt;Integer&amp;gt; sort(List&amp;lt;Integer&amp;gt; in){
+    int[] inArray = initHeap(in);
+    List&amp;lt;Integer&amp;gt; out = new LinkedList&amp;lt;&amp;gt;();
+    for(int i=in.size()-1;i&amp;gt;0;i--){
+        int tmp = inArray[i];
+        inArray[i] = inArray[0];
+        inArray[0] = tmp;
+        if(i&amp;gt;=1)
+            maxHeap(inArray,i,0);
+    }
+    for(int i=0;i&amp;lt;in.size();i++){
+        out.add(inArray[i]);
+    }
+    return out;
+}
+
+private static void maxHeap(int[] inArray,int size,int index) {
+    int left = (index+1)*2-1;
+    int right = (index+1)*2;
+    int maxIndex = index;
+    boolean changed = false;
+    if(left&amp;lt;size&amp;amp;&amp;amp;inArray[left]&amp;gt;inArray[maxIndex]){
+        maxIndex = left;
+    }
+    if(right&amp;lt;size&amp;amp;&amp;amp;inArray[right]&amp;gt;inArray[maxIndex]){
+        maxIndex = right;
+    }
+    if(left&amp;lt;size&amp;amp;&amp;amp;maxIndex==left){
+        int tmp = inArray[left];
+        inArray[left] = inArray[index];
+        inArray[index] = tmp;
+        changed = true;
+    }
+    if(right&amp;lt;size&amp;amp;&amp;amp;maxIndex==right){
+        int tmp = inArray[right];
+        inArray[right] = inArray[index];
+        inArray[index] = tmp;
+        changed = true;
+    }
+    if(changed){
+        maxHeap(inArray,size,maxIndex);
+    }
+
+}
+
+public static int[] initHeap(List&amp;lt;Integer&amp;gt; in){
+    int[] out = new int[in.size()];
+    for(int i=0;i&amp;lt;in.size();i++){
+        out[i]=in.get(i);
+    }
+    for(int i=in.size()/2;i&amp;gt;=0;i--){
+        maxHeap(out,in.size(),i);
+    }
+    return out;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; }&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;归并排序&quot;&gt;&lt;a href=&quot;#归并排序&quot; class=&quot;headerlink&quot; title=&quot;归并排序&quot;&gt;&lt;/a&gt;归并排序&lt;/h1&gt;&lt;p&gt;假设初始序列含有n个记录,则可以看成n个有序的子序列,每个子序列的长度为1,然后两两归并,得到(不小于n/2的最小整数)个长度为2或1的有序子序列,再两两归并,…如此重复,直至得到一个长度为n的有序序列为止,这种排序方法称为2路归并排序。&lt;br&gt;时间复杂度为O(nlogn),空间复杂度为O(n+logn),如果非递归实现归并,则避免了递归时深度为logn的栈空间 空间复杂度为O(n)&lt;br&gt;空间复杂度较大&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package com.jellygogo.sort;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.List;
+
+public class MergeSort {
+
+    public static List&amp;lt;Integer&amp;gt; sort(List&amp;lt;Integer&amp;gt; in){
+        if(in.size()==1||in.size()==0){
+            return in;
+        }else{
+            List&amp;lt;Integer&amp;gt; i1= sort(in.subList(0, in.size()/2));
+            List&amp;lt;Integer&amp;gt; i2= sort(in.subList(in.size()/2, in.size()));
+            List&amp;lt;Integer&amp;gt; returnList = new LinkedList&amp;lt;&amp;gt;();
+            int index1=0;
+            int index2=0;
+            boolean oneNull =false,index1Boolean = true,index2Boolean = true;
+            while(index1!=i1.size()||index2!=i2.size()){
+                if(index1==i1.size()&amp;amp;&amp;amp;index1Boolean){
+                    returnList.add(i2.get(index2));
+                    index2++;
+                    oneNull=true;
+                    index2Boolean = false;
+                }
+                if(index2==i2.size()&amp;amp;&amp;amp;index2Boolean){
+                    returnList.add(i1.get(index1));
+                    index1++;
+                    oneNull=true;
+                    index1Boolean = false;
+                }
+                if(!oneNull){
+                    if(i2.get(index2)&amp;gt;i1.get(index1)){
+                        returnList.add(i1.get(index1));
+                        index1++;
+                    }else{
+                        returnList.add(i2.get(index2));
+                        index2++;
+                    }
+                }
+            }
+            return returnList;
+
+        }
+
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;计数排序&quot;&gt;&lt;a href=&quot;#计数排序&quot; class=&quot;headerlink&quot; title=&quot;计数排序&quot;&gt;&lt;/a&gt;计数排序&lt;/h1&gt;&lt;p&gt;计数排序(Counting sort)是一种稳定的排序算法。计数排序使用一个额外的数组C，其中第i个元素是待排序数组A中值等于i的元素的个数。然后根据数组C来将A中的元素排到正确的位置。&lt;/p&gt;
+&lt;h1 id=&quot;桶排序&quot;&gt;&lt;a href=&quot;#桶排序&quot; class=&quot;headerlink&quot; title=&quot;桶排序&quot;&gt;&lt;/a&gt;桶排序&lt;/h1&gt;&lt;h1 id=&quot;基数排序&quot;&gt;&lt;a href=&quot;#基数排序&quot; class=&quot;headerlink&quot; title=&quot;基数排序&quot;&gt;&lt;/a&gt;基数排序&lt;/h1&gt;&lt;p&gt;基数排序（英语：Radix sort）是一种非比较型整数排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别比较。由于整数也可以表达字符串（比如名字或日期）和特定格式的浮点数，所以基数排序也不是只能使用于整数&lt;/p&gt;
+&lt;p&gt;参考博客&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/xiazdong/article/details/8462393&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/xiazdong/article/details/8462393&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.open-open.com/lib/view/open1420372620468.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.open-open.com/lib/view/open1420372620468.html&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;常用的排序算法我知道的有9种&lt;br&gt;在whuslei博客中发现这么一张图片能概括这9种算法.&lt;br&gt;&lt;img src=&quot;/img/2016/04/001.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这些算法主要比较的是时间复杂性,稳定性,和实现的复杂度&lt;br&gt;稳定性，就是有两个
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
+    
+      <category term="算法" scheme="http://jellygogo.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="排序" scheme="http://jellygogo.com/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MRunit combiner partitioner</title>
     <link href="http://jellygogo.com/2016/04/07/MRunit_combiner_partitioner/"/>
     <id>http://jellygogo.com/2016/04/07/MRunit_combiner_partitioner/</id>
     <published>2016-04-07T15:50:55.000Z</published>
-    <updated>2016-04-07T08:47:31.170Z</updated>
+    <updated>2016-04-09T20:41:22.000Z</updated>
     
     <content type="html">&lt;p&gt;在maven中使用MRunit测试框架搭建了个mapreduce程序,里面使用了combiner和partitioner&lt;br&gt;并使用了 org.apache.hadoop.util.Tool&lt;br&gt;实现了找出对应年份的最大值,&lt;br&gt;        //数据样例&lt;br&gt;        1995 65&lt;br&gt;        1965 21&lt;br&gt;        1995 62&lt;br&gt;为了验证使用combiner和不适用combiner的不同,所以写了个生成数据的小程序&lt;br&gt;    package com.jellygogo.basejava;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;import java.io.File;
@@ -314,7 +653,113 @@ public class MR2Test extends TestCase{
 &lt;/blockquote&gt;
 &lt;p&gt;可以对比出&lt;br&gt;                Combine input records=0&lt;br&gt;                Combine output records=0&lt;br&gt;与&lt;br&gt;                Combine input records=100000&lt;br&gt;                Combine output records=100&lt;/p&gt;
 &lt;p&gt;Combiner相关链接 &lt;a href=&quot;http://www.tuicool.com/articles/qAzUjav&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.tuicool.com/articles/qAzUjav&lt;/a&gt;&lt;br&gt;partitioner相关链接 &lt;a href=&quot;http://www.cnblogs.com/xwdreamer/archive/2011/10/27/2296943.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/xwdreamer/archive/2011/10/27/2296943.html&lt;/a&gt;&lt;/p&gt;
-</content>
+&lt;h1 id=&quot;二次排序&quot;&gt;&lt;a href=&quot;#二次排序&quot; class=&quot;headerlink&quot; title=&quot;二次排序&quot;&gt;&lt;/a&gt;二次排序&lt;/h1&gt;&lt;p&gt;此次是把前面的例子修改下,使其满足使用二次排序&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.educity.cn/linux/1603517.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.educity.cn/linux/1603517.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/2016/04/002.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;前面的例子只有年和最大数,现在的例子要求先按照年份降序再按月份升序,&lt;br&gt;修改数据的生成&lt;br&gt;                int randomYear = 1900 + (int)(Math.random()&lt;em&gt;100);&lt;br&gt;                int randomMonth = (int)(Math.random()&lt;/em&gt;12);&lt;br&gt;                int randomNum = (int)(Math.random()*100)+randomMonth;&lt;br&gt;                b.write(randomYear+” “+randomMonth+” “+randomNum+”\n”);&lt;/p&gt;
+&lt;p&gt;自己新建key 在map output和reduce input中使用,compareTo方式实现了先按照年份降序再按月份升序,&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    class YearAndMonthWritable implements WritableComparable&amp;lt;YearAndMonthWritable&amp;gt; {
+
+    public Text year = new Text();
+    public Text month = new Text();
+
+    public YearAndMonthWritable() {
+    }
+
+    public YearAndMonthWritable(Text year, Text month) {
+        this.year = year;
+        this.month = month;
+    }
+
+    @Override
+    public void write(DataOutput out) throws IOException {
+        // TODO Auto-generated method stub
+        this.year.write(out);
+        this.month.write(out);
+    }
+
+    @Override
+    public void readFields(DataInput in) throws IOException {
+        // TODO Auto-generated method stub
+        this.year.readFields(in);
+        this.month.readFields(in);
+    }
+
+    @Override
+    public int compareTo(YearAndMonthWritable other) {
+        // TODO Auto-generated method stub
+        int yearC = this.year.toString().compareTo(other.year.toString());
+        int monthC = Math.abs(Integer.valueOf(this.month.toString()).compareTo(Integer.valueOf(other.month.toString())));
+        if (yearC &amp;gt;= 0) {
+            return -monthC;
+        } else {
+            return monthC;
+        }
+    }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return this.year.toString() + &amp;quot; &amp;quot; + this.month.toString();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用默认的Partitioner,得出结果如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;File System Counters
+        FILE: Number of bytes read=4272
+        FILE: Number of bytes written=1276859
+        FILE: Number of read operations=0
+        FILE: Number of large read operations=0
+        FILE: Number of write operations=0
+        HDFS: Number of bytes read=101887
+        HDFS: Number of bytes written=3532
+        HDFS: Number of read operations=39
+        HDFS: Number of large read operations=0
+        HDFS: Number of write operations=24
+Job Counters
+        Launched map tasks=1
+        Launched reduce tasks=12
+        Data-local map tasks=1
+        Total time spent by all maps in occupied slots (ms)=8384
+        Total time spent by all reduces in occupied slots (ms)=1075954
+        Total time spent by all map tasks (ms)=8384
+        Total time spent by all reduce tasks (ms)=1075954
+        Total vcore-seconds taken by all map tasks=8384
+        Total vcore-seconds taken by all reduce tasks=1075954
+        Total megabyte-seconds taken by all map tasks=8585216
+        Total megabyte-seconds taken by all reduce tasks=1101776896
+Map-Reduce Framework
+        Map input records=10000
+        Map output records=10000
+        Map output bytes=101781
+        Map output materialized bytes=4272
+        Input split bytes=106
+        Combine input records=10000
+        Combine output records=334
+        Reduce input groups=334
+        Reduce shuffle bytes=4272
+        Reduce input records=334
+        Reduce output records=334
+        Spilled Records=668
+        Shuffled Maps =12
+        Failed Shuffles=0
+        Merged Map outputs=12
+        GC time elapsed (ms)=5909
+        CPU time spent (ms)=30300
+        Physical memory (bytes) snapshot=1146945536
+        Virtual memory (bytes) snapshot=27008589824
+        Total committed heap usage (bytes)=326991872
+Shuffle Errors
+        BAD_ID=0
+        CONNECTION=0
+        IO_ERROR=0
+        WRONG_LENGTH=0
+        WRONG_MAP=0
+        WRONG_REDUCE=0
+File Input Format Counters
+        Bytes Read=101781
+File Output Format Counters
+        Bytes Written=3532
+&lt;/code&gt;&lt;/pre&gt;</content>
     
     <summary type="html">
     

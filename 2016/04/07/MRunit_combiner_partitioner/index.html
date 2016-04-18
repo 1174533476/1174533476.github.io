@@ -13,10 +13,12 @@
 <meta property="og:url" content="http://jellygogo.com/2016/04/07/MRunit_combiner_partitioner/index.html">
 <meta property="og:site_name" content="JellyGoGo Blog">
 <meta property="og:description" content="在maven中使用MRunit测试框架搭建了个mapreduce程序,里面使用了combiner和partitioner并使用了 org.apache.hadoop.util.Tool实现了找出对应年份的最大值,        //数据样例        1995 65        1965 21        1995 62为了验证使用combiner和不适用combiner的不同,所以写了个">
-<meta property="og:updated_time" content="2016-04-07T08:47:31.170Z">
+<meta property="og:image" content="http://jellygogo.com/img/2016/04/002.jpg">
+<meta property="og:updated_time" content="2016-04-09T20:41:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MRunit combiner partitioner">
 <meta name="twitter:description" content="在maven中使用MRunit测试框架搭建了个mapreduce程序,里面使用了combiner和partitioner并使用了 org.apache.hadoop.util.Tool实现了找出对应年份的最大值,        //数据样例        1995 65        1965 21        1995 62为了验证使用combiner和不适用combiner的不同,所以写了个">
+<meta name="twitter:image" content="http://jellygogo.com/img/2016/04/002.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JellyGoGo Blog" type="application/atom+xml">
   
@@ -173,7 +175,7 @@
 
           
           <nav class="post-toc-wrap" id="post-toc">
-            
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二次排序"><span class="post-toc-text">二次排序</span></a></li></ol>
           </nav>
           
         </aside>
@@ -472,11 +474,122 @@ public class MR2Test extends TestCase{
 </blockquote>
 <p>可以对比出<br>                Combine input records=0<br>                Combine output records=0<br>与<br>                Combine input records=100000<br>                Combine output records=100</p>
 <p>Combiner相关链接 <a href="http://www.tuicool.com/articles/qAzUjav" target="_blank" rel="external">http://www.tuicool.com/articles/qAzUjav</a><br>partitioner相关链接 <a href="http://www.cnblogs.com/xwdreamer/archive/2011/10/27/2296943.html" target="_blank" rel="external">http://www.cnblogs.com/xwdreamer/archive/2011/10/27/2296943.html</a></p>
-</div>
+<h1 id="二次排序"><a href="#二次排序" class="headerlink" title="二次排序"></a>二次排序</h1><p>此次是把前面的例子修改下,使其满足使用二次排序</p>
+<p><a href="http://www.educity.cn/linux/1603517.html" target="_blank" rel="external">http://www.educity.cn/linux/1603517.html</a></p>
+<p><img src="/img/2016/04/002.jpg" alt=""></p>
+<p>前面的例子只有年和最大数,现在的例子要求先按照年份降序再按月份升序,<br>修改数据的生成<br>                int randomYear = 1900 + (int)(Math.random()<em>100);<br>                int randomMonth = (int)(Math.random()</em>12);<br>                int randomNum = (int)(Math.random()*100)+randomMonth;<br>                b.write(randomYear+” “+randomMonth+” “+randomNum+”\n”);</p>
+<p>自己新建key 在map output和reduce input中使用,compareTo方式实现了先按照年份降序再按月份升序,</p>
+<pre><code>    class YearAndMonthWritable implements WritableComparable&lt;YearAndMonthWritable&gt; {
+
+    public Text year = new Text();
+    public Text month = new Text();
+
+    public YearAndMonthWritable() {
+    }
+
+    public YearAndMonthWritable(Text year, Text month) {
+        this.year = year;
+        this.month = month;
+    }
+
+    @Override
+    public void write(DataOutput out) throws IOException {
+        // TODO Auto-generated method stub
+        this.year.write(out);
+        this.month.write(out);
+    }
+
+    @Override
+    public void readFields(DataInput in) throws IOException {
+        // TODO Auto-generated method stub
+        this.year.readFields(in);
+        this.month.readFields(in);
+    }
+
+    @Override
+    public int compareTo(YearAndMonthWritable other) {
+        // TODO Auto-generated method stub
+        int yearC = this.year.toString().compareTo(other.year.toString());
+        int monthC = Math.abs(Integer.valueOf(this.month.toString()).compareTo(Integer.valueOf(other.month.toString())));
+        if (yearC &gt;= 0) {
+            return -monthC;
+        } else {
+            return monthC;
+        }
+    }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return this.year.toString() + &quot; &quot; + this.month.toString();
+    }
+}
+</code></pre><p>使用默认的Partitioner,得出结果如下</p>
+<pre><code>File System Counters
+        FILE: Number of bytes read=4272
+        FILE: Number of bytes written=1276859
+        FILE: Number of read operations=0
+        FILE: Number of large read operations=0
+        FILE: Number of write operations=0
+        HDFS: Number of bytes read=101887
+        HDFS: Number of bytes written=3532
+        HDFS: Number of read operations=39
+        HDFS: Number of large read operations=0
+        HDFS: Number of write operations=24
+Job Counters
+        Launched map tasks=1
+        Launched reduce tasks=12
+        Data-local map tasks=1
+        Total time spent by all maps in occupied slots (ms)=8384
+        Total time spent by all reduces in occupied slots (ms)=1075954
+        Total time spent by all map tasks (ms)=8384
+        Total time spent by all reduce tasks (ms)=1075954
+        Total vcore-seconds taken by all map tasks=8384
+        Total vcore-seconds taken by all reduce tasks=1075954
+        Total megabyte-seconds taken by all map tasks=8585216
+        Total megabyte-seconds taken by all reduce tasks=1101776896
+Map-Reduce Framework
+        Map input records=10000
+        Map output records=10000
+        Map output bytes=101781
+        Map output materialized bytes=4272
+        Input split bytes=106
+        Combine input records=10000
+        Combine output records=334
+        Reduce input groups=334
+        Reduce shuffle bytes=4272
+        Reduce input records=334
+        Reduce output records=334
+        Spilled Records=668
+        Shuffled Maps =12
+        Failed Shuffles=0
+        Merged Map outputs=12
+        GC time elapsed (ms)=5909
+        CPU time spent (ms)=30300
+        Physical memory (bytes) snapshot=1146945536
+        Virtual memory (bytes) snapshot=27008589824
+        Total committed heap usage (bytes)=326991872
+Shuffle Errors
+        BAD_ID=0
+        CONNECTION=0
+        IO_ERROR=0
+        WRONG_LENGTH=0
+        WRONG_MAP=0
+        WRONG_REDUCE=0
+File Input Format Counters
+        Bytes Read=101781
+File Output Format Counters
+        Bytes Written=3532
+</code></pre></div>
 
             
 <nav class="post-nav flex-row">
   <div class="flex-col waves-block prev">
+    
+      <a href="/2016/04/08/常用排序算法总结/" title="常用排序算法总结" id="post-prev" class="post-nav-link">
+        <i class="icon icon-chevron-left"></i>
+        <span class="article-nav-title">上一篇</span>
+      </a>
     
   </div>
   <div class="flex-col waves-block next">
