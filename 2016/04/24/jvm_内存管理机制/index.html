@@ -3,20 +3,34 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hive学习 | JellyGoGo Blog | 扯淡,发呆,思考之处</title>
+  <title>java并发实战-任务终止 | JellyGoGo Blog | 扯淡,发呆,思考之处</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="hadoop,hive">
-  <meta name="description" content="hive数据仓库,基于mapreduce计算模型，结构化数据的离线分析。hive 应用场景:对搜索日志数据进行统计分析。集团搜索刚上线不久，日志量并不大 。这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。基于 Hive ，我们将这些数据按天为单位建表">
+  <meta name="keywords" content="java,并发">
+  <meta name="description" content="内存区域划分程序计数区唯一没有规定任务OutOfmemery异常的区域
+java虚拟机栈java虚拟机栈是线程私有区域,每个方法执行时都会在java虚拟机栈中创建一个栈帧(Stack Flame)用于存储局部变量表,方法出口,操作数栈等参数
+package com.jellygogo.jvm;
+
+//Exception in thread &amp;quot;main&amp;quot; java.lang.St">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hive学习">
-<meta property="og:url" content="http://jellygogo.com/2016/04/13/hiveLearn/index.html">
+<meta property="og:title" content="java并发实战-任务终止">
+<meta property="og:url" content="http://jellygogo.com/2016/04/24/jvm_内存管理机制/index.html">
 <meta property="og:site_name" content="JellyGoGo Blog">
-<meta property="og:description" content="hive数据仓库,基于mapreduce计算模型，结构化数据的离线分析。hive 应用场景:对搜索日志数据进行统计分析。集团搜索刚上线不久，日志量并不大 。这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。基于 Hive ，我们将这些数据按天为单位建表">
-<meta property="og:updated_time" content="2016-04-18T07:26:45.866Z">
+<meta property="og:description" content="内存区域划分程序计数区唯一没有规定任务OutOfmemery异常的区域
+java虚拟机栈java虚拟机栈是线程私有区域,每个方法执行时都会在java虚拟机栈中创建一个栈帧(Stack Flame)用于存储局部变量表,方法出口,操作数栈等参数
+package com.jellygogo.jvm;
+
+//Exception in thread &amp;quot;main&amp;quot; java.lang.St">
+<meta property="og:image" content="http://jellygogo.com/img/2016/04/Collectors.jpg">
+<meta property="og:updated_time" content="2016-04-23T14:26:21.995Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hive学习">
-<meta name="twitter:description" content="hive数据仓库,基于mapreduce计算模型，结构化数据的离线分析。hive 应用场景:对搜索日志数据进行统计分析。集团搜索刚上线不久，日志量并不大 。这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。基于 Hive ，我们将这些数据按天为单位建表">
+<meta name="twitter:title" content="java并发实战-任务终止">
+<meta name="twitter:description" content="内存区域划分程序计数区唯一没有规定任务OutOfmemery异常的区域
+java虚拟机栈java虚拟机栈是线程私有区域,每个方法执行时都会在java虚拟机栈中创建一个栈帧(Stack Flame)用于存储局部变量表,方法出口,操作数栈等参数
+package com.jellygogo.jvm;
+
+//Exception in thread &amp;quot;main&amp;quot; java.lang.St">
+<meta name="twitter:image" content="http://jellygogo.com/img/2016/04/Collectors.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JellyGoGo Blog" type="application/atom+xml">
   
@@ -104,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-circle-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Hive学习</div>
+        <div class="flex-col header-title ellipsis">java并发实战-任务终止</div>
         
         <a href="javascript:;" class="header-icon waves-circle-light" id="menu-share">
             <i class="icon icon-lg icon-share-alt"></i>
@@ -114,18 +128,18 @@
 </header>
 <header class="content-header">
   <div class="container">
-    <h1 class="author">Hive学习</h1>
-    <h5 class="subtitle">2016-04-13</h5>
+    <h1 class="author">java并发实战-任务终止</h1>
+    <h5 class="subtitle">2016-04-23</h5>
   </div>
 </header>
 
     <div class="container body-wrap">
       
-  <article id="mapreduce-hiveLearn" class="article article-type-mapreduce" itemscope itemprop="blogPost">
+  <article id="post-jvm_内存管理机制" class="article article-type-post" itemscope itemprop="blogPost">
     
       <div class="post-meat flex-row">
         <div class="flex-col">
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hive/">hive</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并发/">并发</a></li></ul>
 </div>
       </div>
       <div class="post-body">
@@ -133,7 +147,7 @@
         <aside class="post-widget" id="post-widget">
 
           
-          <div class="post-share" id="post-share" data-title="Hive学习" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/13/hiveLearn/index.html">
+          <div class="post-share" id="post-share" data-title="java并发实战-任务终止" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/24/jvm_内存管理机制/index.html">
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
@@ -173,57 +187,62 @@
 
           
           <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hive基础操作"><span class="post-toc-text">hive基础操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#wordcount-hive-Demo"><span class="post-toc-text">wordcount hive Demo</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#内存区域划分"><span class="post-toc-text">内存区域划分</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#程序计数区"><span class="post-toc-text">程序计数区</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#java虚拟机栈"><span class="post-toc-text">java虚拟机栈</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本地方法区"><span class="post-toc-text">本地方法区</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#java堆"><span class="post-toc-text">java堆</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法区"><span class="post-toc-text">方法区</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运行时常量池"><span class="post-toc-text">运行时常量池</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#垃圾收集器"><span class="post-toc-text">垃圾收集器</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#内存分配策略"><span class="post-toc-text">内存分配策略</span></a></li></ol>
           </nav>
           
         </aside>
 
         <div class="post-main">
 
-            <div class="post-content" itemprop="postContent"><p>hive数据仓库,基于mapreduce计算模型，结构化数据的离线分析。<br>hive 应用场景:对搜索日志数据进行统计分析。<br>集团搜索刚上线不久，日志量并不大 。这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，<br>包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。<br>基于 Hive ，我们将这些数据按天为单位建表，每天一个表，后台脚本根据时间戳将每小时同步过来的 5 台前端机的日志数据合并成一个日志文件，导入 Hive 系统，每小时同步的日志数据<br>被追加到当天数据表中，导入完成后，当天各项统计项将被重新计算并输出统计结果。<br>以上需求若直接基于 hadoop 开发，需要自行管理数据，针对多个统计需求开发不同的 map/reduce 运算任务，对合并、排序等多项操作进行定制，并检测任务运行状态，工作量并不小。但<br>使用 Hive ，从导入到分析、排序、去重、结果输出，这些操作都可以运用 hql 语句来解决，一条语句经过处理被解析成几个任务来运行，即使是关键词访问量增量这种需要同时访问多天数<br>据的较为复杂的需求也能通过表关联这样的语句自动完 成，节省了大量工作量。</p>
-<p>参考博客:<a href="http://www.cnblogs.com/zhwl/p/3654346.html" target="_blank" rel="external">http://www.cnblogs.com/zhwl/p/3654346.html</a></p>
-<h2 id="hive基础操作"><a href="#hive基础操作" class="headerlink" title="hive基础操作"></a>hive基础操作</h2><p>hive导入数据方法:<a href="http://blog.csdn.net/lifuxiangcaohui/article/details/40588929" target="_blank" rel="external">http://blog.csdn.net/lifuxiangcaohui/article/details/40588929</a><br>    hive&gt; dfs -cat hdfs://h1:9000/user/grip/word.txt</p>
-<pre><code>hive&gt; create database test;
-OK
-Time taken: 8.764 seconds
+            <div class="post-content" itemprop="postContent"><h1 id="内存区域划分"><a href="#内存区域划分" class="headerlink" title="内存区域划分"></a>内存区域划分</h1><h2 id="程序计数区"><a href="#程序计数区" class="headerlink" title="程序计数区"></a>程序计数区</h2><p>唯一没有规定任务OutOfmemery异常的区域</p>
+<h2 id="java虚拟机栈"><a href="#java虚拟机栈" class="headerlink" title="java虚拟机栈"></a>java虚拟机栈</h2><p>java虚拟机栈是线程私有区域,每个方法执行时都会在java虚拟机栈中创建一个栈帧(Stack Flame)用于存储局部变量表,方法出口,操作数栈等参数</p>
+<pre><code>package com.jellygogo.jvm;
 
-hive&gt; use test;
-OK
-Time taken: 1.91 seconds
+//Exception in thread &quot;main&quot; java.lang.StackOverflowError
+//通过无限调用递归方法,来模拟StackOverflowError
+public class JvmOutOfMemoryTest {
+/*
+ * -Xss128k
+ */
 
-hive&gt;
-hive&gt; set hivevar:v=name;
-hive&gt; create table tabletest(id int,${hivevar:v} string) ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;\t&apos; ;
-OK
-Time taken: 15.879 seconds
+    public static void main(String[] args) {
+        new JvmOutOfMemoryTest().stack(1);
+    }
 
-hive&gt; describe tabletest;
-OK
-id                      int                                    
-name                    string                                 
-Time taken: 4.328 seconds, Fetched: 2 row(s)
+    public void stack(int i){
+        stack(++i);
+    }
+}
+</code></pre><h2 id="本地方法区"><a href="#本地方法区" class="headerlink" title="本地方法区"></a>本地方法区</h2><p>与java虚拟机栈类似,区别是执行native方法</p>
+<h2 id="java堆"><a href="#java堆" class="headerlink" title="java堆"></a>java堆</h2><p>所有线程共享,此内存区域唯一目的是存放方法实例.<br>java堆可以分为新生代和老年代</p>
+<p>java堆溢出异常测试<br>只需要不断创建对象就可以模拟出这种现象</p>
+<pre><code>package com.jellygogo.jvm;
 
-[grip@h1 tData]$ cat hivedata.txt
-101     jelly
-102     gogo
+import java.util.ArrayList;
+import java.util.List;
 
-hive (test)&gt; load data local inpath &quot;/home/grip/tData/hivedata.txt&quot; into table tabletest;
-Loading data to table test.tabletest
-OK
-Time taken: 2.252 seconds
-hive (test)&gt; select * from tabletest;
-OK
-101     jelly
-102     gogo
-Time taken: 0.569 seconds, Fetched: 2 row(s)
-</code></pre><h2 id="wordcount-hive-Demo"><a href="#wordcount-hive-Demo" class="headerlink" title="wordcount hive Demo"></a>wordcount hive Demo</h2><p>create database wordcount;</p>
-</div>
+public class JvmOutOfMemoryTest {
+/*
+ * -Xms10m -Xmx10m
+ */
+
+    public static void main(String[] args) {
+        List l = new ArrayList&lt;&gt;();
+        while(true)
+        l.add(new JvmOutOfMemoryTest());
+    }
+}
+</code></pre><h2 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h2><p>所有线程共享的区域,存储已被类加载的类信息,常量,静态变量.</p>
+<h2 id="运行时常量池"><a href="#运行时常量池" class="headerlink" title="运行时常量池"></a>运行时常量池</h2><p>属于方法区的一部分,储存编译器生成的字面量与符号引用</p>
+<h1 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h1><p>常用的垃圾收集算法：<br>标记-清除算法：<br>复制算法：新生代算法<br>标记-整理：<br>分代收集算法：</p>
+<p><img src="/img/2016/04/Collectors.jpg" alt=""></p>
+<h1 id="内存分配策略"><a href="#内存分配策略" class="headerlink" title="内存分配策略"></a>内存分配策略</h1></div>
 
             
 <nav class="post-nav flex-row">
   <div class="flex-col waves-block prev">
     
-      <a href="/2016/04/19/hbase_learn/" title="hbase学习" id="post-prev" class="post-nav-link">
+      <a href="/2016/04/27/every_end/" title="我决定了，要去考研了！" id="post-prev" class="post-nav-link">
         <i class="icon icon-chevron-left"></i>
         <span class="article-nav-title">上一篇</span>
       </a>
@@ -231,7 +250,7 @@ Time taken: 0.569 seconds, Fetched: 2 row(s)
   </div>
   <div class="flex-col waves-block next">
     
-      <a href="/2016/04/08/常用排序算法总结/" title="常用排序算法总结" id="post-next" class="post-nav-link">
+      <a href="/2016/04/24/java并发实战_多任务执行/" title="java并发实战-多任务执行" id="post-next" class="post-nav-link">
         <span class="article-nav-title">下一篇</span>
         <i class="icon icon-chevron-right"></i>
       </a>
@@ -245,7 +264,7 @@ Time taken: 0.569 seconds, Fetched: 2 row(s)
             
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hiveLearn" data-title="Hive学习" data-url="http://jellygogo.com/2016/04/13/hiveLearn/index.html"></div>
+	<div class="ds-thread" data-thread-key="jvm_内存管理机制" data-title="java并发实战-任务终止" data-url="http://jellygogo.com/2016/04/24/jvm_内存管理机制/index.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -282,7 +301,7 @@ Time taken: 0.569 seconds, Fetched: 2 row(s)
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-circle-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<div class="global-share" id="global-share" data-title="Hive学习" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/13/hiveLearn/index.html">
+<div class="global-share" id="global-share" data-title="java并发实战-任务终止" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/24/jvm_内存管理机制/index.html">
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>

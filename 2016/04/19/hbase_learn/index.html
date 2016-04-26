@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hive学习 | JellyGoGo Blog | 扯淡,发呆,思考之处</title>
+  <title>hbase学习 | JellyGoGo Blog | 扯淡,发呆,思考之处</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="hadoop,hive">
-  <meta name="description" content="hive数据仓库,基于mapreduce计算模型，结构化数据的离线分析。hive 应用场景:对搜索日志数据进行统计分析。集团搜索刚上线不久，日志量并不大 。这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。基于 Hive ，我们将这些数据按天为单位建表">
+  <meta name="keywords" content="hadoop,java,hbase">
+  <meta name="description" content="hbase应用场景1、爬虫网站URL的写入。2、淘宝在2011年之前所有的后端持久化存储基本上都是在mysql上进行的(不排除少量oracle/bdb/tair/mongdb等)，mysql由于开源，并且生态系统良好，本身拥有分库分表等多种解决方案，因此很长一段时间内都满足淘宝大量业务的需求。但是由于业务的多样化发展，有越来越多的业务系统的需求开始发生了变化。一般来说有以下几类变化：数据量变得越来">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hive学习">
-<meta property="og:url" content="http://jellygogo.com/2016/04/13/hiveLearn/index.html">
+<meta property="og:title" content="hbase学习">
+<meta property="og:url" content="http://jellygogo.com/2016/04/19/hbase_learn/index.html">
 <meta property="og:site_name" content="JellyGoGo Blog">
-<meta property="og:description" content="hive数据仓库,基于mapreduce计算模型，结构化数据的离线分析。hive 应用场景:对搜索日志数据进行统计分析。集团搜索刚上线不久，日志量并不大 。这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。基于 Hive ，我们将这些数据按天为单位建表">
-<meta property="og:updated_time" content="2016-04-18T07:26:45.866Z">
+<meta property="og:description" content="hbase应用场景1、爬虫网站URL的写入。2、淘宝在2011年之前所有的后端持久化存储基本上都是在mysql上进行的(不排除少量oracle/bdb/tair/mongdb等)，mysql由于开源，并且生态系统良好，本身拥有分库分表等多种解决方案，因此很长一段时间内都满足淘宝大量业务的需求。但是由于业务的多样化发展，有越来越多的业务系统的需求开始发生了变化。一般来说有以下几类变化：数据量变得越来">
+<meta property="og:updated_time" content="2016-04-20T04:49:38.492Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hive学习">
-<meta name="twitter:description" content="hive数据仓库,基于mapreduce计算模型，结构化数据的离线分析。hive 应用场景:对搜索日志数据进行统计分析。集团搜索刚上线不久，日志量并不大 。这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。基于 Hive ，我们将这些数据按天为单位建表">
+<meta name="twitter:title" content="hbase学习">
+<meta name="twitter:description" content="hbase应用场景1、爬虫网站URL的写入。2、淘宝在2011年之前所有的后端持久化存储基本上都是在mysql上进行的(不排除少量oracle/bdb/tair/mongdb等)，mysql由于开源，并且生态系统良好，本身拥有分库分表等多种解决方案，因此很长一段时间内都满足淘宝大量业务的需求。但是由于业务的多样化发展，有越来越多的业务系统的需求开始发生了变化。一般来说有以下几类变化：数据量变得越来">
   
     <link rel="alternative" href="/atom.xml" title="JellyGoGo Blog" type="application/atom+xml">
   
@@ -104,7 +104,7 @@
         <a href="javascript:;" class="header-icon waves-circle-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Hive学习</div>
+        <div class="flex-col header-title ellipsis">hbase学习</div>
         
         <a href="javascript:;" class="header-icon waves-circle-light" id="menu-share">
             <i class="icon icon-lg icon-share-alt"></i>
@@ -114,18 +114,18 @@
 </header>
 <header class="content-header">
   <div class="container">
-    <h1 class="author">Hive学习</h1>
-    <h5 class="subtitle">2016-04-13</h5>
+    <h1 class="author">hbase学习</h1>
+    <h5 class="subtitle">2016-04-18</h5>
   </div>
 </header>
 
     <div class="container body-wrap">
       
-  <article id="mapreduce-hiveLearn" class="article article-type-mapreduce" itemscope itemprop="blogPost">
+  <article id="post-hbase_learn" class="article article-type-post" itemscope itemprop="blogPost">
     
       <div class="post-meat flex-row">
         <div class="flex-col">
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hive/">hive</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hbase/">hbase</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
 </div>
       </div>
       <div class="post-body">
@@ -133,7 +133,7 @@
         <aside class="post-widget" id="post-widget">
 
           
-          <div class="post-share" id="post-share" data-title="Hive学习" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/13/hiveLearn/index.html">
+          <div class="post-share" id="post-share" data-title="hbase学习" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/19/hbase_learn/index.html">
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
@@ -173,57 +173,24 @@
 
           
           <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hive基础操作"><span class="post-toc-text">hive基础操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#wordcount-hive-Demo"><span class="post-toc-text">wordcount hive Demo</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hbase应用场景"><span class="post-toc-text">hbase应用场景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#学习进度一-2016-04-20"><span class="post-toc-text">学习进度一:2016-04-20</span></a></li></ol>
           </nav>
           
         </aside>
 
         <div class="post-main">
 
-            <div class="post-content" itemprop="postContent"><p>hive数据仓库,基于mapreduce计算模型，结构化数据的离线分析。<br>hive 应用场景:对搜索日志数据进行统计分析。<br>集团搜索刚上线不久，日志量并不大 。这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，<br>包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。<br>基于 Hive ，我们将这些数据按天为单位建表，每天一个表，后台脚本根据时间戳将每小时同步过来的 5 台前端机的日志数据合并成一个日志文件，导入 Hive 系统，每小时同步的日志数据<br>被追加到当天数据表中，导入完成后，当天各项统计项将被重新计算并输出统计结果。<br>以上需求若直接基于 hadoop 开发，需要自行管理数据，针对多个统计需求开发不同的 map/reduce 运算任务，对合并、排序等多项操作进行定制，并检测任务运行状态，工作量并不小。但<br>使用 Hive ，从导入到分析、排序、去重、结果输出，这些操作都可以运用 hql 语句来解决，一条语句经过处理被解析成几个任务来运行，即使是关键词访问量增量这种需要同时访问多天数<br>据的较为复杂的需求也能通过表关联这样的语句自动完 成，节省了大量工作量。</p>
-<p>参考博客:<a href="http://www.cnblogs.com/zhwl/p/3654346.html" target="_blank" rel="external">http://www.cnblogs.com/zhwl/p/3654346.html</a></p>
-<h2 id="hive基础操作"><a href="#hive基础操作" class="headerlink" title="hive基础操作"></a>hive基础操作</h2><p>hive导入数据方法:<a href="http://blog.csdn.net/lifuxiangcaohui/article/details/40588929" target="_blank" rel="external">http://blog.csdn.net/lifuxiangcaohui/article/details/40588929</a><br>    hive&gt; dfs -cat hdfs://h1:9000/user/grip/word.txt</p>
-<pre><code>hive&gt; create database test;
-OK
-Time taken: 8.764 seconds
-
-hive&gt; use test;
-OK
-Time taken: 1.91 seconds
-
-hive&gt;
-hive&gt; set hivevar:v=name;
-hive&gt; create table tabletest(id int,${hivevar:v} string) ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;\t&apos; ;
-OK
-Time taken: 15.879 seconds
-
-hive&gt; describe tabletest;
-OK
-id                      int                                    
-name                    string                                 
-Time taken: 4.328 seconds, Fetched: 2 row(s)
-
-[grip@h1 tData]$ cat hivedata.txt
-101     jelly
-102     gogo
-
-hive (test)&gt; load data local inpath &quot;/home/grip/tData/hivedata.txt&quot; into table tabletest;
-Loading data to table test.tabletest
-OK
-Time taken: 2.252 seconds
-hive (test)&gt; select * from tabletest;
-OK
-101     jelly
-102     gogo
-Time taken: 0.569 seconds, Fetched: 2 row(s)
-</code></pre><h2 id="wordcount-hive-Demo"><a href="#wordcount-hive-Demo" class="headerlink" title="wordcount hive Demo"></a>wordcount hive Demo</h2><p>create database wordcount;</p>
+            <div class="post-content" itemprop="postContent"><h2 id="hbase应用场景"><a href="#hbase应用场景" class="headerlink" title="hbase应用场景"></a>hbase应用场景</h2><p>1、爬虫网站URL的写入。<br>2、淘宝在2011年之前所有的后端持久化存储基本上都是在mysql上进行的(不排除少量oracle/bdb/tair/mongdb等)，mysql由于开源，并且生态系统良好，本身拥有分库分表等多种解决方案，因此很长一段时间内都满足淘宝大量业务的需求。<br>但是由于业务的多样化发展，有越来越多的业务系统的需求开始发生了变化。一般来说有以下几类变化：<br>数据量变得越来越多，事实上现在淘宝几乎任何一个与用户相关的在线业务的数据量都在亿级别，每日系统调用次数从亿到百亿都有，且历史数据不能轻易删除。这需要有一个海量分布式文件系统，能对TB级甚至PB级别的数据提供在线服务<br>数据量的增长很快且不一定能准确预计，大多数应用系统从上线起在一段时间内数据量都呈很快的上升趋势，因此从成本的角度考虑对系统水平扩展能力有比较强烈的需求，且不希望存在单点制约<br>只需要简单的kv读取，没有复杂的join等需求。但对系统的并发能力以及吞吐量、响应延时有非常高的需求，并且希望系统能够保持强一致性<br>通常系统的写入非常频繁，尤其是大量系统依赖于实时的日志分析<br>希望能够快速读取批量数据 </p>
+<p>参考博客:<a href="http://www.cnblogs.com/zhwl/p/3654346.html" target="_blank" rel="external">http://www.cnblogs.com/zhwl/p/3654346.html</a><br>hbase应用场景重点参考博客:<a href="http://blog.sina.com.cn/s/blog_ae33b83901016azb.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_ae33b83901016azb.html</a>  </p>
+<h2 id="学习进度一-2016-04-20"><a href="#学习进度一-2016-04-20" class="headerlink" title="学习进度一:2016-04-20"></a>学习进度一:2016-04-20</h2><p>hbase的学习参考书籍为:Hbase权威指南<br>目前学习进度为hbase简单使用与java API:基础知识部分(此书前三章),后面的部分等到需要使用时再具体学习.</p>
+<p>Demo1 hbase数据插入</p>
 </div>
 
             
 <nav class="post-nav flex-row">
   <div class="flex-col waves-block prev">
     
-      <a href="/2016/04/19/hbase_learn/" title="hbase学习" id="post-prev" class="post-nav-link">
+      <a href="/2016/04/19/常用数据搜索算法总结/" title="常用数据查找(搜索)算法总结" id="post-prev" class="post-nav-link">
         <i class="icon icon-chevron-left"></i>
         <span class="article-nav-title">上一篇</span>
       </a>
@@ -231,7 +198,7 @@ Time taken: 0.569 seconds, Fetched: 2 row(s)
   </div>
   <div class="flex-col waves-block next">
     
-      <a href="/2016/04/08/常用排序算法总结/" title="常用排序算法总结" id="post-next" class="post-nav-link">
+      <a href="/2016/04/13/hiveLearn/" title="Hive学习" id="post-next" class="post-nav-link">
         <span class="article-nav-title">下一篇</span>
         <i class="icon icon-chevron-right"></i>
       </a>
@@ -245,7 +212,7 @@ Time taken: 0.569 seconds, Fetched: 2 row(s)
             
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hiveLearn" data-title="Hive学习" data-url="http://jellygogo.com/2016/04/13/hiveLearn/index.html"></div>
+	<div class="ds-thread" data-thread-key="hbase_learn" data-title="hbase学习" data-url="http://jellygogo.com/2016/04/19/hbase_learn/index.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -282,7 +249,7 @@ Time taken: 0.569 seconds, Fetched: 2 row(s)
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-circle-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<div class="global-share" id="global-share" data-title="Hive学习" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/13/hiveLearn/index.html">
+<div class="global-share" id="global-share" data-title="hbase学习" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/19/hbase_learn/index.html">
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>

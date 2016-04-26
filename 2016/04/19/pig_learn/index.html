@@ -3,20 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hive学习 | JellyGoGo Blog | 扯淡,发呆,思考之处</title>
+  <title>pig学习 | JellyGoGo Blog | 扯淡,发呆,思考之处</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="hadoop,hive">
-  <meta name="description" content="hive数据仓库,基于mapreduce计算模型，结构化数据的离线分析。hive 应用场景:对搜索日志数据进行统计分析。集团搜索刚上线不久，日志量并不大 。这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。基于 Hive ，我们将这些数据按天为单位建表">
+  <meta name="keywords" content="java,算法,排序">
+  <meta name="description" content="grunt&amp;gt; cat hdfs://h1:9000/user/grip/toolSample.txt2016 992015 62016 9992015 5
+grunt&amp;gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ using PigStorage(‘ ‘) as (year,max) ;
+grunt&amp;gt; a = load ‘">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hive学习">
-<meta property="og:url" content="http://jellygogo.com/2016/04/13/hiveLearn/index.html">
+<meta property="og:title" content="pig学习">
+<meta property="og:url" content="http://jellygogo.com/2016/04/19/pig_learn/index.html">
 <meta property="og:site_name" content="JellyGoGo Blog">
-<meta property="og:description" content="hive数据仓库,基于mapreduce计算模型，结构化数据的离线分析。hive 应用场景:对搜索日志数据进行统计分析。集团搜索刚上线不久，日志量并不大 。这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。基于 Hive ，我们将这些数据按天为单位建表">
-<meta property="og:updated_time" content="2016-04-18T07:26:45.866Z">
+<meta property="og:description" content="grunt&amp;gt; cat hdfs://h1:9000/user/grip/toolSample.txt2016 992015 62016 9992015 5
+grunt&amp;gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ using PigStorage(‘ ‘) as (year,max) ;
+grunt&amp;gt; a = load ‘">
+<meta property="og:updated_time" content="2016-04-18T05:28:52.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hive学习">
-<meta name="twitter:description" content="hive数据仓库,基于mapreduce计算模型，结构化数据的离线分析。hive 应用场景:对搜索日志数据进行统计分析。集团搜索刚上线不久，日志量并不大 。这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。基于 Hive ，我们将这些数据按天为单位建表">
+<meta name="twitter:title" content="pig学习">
+<meta name="twitter:description" content="grunt&amp;gt; cat hdfs://h1:9000/user/grip/toolSample.txt2016 992015 62016 9992015 5
+grunt&amp;gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ using PigStorage(‘ ‘) as (year,max) ;
+grunt&amp;gt; a = load ‘">
   
     <link rel="alternative" href="/atom.xml" title="JellyGoGo Blog" type="application/atom+xml">
   
@@ -104,7 +110,7 @@
         <a href="javascript:;" class="header-icon waves-circle-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Hive学习</div>
+        <div class="flex-col header-title ellipsis">pig学习</div>
         
         <a href="javascript:;" class="header-icon waves-circle-light" id="menu-share">
             <i class="icon icon-lg icon-share-alt"></i>
@@ -114,18 +120,18 @@
 </header>
 <header class="content-header">
   <div class="container">
-    <h1 class="author">Hive学习</h1>
-    <h5 class="subtitle">2016-04-13</h5>
+    <h1 class="author">pig学习</h1>
+    <h5 class="subtitle">2016-04-18</h5>
   </div>
 </header>
 
     <div class="container body-wrap">
       
-  <article id="mapreduce-hiveLearn" class="article article-type-mapreduce" itemscope itemprop="blogPost">
+  <article id="post-pig_learn" class="article article-type-post" itemscope itemprop="blogPost">
     
       <div class="post-meat flex-row">
         <div class="flex-col">
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hive/">hive</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
 </div>
       </div>
       <div class="post-body">
@@ -133,7 +139,7 @@
         <aside class="post-widget" id="post-widget">
 
           
-          <div class="post-share" id="post-share" data-title="Hive学习" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/13/hiveLearn/index.html">
+          <div class="post-share" id="post-share" data-title="pig学习" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/19/pig_learn/index.html">
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
@@ -173,57 +179,23 @@
 
           
           <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hive基础操作"><span class="post-toc-text">hive基础操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#wordcount-hive-Demo"><span class="post-toc-text">wordcount hive Demo</span></a></li></ol>
+            
           </nav>
           
         </aside>
 
         <div class="post-main">
 
-            <div class="post-content" itemprop="postContent"><p>hive数据仓库,基于mapreduce计算模型，结构化数据的离线分析。<br>hive 应用场景:对搜索日志数据进行统计分析。<br>集团搜索刚上线不久，日志量并不大 。这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，<br>包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。<br>基于 Hive ，我们将这些数据按天为单位建表，每天一个表，后台脚本根据时间戳将每小时同步过来的 5 台前端机的日志数据合并成一个日志文件，导入 Hive 系统，每小时同步的日志数据<br>被追加到当天数据表中，导入完成后，当天各项统计项将被重新计算并输出统计结果。<br>以上需求若直接基于 hadoop 开发，需要自行管理数据，针对多个统计需求开发不同的 map/reduce 运算任务，对合并、排序等多项操作进行定制，并检测任务运行状态，工作量并不小。但<br>使用 Hive ，从导入到分析、排序、去重、结果输出，这些操作都可以运用 hql 语句来解决，一条语句经过处理被解析成几个任务来运行，即使是关键词访问量增量这种需要同时访问多天数<br>据的较为复杂的需求也能通过表关联这样的语句自动完 成，节省了大量工作量。</p>
-<p>参考博客:<a href="http://www.cnblogs.com/zhwl/p/3654346.html" target="_blank" rel="external">http://www.cnblogs.com/zhwl/p/3654346.html</a></p>
-<h2 id="hive基础操作"><a href="#hive基础操作" class="headerlink" title="hive基础操作"></a>hive基础操作</h2><p>hive导入数据方法:<a href="http://blog.csdn.net/lifuxiangcaohui/article/details/40588929" target="_blank" rel="external">http://blog.csdn.net/lifuxiangcaohui/article/details/40588929</a><br>    hive&gt; dfs -cat hdfs://h1:9000/user/grip/word.txt</p>
-<pre><code>hive&gt; create database test;
-OK
-Time taken: 8.764 seconds
-
-hive&gt; use test;
-OK
-Time taken: 1.91 seconds
-
-hive&gt;
-hive&gt; set hivevar:v=name;
-hive&gt; create table tabletest(id int,${hivevar:v} string) ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;\t&apos; ;
-OK
-Time taken: 15.879 seconds
-
-hive&gt; describe tabletest;
-OK
-id                      int                                    
-name                    string                                 
-Time taken: 4.328 seconds, Fetched: 2 row(s)
-
-[grip@h1 tData]$ cat hivedata.txt
-101     jelly
-102     gogo
-
-hive (test)&gt; load data local inpath &quot;/home/grip/tData/hivedata.txt&quot; into table tabletest;
-Loading data to table test.tabletest
-OK
-Time taken: 2.252 seconds
-hive (test)&gt; select * from tabletest;
-OK
-101     jelly
-102     gogo
-Time taken: 0.569 seconds, Fetched: 2 row(s)
-</code></pre><h2 id="wordcount-hive-Demo"><a href="#wordcount-hive-Demo" class="headerlink" title="wordcount hive Demo"></a>wordcount hive Demo</h2><p>create database wordcount;</p>
+            <div class="post-content" itemprop="postContent"><p>grunt&gt; cat hdfs://h1:9000/user/grip/toolSample.txt<br>2016 99<br>2015 6<br>2016 999<br>2015 5</p>
+<p>grunt&gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ using PigStorage(‘ ‘) as (year,max) ;</p>
+<p>grunt&gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ as (year,max) using PigStorage(‘ ‘);<br>2016-04-17 22:26:19,929 [main] ERROR org.apache.pig.tools.grunt.Grunt - ERROR 1200: <line 65="" 16,="" column=""></line>  mismatched input ‘using’ expecting SEMI_COLON<br>Details at logfile: /home/grip/hadoop-2.5.2/pig_1460955057730.log<br>grunt&gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ using PigStorage(‘ ‘) as (year,max) ;<br>2016-04-17 22:26:57,098 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS<br>grunt&gt; dump a;<br>2016-04-17 22:27:05,950 [main] INFO  org.apache.pig.tools.pigstats.ScriptState - Pig features used in the script: UNKNOWN<br>2016-04-17 22:27:05,951 [main] INFO  org.apache.pig.newplan.logical.optimizer.LogicalPlanOptimizer - {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, PartitionFilterOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter], RULES_DISABLED=[FilterLogicExpressionSimplifier]}<br>2016-04-17 22:27:06,028 [main] WARN  org.apache.pig.data.SchemaTupleBackend - SchemaTupleBackend has already been initialized<br>2016-04-17 22:27:06,047 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1<br>2016-04-17 22:27:06,047 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1<br>2016-04-17 22:27:06,140 [main] INFO  org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter - Saved output of task ‘attempt<strong>0001_m_000001_1’ to hdfs://h1:9000/tmp/temp342437142/tmp293532517/_temporary/0/task</strong>0001_m_000001<br>2016-04-17 22:27:06,180 [main] WARN  org.apache.pig.data.SchemaTupleBackend - SchemaTupleBackend has already been initialized<br>2016-04-17 22:27:06,185 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1<br>2016-04-17 22:27:06,185 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1<br>(2016,99)<br>(2015,6)<br>(2016,999)<br>(2015,5)</p>
 </div>
 
             
 <nav class="post-nav flex-row">
   <div class="flex-col waves-block prev">
     
-      <a href="/2016/04/19/hbase_learn/" title="hbase学习" id="post-prev" class="post-nav-link">
+      <a href="/2016/04/23/机器学习之线性规划与梯度下降/" title="机器学习之线性规划与梯度下降" id="post-prev" class="post-nav-link">
         <i class="icon icon-chevron-left"></i>
         <span class="article-nav-title">上一篇</span>
       </a>
@@ -231,7 +203,7 @@ Time taken: 0.569 seconds, Fetched: 2 row(s)
   </div>
   <div class="flex-col waves-block next">
     
-      <a href="/2016/04/08/常用排序算法总结/" title="常用排序算法总结" id="post-next" class="post-nav-link">
+      <a href="/2016/04/19/常用数据搜索算法总结/" title="常用数据查找(搜索)算法总结" id="post-next" class="post-nav-link">
         <span class="article-nav-title">下一篇</span>
         <i class="icon icon-chevron-right"></i>
       </a>
@@ -245,7 +217,7 @@ Time taken: 0.569 seconds, Fetched: 2 row(s)
             
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hiveLearn" data-title="Hive学习" data-url="http://jellygogo.com/2016/04/13/hiveLearn/index.html"></div>
+	<div class="ds-thread" data-thread-key="pig_learn" data-title="pig学习" data-url="http://jellygogo.com/2016/04/19/pig_learn/index.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -282,7 +254,7 @@ Time taken: 0.569 seconds, Fetched: 2 row(s)
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-circle-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<div class="global-share" id="global-share" data-title="Hive学习" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/13/hiveLearn/index.html">
+<div class="global-share" id="global-share" data-title="pig学习" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/19/pig_learn/index.html">
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>

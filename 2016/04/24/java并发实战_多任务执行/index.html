@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java并发实战-多任务执行 | JellyGoGo Blog | 扯淡,发呆,思考之处</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="java,并发">
+  <meta name="description" content="1.延时任务与周期任务DelayQueue类的主要作用：是一个无界的BlockingQueue，用于放置实现了Delayed接口的对象，其中的对象只能在其到期时才能从队列中取走。这种队列是有序的，即队头对象的延迟到期时间最长.DelayQueue队列中保存的是实现了Delayed接口的实现类，里面必须实现getDelay()和compareTo()方法，前者用于返回与此对象相关的剩余延迟时间，以给">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java并发实战-多任务执行">
+<meta property="og:url" content="http://jellygogo.com/2016/04/24/java并发实战_多任务执行/index.html">
+<meta property="og:site_name" content="JellyGoGo Blog">
+<meta property="og:description" content="1.延时任务与周期任务DelayQueue类的主要作用：是一个无界的BlockingQueue，用于放置实现了Delayed接口的对象，其中的对象只能在其到期时才能从队列中取走。这种队列是有序的，即队头对象的延迟到期时间最长.DelayQueue队列中保存的是实现了Delayed接口的实现类，里面必须实现getDelay()和compareTo()方法，前者用于返回与此对象相关的剩余延迟时间，以给">
+<meta property="og:updated_time" content="2016-04-23T12:45:31.782Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java并发实战-多任务执行">
+<meta name="twitter:description" content="1.延时任务与周期任务DelayQueue类的主要作用：是一个无界的BlockingQueue，用于放置实现了Delayed接口的对象，其中的对象只能在其到期时才能从队列中取走。这种队列是有序的，即队头对象的延迟到期时间最长.DelayQueue队列中保存的是实现了Delayed接口的实现类，里面必须实现getDelay()和compareTo()方法，前者用于返回与此对象相关的剩余延迟时间，以给">
+  
+    <link rel="alternative" href="/atom.xml" title="JellyGoGo Blog" type="application/atom+xml">
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner">
+  <a href="javascript:;" class="header-icon waves-circle-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="./" class="avatar"><img src="/img/logo.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">Gordon Young</h5>
+        <a href="mailto:undefined" title="yangguodong1995@gmail.com" class="mail">yangguodong1995@gmail.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <ul class="nav">
+    
+        <li class="waves-block">
+          <a href="/"  >
+            <i class="icon icon-lg icon-home"></i>
+            Home
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/archives"  >
+            <i class="icon icon-lg icon-archives"></i>
+            Archives
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/tags"  >
+            <i class="icon icon-lg icon-tags"></i>
+            Tags
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="https://github.com/1174533476" target="_blank" >
+            <i class="icon icon-lg icon-github"></i>
+            Github
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="https://www.facebook.com/anikaarnoldrujc" target="_blank" >
+            <i class="icon icon-lg icon-facebook"></i>
+            Facebook
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/about"  >
+            <i class="icon icon-lg icon-link"></i>
+            about
+          </a>
+        </li>
+    
+  </ul>
+
+  <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>JellyGoGo Blog &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-circle-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">java并发实战-多任务执行</div>
+        
+        <a href="javascript:;" class="header-icon waves-circle-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">java并发实战-多任务执行</h1>
+    <h5 class="subtitle">2016-04-23</h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      
+  <article id="post-java并发实战_多任务执行" class="article article-type-post" itemscope itemprop="blogPost">
+    
+      <div class="post-meat flex-row">
+        <div class="flex-col">
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并发/">并发</a></li></ul>
+</div>
+      </div>
+      <div class="post-body">
+
+        <aside class="post-widget" id="post-widget">
+
+          
+          <div class="post-share" id="post-share" data-title="java并发实战-多任务执行" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/24/java并发实战_多任务执行/index.html">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+          
+
+          
+          <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-延时任务与周期任务"><span class="post-toc-text">1.延时任务与周期任务</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-CompletionService-Executor与BlockingQueue"><span class="post-toc-text">2.CompletionService:Executor与BlockingQueue</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-invokeAll"><span class="post-toc-text">3.invokeAll</span></a></li></ol>
+          </nav>
+          
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" itemprop="postContent"><h1 id="1-延时任务与周期任务"><a href="#1-延时任务与周期任务" class="headerlink" title="1.延时任务与周期任务"></a>1.延时任务与周期任务</h1><p>DelayQueue类的主要作用：是一个无界的BlockingQueue，用于放置实现了Delayed接口的对象，其中的对象只能在其到期时才能从队列中取走。这种队列是有序的，即队头对象的延迟到期时间最长<br>.DelayQueue队列中保存的是实现了Delayed接口的实现类，里面必须实现getDelay()和compareTo()方法，<br>前者用于返回与此对象相关的剩余延迟时间，以给定的时间单位表示<br>compareTo()方法用于进行队列内部的排序</p>
+<p>Delayed 元素的一个无界阻塞队列，只有在延迟期满时才能从中提取元素。该队列的头部 是延迟期满后保存时间最长的 Delayed 元素。如果延迟都还没有期满，则队列没有头部，并且 poll 将返回 null。当一个元素的 getDelay(TimeUnit.NANOSECONDS) 方法返回一个小于等于 0 的值时，将发生到期。即使无法使用 take 或 poll 移除未到期的元素，也不会将这些元素作为正常元素对待。例如，size 方法同时返回到期和未到期元素的计数。此队列不允许使用 null 元素。 </p>
+<pre><code>package com.jellygogo.basejava;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.DelayQueue;
+import java.util.concurrent.Delayed;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
+public class DelayQueueTest {
+
+    public static void main(String[] args) {
+        ExecutorService exec = Executors.newFixedThreadPool(10);
+        DelayQueue&lt;MyTask&gt; queue = new DelayQueue&lt;&gt;();
+        queue.add(new MyTask(1000, &quot;Task1:1s:&quot;));
+        queue.add(new MyTask(9000, &quot;Task2:9s:&quot;));
+        queue.add(new MyTask(3000, &quot;Task3:3s:&quot;));
+        try {
+            while (!queue.isEmpty()) {
+                MyTask my =  queue.take();
+                Future&lt;String&gt; future = exec.submit(my);
+                System.out.println(&quot;start thread&quot;+my.getTaskName());
+                System.out.println(future.get(4,TimeUnit.SECONDS ));
+                System.out.println(&quot;end thread&quot;+my.getTaskName());
+                if (queue.isEmpty()) {
+                    System.out.println(&quot;Empty!&quot;);
+                    break;
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+
+        }catch (TimeoutException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println(&quot;超时!&quot;);
+        }
+        System.out.println(&quot;main Thread end&quot;);
+    }
+}
+
+class MyTask implements Delayed, Callable&lt;String&gt; {
+
+    private long waitTime;
+    private String taskName;
+    private long endTime;
+    public MyTask(long waitTime, String taskName) {
+        this.waitTime = waitTime;
+        this.taskName = taskName;
+        this.endTime = System.currentTimeMillis() + waitTime;
+    }
+    public long getDelay(TimeUnit unit) {
+        return this.endTime - System.currentTimeMillis();
+    }
+    public String call() throws Exception {
+        // sleep waitTime 
+        System.out.println(this.taskName + &quot;sleep before&quot;);
+        //wait(100);
+        Thread.sleep(this.waitTime);
+        System.out.println(this.taskName + &quot;sleep end&quot;);
+        return &quot;SUCCESS&quot;;
+    }
+
+    public int compareTo(Delayed o) {
+        MyTask other = (MyTask) o;
+        return endTime - other.endTime &gt; 0 ? 1 : 0;
+    }
+    public String getTaskName() {
+        return taskName;
+    }
+
+}
+</code></pre><p>Demo 解释.<br>例子中使用了Future get(long timeout, TimeUnit unit) 这个方法,指如果在规定时间内不能get()到结果,就抛异常<br>一个很实用的例子:<a href="http://blog.csdn.net/yjl49/article/details/7088121" target="_blank" rel="external">http://blog.csdn.net/yjl49/article/details/7088121</a></p>
+<h1 id="2-CompletionService-Executor与BlockingQueue"><a href="#2-CompletionService-Executor与BlockingQueue" class="headerlink" title="2.CompletionService:Executor与BlockingQueue"></a>2.CompletionService:Executor与BlockingQueue</h1><p>CompletionService是结合了BlockingQueue</p>
+<p>Demo2</p>
+<pre><code>package com.jellygogo.basejava;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorCompletionService;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class CompletionServiceTest {
+
+    public static void main(String[] args) {
+        ExecutorService exec = Executors.newFixedThreadPool(10);
+        ExecutorCompletionService&lt;String&gt; cs = new ExecutorCompletionService&lt;&gt;(exec);
+        cs.submit(new MyTask(1000, &quot;Task1:1s:&quot;));
+        cs.submit(new MyTask(9000, &quot;Task2:9s:&quot;));
+        cs.submit(new MyTask(3000, &quot;Task3:3s:&quot;));
+        int size = 3;
+        while (size--==0) {
+            System.out.println(&quot;start thread&quot;);
+            try {
+                System.out.println(cs.take());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(&quot;end thread&quot;);
+        }
+    }
+}
+
+class MyTask2 implements Callable&lt;String&gt; {
+
+    private long waitTime;
+    private String taskName;
+    public MyTask2(long waitTime, String taskName) {
+        this.waitTime = waitTime;
+        this.taskName = taskName;
+    }
+    public String call() throws Exception {
+        System.out.println(this.taskName + &quot;sleep before&quot;);
+        Thread.sleep(this.waitTime);
+        System.out.println(this.taskName + &quot;sleep end&quot;);
+        return &quot;SUCCESS&quot;;
+    }
+
+    public String getTaskName() {
+        return taskName;
+    }
+
+}
+</code></pre><p>此种方法不能设定获取时间,不如第一种灵活,但是更容易实现</p>
+<h1 id="3-invokeAll"><a href="#3-invokeAll" class="headerlink" title="3.invokeAll"></a>3.invokeAll</h1><p>此种方法更容易实现,而且能解决第二种出现的弊端</p>
+<pre><code>package com.jellygogo.basejava;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
+public class InvokaAll {
+
+    public static void main(String[] args) {
+        ExecutorService exec = Executors.newFixedThreadPool(10);
+        List&lt;MyTask3&gt; list = new ArrayList&lt;&gt;();
+        list.add(new MyTask3(1000, &quot;Task1:1s:&quot;));
+        list.add(new MyTask3(10000, &quot;Task2:9s:&quot;));
+        list.add(new MyTask3(3000, &quot;Task3:3s:&quot;));
+        try {
+            List&lt;Future&lt;String&gt;&gt; futures = exec.invokeAll(list,4,TimeUnit.SECONDS );
+            for(Future f:futures){
+                try {
+                    System.out.println(f.get());
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+class MyTask3 implements Callable&lt;String&gt; {
+
+    private long waitTime;
+    private String taskName;
+    public MyTask3(long waitTime, String taskName) {
+        this.waitTime = waitTime;
+        this.taskName = taskName;
+    }
+    public String call() throws Exception {
+        System.out.println(this.taskName + &quot;sleep before&quot;+&quot;wait:&quot;+waitTime);
+        Thread.sleep(waitTime);
+        System.out.println(this.taskName + &quot;sleep end&quot;);
+        return &quot;SUCCESS&quot;;
+    }
+
+    public String getTaskName() {
+        return taskName;
+    }
+
+}
+</code></pre></div>
+
+            
+<nav class="post-nav flex-row">
+  <div class="flex-col waves-block prev">
+    
+      <a href="/2016/04/24/jvm_内存管理机制/" title="java并发实战-任务终止" id="post-prev" class="post-nav-link">
+        <i class="icon icon-chevron-left"></i>
+        <span class="article-nav-title">上一篇</span>
+      </a>
+    
+  </div>
+  <div class="flex-col waves-block next">
+    
+      <a href="/2016/04/24/java并发实战_任务终止/" title="java并发实战-任务终止" id="post-next" class="post-nav-link">
+        <span class="article-nav-title">下一篇</span>
+        <i class="icon icon-chevron-right"></i>
+      </a>
+    
+  </div>
+
+</nav>
+
+
+
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="java并发实战_多任务执行" data-title="java并发实战-多任务执行" data-url="http://jellygogo.com/2016/04/24/java并发实战_多任务执行/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"jellygogo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+        </div>
+
+      </div>
+
+    
+
+  </article>
+
+
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-circle-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<div class="global-share" id="global-share" data-title="java并发实战-多任务执行" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/04/24/java并发实战_多任务执行/index.html">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/javascript">
+var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cspan id='cnzz_stat_icon_1257998795' style='display:none' %3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257998795%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+
+
+
+</body>
+</html>
