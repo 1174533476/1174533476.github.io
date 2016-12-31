@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jellygogo.com/"/>
-  <updated>2016-12-31T06:43:08.290Z</updated>
+  <updated>2016-12-31T07:57:10.053Z</updated>
   <id>http://jellygogo.com/</id>
   
   <author>
@@ -16,19 +16,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hadoop体系虚拟机安装</title>
+    <link href="http://jellygogo.com/2016/12/31/Hadoop%E4%BD%93%E7%B3%BB%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/"/>
+    <id>http://jellygogo.com/2016/12/31/Hadoop体系虚拟机安装/</id>
+    <published>2016-12-31T15:52:21.000Z</published>
+    <updated>2016-12-31T07:57:10.053Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="hadoop" scheme="http://jellygogo.com/tags/hadoop/"/>
+    
+      <category term="安装，虚拟机" scheme="http://jellygogo.com/tags/%E5%AE%89%E8%A3%85%EF%BC%8C%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>New Year New Beginning</title>
     <link href="http://jellygogo.com/2016/12/31/New-Year-New-Beginning/"/>
     <id>http://jellygogo.com/2016/12/31/New-Year-New-Beginning/</id>
     <published>2016-12-31T09:34:51.000Z</published>
-    <updated>2016-12-31T06:43:08.290Z</updated>
+    <updated>2016-12-31T16:30:32.991Z</updated>
     
     <content type="html">&lt;h1 id=&quot;新的一年，新的开始！&quot;&gt;&lt;a href=&quot;#新的一年，新的开始！&quot; class=&quot;headerlink&quot; title=&quot;新的一年，新的开始！&quot;&gt;&lt;/a&gt;新的一年，新的开始！&lt;/h1&gt;&lt;p&gt;考研已经结束了5天了，这几天一直在休息，但是休息的时候竟然会有一种失落感，感觉自己没有目标了，唉，我四不四剑。&lt;br&gt;这次考研正常发挥，数学比较简单，专业课有点难，题量有点大，不过过线应该没有太大问题。&lt;/p&gt;
 &lt;h1 id=&quot;Now，新的征程又要开始了！&quot;&gt;&lt;a href=&quot;#Now，新的征程又要开始了！&quot; class=&quot;headerlink&quot; title=&quot;Now，新的征程又要开始了！&quot;&gt;&lt;/a&gt;Now，新的征程又要开始了！&lt;/h1&gt;&lt;p&gt;经过8个月的考研复习，以前学习的东西基本上都还给老师了，现在需要巩固复习以前学习的java hadoop python相关的东西，然后学习些新的东西。&lt;br&gt;所以，现在是时候做出下一阶段的计划和复试准备计划！&lt;/p&gt;
 &lt;h2 id=&quot;扬帆起航&quot;&gt;&lt;a href=&quot;#扬帆起航&quot; class=&quot;headerlink&quot; title=&quot;扬帆起航~~&quot;&gt;&lt;/a&gt;扬帆起航~~&lt;/h2&gt;&lt;p&gt;下一步整个寒假的重点还是在hadoop体系上面，了解数据挖掘与机器学习，语言重点还是java与python&lt;/p&gt;
-&lt;p&gt;第一门：英语 听力和口语，继续记单词，每天半小时，提神醒脑算法设计，刷算法题，毕竟复试有四个题；408其他课程的学习，基础课程不能挺，按照408的基础讲义来吧，矩阵和概率-大数据的矩阵计算基础（第11期）&lt;br&gt;第二门：python学习，python在dataguru上面的python基础，爬虫，数据分析三连击&lt;br&gt;第三门：hadoop 主要是mapreduce&lt;br&gt;第四门：机器学习 入门和了解&lt;/p&gt;
+&lt;p&gt;第一门：英语 听力和口语，继续记单词，每天半小时，提神醒脑算法设计，刷算法题，毕竟复试有四个题；408其他课程的学习，基础课程不能挺，按照408的基础讲义来吧，矩阵和概率-大数据的矩阵计算基础（第11期）&lt;br&gt;第二门：python学习，python在dataguru上面的python基础，爬虫，数据分析三连击&lt;br&gt;第三门：hadoop 主要是mapreduce加强，这是重心；然后熟悉pig hive、hbase这一系列的工具&lt;br&gt;第四门：机器学习 入门和了解&lt;/p&gt;
 &lt;h1 id=&quot;每天的博客写作计划，坚持下去&quot;&gt;&lt;a href=&quot;#每天的博客写作计划，坚持下去&quot; class=&quot;headerlink&quot; title=&quot;每天的博客写作计划，坚持下去&quot;&gt;&lt;/a&gt;每天的博客写作计划，坚持下去&lt;/h1&gt;&lt;p&gt;目前的书目：（有点多）&lt;br&gt;python语言程序设计&lt;br&gt;数据挖掘技术与工程实践&lt;br&gt;机器学习相关：机器学习 周志华；机器学习的哲学探索；机器学习系统设计；mahout算法解析与案例实战；Mahout in action；&lt;/p&gt;
 &lt;p&gt;hadoop相关：hadoop mapReduceV2 参考手册 ；hadoop技术内幕-深入解析yarn架构设计与实现原理  ；深入理解hadoop；hadoop技术内幕-深入解析mapreduce架构设计和实现原理；&lt;br&gt;mapreduce 2.0源码分析与编程实战；mapreduce设计模式；mahout算法解析与案例实战；Mahout in action；&lt;/p&gt;
-&lt;p&gt;杂记：BigData大数据日知录-架构与算法；大数据智能；大数据架构师指南；hadoop mapreduce 实战手册（第一版中文）；探路大数据：海量大数据与大规模分析；大话数据挖掘；&lt;/p&gt;
+&lt;h2 id=&quot;杂记：BigData大数据日知录-架构与算法；大数据智能；大数据架构师指南；hadoop-mapreduce-实战手册（第一版中文）；探路大数据：海量大数据与大规模分析；大话数据挖掘；&quot;&gt;&lt;a href=&quot;#杂记：BigData大数据日知录-架构与算法；大数据智能；大数据架构师指南；hadoop-mapreduce-实战手册（第一版中文）；探路大数据：海量大数据与大规模分析；大话数据挖掘；&quot; class=&quot;headerlink&quot; title=&quot;杂记：BigData大数据日知录-架构与算法；大数据智能；大数据架构师指南；hadoop mapreduce 实战手册（第一版中文）；探路大数据：海量大数据与大规模分析；大话数据挖掘；&quot;&gt;&lt;/a&gt;杂记：BigData大数据日知录-架构与算法；大数据智能；大数据架构师指南；hadoop mapreduce 实战手册（第一版中文）；探路大数据：海量大数据与大规模分析；大话数据挖掘；&lt;/h2&gt;&lt;p&gt;需要了解的算法：&lt;br&gt;回归，时间序列分析，分类器，聚类，频繁模式挖掘，&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;需要关注的点：&lt;br&gt;主流：Map-Reduce java 程序&lt;br&gt;轻量级脚本语言：pig&lt;br&gt;SQL技巧过渡：Hive&lt;br&gt;机器学习平台：Mahout&lt;br&gt;Nosql：HBase&lt;/p&gt;
+&lt;p&gt;需要了解的工具：R SAS &lt;/p&gt;
+&lt;p&gt;下一步要报的课程：&lt;br&gt;基于案例学习bash脚本编程（第一期）1月14日 待考虑&lt;br&gt;Python网络爬虫（第四期）与&lt;br&gt;Python数据分析&lt;br&gt;机器学习（第16期）1月11日贯彻这个假期的学习；&lt;/p&gt;
+&lt;p&gt;具体课程计划：&lt;br&gt;一.hadoop&lt;br&gt;1.hadoop集群安装&lt;br&gt;2.mapreduce&lt;br&gt;3.Mahout&lt;br&gt;二.机器学习&lt;br&gt;1.机器学习先导数学课，&lt;br&gt;2.dataguru炼数成金课程&lt;br&gt;三.python&lt;br&gt;1.1.11之前python魔鬼训练营结束课程准备网络爬虫部分的课程看完&lt;br&gt;2.第二部分是python网络爬虫&lt;br&gt;3.与第二部分一起的还有python数据分析&lt;br&gt;四，读书计划&lt;br&gt;上述书单，每天坚持读书&lt;/p&gt;
+&lt;h1 id=&quot;具体计划&quot;&gt;&lt;a href=&quot;#具体计划&quot; class=&quot;headerlink&quot; title=&quot;具体计划&quot;&gt;&lt;/a&gt;具体计划&lt;/h1&gt;&lt;h2 id=&quot;第一周&quot;&gt;&lt;a href=&quot;#第一周&quot; class=&quot;headerlink&quot; title=&quot;第一周&quot;&gt;&lt;/a&gt;第一周&lt;/h2&gt;&lt;p&gt;一月一号：&lt;br&gt;早起第一件事：A出三道算法题&lt;br&gt;hadoop集群安装，pig hive hbase 等工具的安装（以前的环境删了，怎么弄也忘了）&lt;br&gt;Python语言学习第一天，&lt;br&gt;机器学习语言学习第一天，&lt;br&gt;英语尝试听力和口语，&lt;br&gt;翻看大数据数学基础课程，&lt;br&gt;第二周&lt;br&gt;第三周&lt;br&gt;第四周&lt;br&gt;第五周&lt;br&gt;第六周&lt;br&gt;考研初试成绩公布&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -278,6 +304,26 @@ class MyTask3 implements Callable&amp;lt;String&amp;gt; {
   
   <entry>
     <title>java并发实战-任务终止</title>
+    <link href="http://jellygogo.com/2016/04/24/java%E5%B9%B6%E5%8F%91%E5%AE%9E%E6%88%98_%E4%BB%BB%E5%8A%A1%E7%BB%88%E6%AD%A2/"/>
+    <id>http://jellygogo.com/2016/04/24/java并发实战_任务终止/</id>
+    <published>2016-04-23T17:06:26.000Z</published>
+    <updated>2016-04-23T13:07:55.670Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
+    
+      <category term="并发" scheme="http://jellygogo.com/tags/%E5%B9%B6%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java并发实战-任务终止</title>
     <link href="http://jellygogo.com/2016/04/24/jvm_%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/"/>
     <id>http://jellygogo.com/2016/04/24/jvm_内存管理机制/</id>
     <published>2016-04-23T17:06:26.000Z</published>
@@ -337,53 +383,6 @@ public class JvmOutOfMemoryTest {
       <category term="java" scheme="http://jellygogo.com/tags/java/"/>
     
       <category term="并发" scheme="http://jellygogo.com/tags/%E5%B9%B6%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java并发实战-任务终止</title>
-    <link href="http://jellygogo.com/2016/04/24/java%E5%B9%B6%E5%8F%91%E5%AE%9E%E6%88%98_%E4%BB%BB%E5%8A%A1%E7%BB%88%E6%AD%A2/"/>
-    <id>http://jellygogo.com/2016/04/24/java并发实战_任务终止/</id>
-    <published>2016-04-23T17:06:26.000Z</published>
-    <updated>2016-04-23T13:07:55.670Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
-    
-      <category term="并发" scheme="http://jellygogo.com/tags/%E5%B9%B6%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习之线性规划与梯度下降</title>
-    <link href="http://jellygogo.com/2016/04/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/"/>
-    <id>http://jellygogo.com/2016/04/23/机器学习之线性规划与梯度下降/</id>
-    <published>2016-04-22T17:06:26.000Z</published>
-    <updated>2016-04-22T13:56:37.135Z</updated>
-    
-    <content type="html">&lt;p&gt;自己试着听网易公开课上面翻译出来的机器学习课程(斯坦福大学公开课),课程上面很多东西都听不懂,所以参考别人博客来促进理解&lt;/p&gt;
-&lt;h1 id=&quot;1-线性回归（Linear-Regression）&quot;&gt;&lt;a href=&quot;#1-线性回归（Linear-Regression）&quot; class=&quot;headerlink&quot; title=&quot;1.线性回归（Linear Regression）&quot;&gt;&lt;/a&gt;1.线性回归（Linear Regression）&lt;/h1&gt;&lt;p&gt;参考博客:&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/jzlxiaohei/article/details/8973410&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/jzlxiaohei/article/details/8973410&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;自己试着听网易公开课上面翻译出来的机器学习课程(斯坦福大学公开课),课程上面很多东西都听不懂,所以参考别人博客来促进理解&lt;/p&gt;
-&lt;h1 id=&quot;1-线性回归（Linear-Regression）&quot;&gt;&lt;a href=&quot;#1-线性回归（Linear-Regression）&quot; 
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="http://jellygogo.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="线性规划" scheme="http://jellygogo.com/tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/"/>
-    
-      <category term="梯度下降" scheme="http://jellygogo.com/tags/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/"/>
     
   </entry>
   
