@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数学基础 | JellyGoGo Blog | 扯淡,发呆,思考之处</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="数学，概率论，矩阵，统计">
+  <meta name="description" content="统计概述统计学可分为：描述统计学与推断统计学
+统计学概念集中趋势描述均值（优点实用性强，缺点容易受极端值影响） 中位数（不受极端值影响，缺乏敏感性） 众数（代表性好，有集中趋势，不受极端值影响，但可能会有多个） 各有优劣
+离散程度描述极差 最大值-最小值，简单地描述数据的范围大小方差 数据离中心越远越离散标准差 方差的开方
+图表类型直方图 频数直方图。根据频数分布表，可以画出频数直方图。频数作为纵">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数学基础">
+<meta property="og:url" content="http://jellygogo.com/2017/01/07/概率论 数理统计 矩阵等数学基础/index.html">
+<meta property="og:site_name" content="JellyGoGo Blog">
+<meta property="og:description" content="统计概述统计学可分为：描述统计学与推断统计学
+统计学概念集中趋势描述均值（优点实用性强，缺点容易受极端值影响） 中位数（不受极端值影响，缺乏敏感性） 众数（代表性好，有集中趋势，不受极端值影响，但可能会有多个） 各有优劣
+离散程度描述极差 最大值-最小值，简单地描述数据的范围大小方差 数据离中心越远越离散标准差 方差的开方
+图表类型直方图 频数直方图。根据频数分布表，可以画出频数直方图。频数作为纵">
+<meta property="og:updated_time" content="2017-01-16T11:45:15.812Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数学基础">
+<meta name="twitter:description" content="统计概述统计学可分为：描述统计学与推断统计学
+统计学概念集中趋势描述均值（优点实用性强，缺点容易受极端值影响） 中位数（不受极端值影响，缺乏敏感性） 众数（代表性好，有集中趋势，不受极端值影响，但可能会有多个） 各有优劣
+离散程度描述极差 最大值-最小值，简单地描述数据的范围大小方差 数据离中心越远越离散标准差 方差的开方
+图表类型直方图 频数直方图。根据频数分布表，可以画出频数直方图。频数作为纵">
+  
+    <link rel="alternative" href="/atom.xml" title="JellyGoGo Blog" type="application/atom+xml">
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner">
+  <a href="javascript:;" class="header-icon waves-circle-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="./" class="avatar"><img src="/img/logo.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">Gordon Young</h5>
+        <a href="mailto:undefined" title="yangguodong1995@gmail.com" class="mail">yangguodong1995@gmail.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <ul class="nav">
+    
+        <li class="waves-block">
+          <a href="/"  >
+            <i class="icon icon-lg icon-home"></i>
+            Home
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/archives"  >
+            <i class="icon icon-lg icon-archives"></i>
+            Archives
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/tags"  >
+            <i class="icon icon-lg icon-tags"></i>
+            Tags
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="https://github.com/1174533476" target="_blank" >
+            <i class="icon icon-lg icon-github"></i>
+            Github
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="https://www.facebook.com/anikaarnoldrujc" target="_blank" >
+            <i class="icon icon-lg icon-facebook"></i>
+            Facebook
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/about"  >
+            <i class="icon icon-lg icon-link"></i>
+            about
+          </a>
+        </li>
+    
+  </ul>
+
+  <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>JellyGoGo Blog &copy; 2017</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-circle-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">数学基础</div>
+        
+        <a href="javascript:;" class="header-icon waves-circle-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">数学基础</h1>
+    <h5 class="subtitle">2017-01-07</h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      
+  <article id="post-概率论 数理统计 矩阵等数学基础" class="article article-type-post" itemscope itemprop="blogPost">
+    
+      <div class="post-meat flex-row">
+        <div class="flex-col">
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数学，概率论，矩阵，统计/">数学，概率论，矩阵，统计</a></li></ul>
+</div>
+      </div>
+      <div class="post-body">
+
+        <aside class="post-widget" id="post-widget">
+
+          
+          <div class="post-share" id="post-share" data-title="数学基础" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2017/01/07/概率论 数理统计 矩阵等数学基础/index.html">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+          
+
+          
+          <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#统计概述"><span class="post-toc-text">统计概述</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#统计学概念"><span class="post-toc-text">统计学概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#集中趋势描述"><span class="post-toc-text">集中趋势描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#离散程度描述"><span class="post-toc-text">离散程度描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图表类型"><span class="post-toc-text">图表类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#概率基础知识"><span class="post-toc-text">概率基础知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概率学概念"><span class="post-toc-text">概率学概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概率模型"><span class="post-toc-text">概率模型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#条件概率"><span class="post-toc-text">条件概率</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#贝叶斯公式"><span class="post-toc-text">贝叶斯公式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#独立性"><span class="post-toc-text">独立性</span></a></li></ol></li></ol>
+          </nav>
+          
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" itemprop="postContent"><h1 id="统计概述"><a href="#统计概述" class="headerlink" title="统计概述"></a>统计概述</h1><p>统计学可分为：描述统计学与推断统计学</p>
+<h1 id="统计学概念"><a href="#统计学概念" class="headerlink" title="统计学概念"></a>统计学概念</h1><h2 id="集中趋势描述"><a href="#集中趋势描述" class="headerlink" title="集中趋势描述"></a>集中趋势描述</h2><p>均值（优点实用性强，缺点容易受极端值影响） 中位数（不受极端值影响，缺乏敏感性） 众数（代表性好，有集中趋势，不受极端值影响，但可能会有多个） 各有优劣</p>
+<h2 id="离散程度描述"><a href="#离散程度描述" class="headerlink" title="离散程度描述"></a>离散程度描述</h2><p>极差 最大值-最小值，简单地描述数据的范围大小<br>方差 数据离中心越远越离散<br>标准差 方差的开方</p>
+<h2 id="图表类型"><a href="#图表类型" class="headerlink" title="图表类型"></a>图表类型</h2><p>直方图 频数直方图。根据频数分布表，可以画出频数直方图。频数作为纵坐标，成绩作为横坐标。通过直方图可以对成绩的分布有了一个直观的印象<br>茎叶图：茎叶图可以在保留全部数据信息的情冴下，直观地显示出数据的分布情冴<br>折线图：以时间为横坐标，变量为纵坐标，反映变量随时间推秱的变化趋势<br>柱形图：显示一段时间内的数据变化或显示各项乊间的比较情冴<br>饼图（饼状图），根据各项所占百分比决定在饼图中的扇形面积。简单易懂，通俗明了，可以更加形象地看出各个项目所占的比例大小<br>箱线图：<br>下四分位数：Q1，将所有数据按照从小到大的顺序排序排在第25%位置的数字<br>上四分位数：Q3，将所有数据按照从小到大的顺序排序排在第75%位置的数字<br>四分位距：IQR，等于Q3-Q1，衡量数据离散程度的一个统计量<br>异常点：小于Q1－1.5IQR或大于Q3+1.5IQR的值<br>上边缘：除异常点以外的数据中的最大值<br>下边缘：除异常点以外的数据中的最小值</p>
+<p>[图片 20170107153417.jpg]</p>
+<h1 id="概率基础知识"><a href="#概率基础知识" class="headerlink" title="概率基础知识"></a>概率基础知识</h1><h2 id="概率学概念"><a href="#概率学概念" class="headerlink" title="概率学概念"></a>概率学概念</h2><p>随机试验：具有以下特点： 1. 可以在相同的条件下重复进行 2. 试验的可能结果不止一个，但在试验前可以知道所有可能结果 3. 试验前丌能确定哪个结果会出现，拥有以上3个特点的试验称为随机试验<br>样本空间：对于随机试验E，E的所有可能结果组成的集合称为E的样本空间，记为S。其中，S中的<br>元素，即E的每个可能结果，称为样本点。</p>
+<p>事件：我们称试验E的样本空间Ｓ的某个子集为Ｅ的随机事件，简称事件。一般用大写字母Ａ，Ｂ，Ｃ……表示。<br>必然事件：在每个试验中一定会发生的事件<br>不可能事件：在每个试验中一定不会发生的事件,用∅ 表示。<br>事件关系：<br>[图片]</p>
+<p>事件运算定律<br>交换律 结合律 分配率<br>德摩根律：<br>图片 20170107162859.jpg</p>
+<p>频率：</p>
+<h2 id="概率模型"><a href="#概率模型" class="headerlink" title="概率模型"></a>概率模型</h2><p>古典概型：对于试验E，若满足：</p>
+<ol>
+<li>试验的样本空间只包含有限个元素</li>
+<li>试验中每个基本事件发生的可能性相同，即每个基本事件发生的概率相等<br>则称这样的试验E为古典概型，也叫等可能概型<br>几何概型：在这个模型下，随机实验所有可能的结果是无限的，并且每个基本结果发生的概率是相同的</li>
+</ol>
+<h2 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h2><p>已知某个事件A发生的条件下，另一个事件B发生的概率称为条件概率，记为P(B|A)<br>P（A） p（B） p(AB)<br>p(B|A) = p(AB)/p(A)</p>
+<h2 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h2><p>当样本空间划分为一对对立事件B和B非时<br>P（B|A）<br>= p(AB)/p(A)<br>=p(A|B)p(B)/[p(A|B)p(B)+p(A|B非)p（B非）]</p>
+<h2 id="独立性"><a href="#独立性" class="headerlink" title="独立性"></a>独立性</h2></div>
+
+            
+<nav class="post-nav flex-row">
+  <div class="flex-col waves-block prev">
+    
+      <a href="/2017/01/10/复试准备/" title="考研复试准备" id="post-prev" class="post-nav-link">
+        <i class="icon icon-chevron-left"></i>
+        <span class="article-nav-title">上一篇</span>
+      </a>
+    
+  </div>
+  <div class="flex-col waves-block next">
+    
+      <a href="/2017/01/07/R语言/" title="R语言入门" id="post-next" class="post-nav-link">
+        <span class="article-nav-title">下一篇</span>
+        <i class="icon icon-chevron-right"></i>
+      </a>
+    
+  </div>
+
+</nav>
+
+
+
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="概率论 数理统计 矩阵等数学基础" data-title="数学基础" data-url="http://jellygogo.com/2017/01/07/概率论 数理统计 矩阵等数学基础/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"jellygogo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+        </div>
+
+      </div>
+
+    
+
+  </article>
+
+
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-circle-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<div class="global-share" id="global-share" data-title="数学基础" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2017/01/07/概率论 数理统计 矩阵等数学基础/index.html">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/javascript">
+var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cspan id='cnzz_stat_icon_1257998795' style='display:none' %3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257998795%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+
+
+
+</body>
+</html>

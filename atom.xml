@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jellygogo.com/"/>
-  <updated>2016-12-31T07:57:10.053Z</updated>
+  <updated>2017-01-16T09:15:48.578Z</updated>
   <id>http://jellygogo.com/</id>
   
   <author>
@@ -14,6 +14,88 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>考研复试准备</title>
+    <link href="http://jellygogo.com/2017/01/10/%E5%A4%8D%E8%AF%95%E5%87%86%E5%A4%87/"/>
+    <id>http://jellygogo.com/2017/01/10/复试准备/</id>
+    <published>2017-01-10T15:00:26.000Z</published>
+    <updated>2017-01-16T09:15:48.578Z</updated>
+    
+    <content type="html">&lt;p&gt;会的和打算接下来学的&lt;br&gt;1.熟悉hadoop pig hive hbase等工具的使用，熟悉mapreduce编写基本数据分析的流程，&lt;br&gt;2.熟悉linux的基本使用&lt;br&gt;3.熟练使用java语言，有过一年多java web开发与学习的经历；熟悉python语言的使用；熟悉简单shell脚本的编写&lt;br&gt;4.了解基本数据挖掘的相关知识，自学过机器学习相关教程&lt;br&gt;5.对技术抱有热情，期待挑战，&lt;/p&gt;
+&lt;h1 id=&quot;复试英语&quot;&gt;&lt;a href=&quot;#复试英语&quot; class=&quot;headerlink&quot; title=&quot;复试英语&quot;&gt;&lt;/a&gt;复试英语&lt;/h1&gt;&lt;h2 id=&quot;听力题型&quot;&gt;&lt;a href=&quot;#听力题型&quot; class=&quot;headerlink&quot; title=&quot;听力题型&quot;&gt;&lt;/a&gt;听力题型&lt;/h2&gt;&lt;p&gt;1.小对话 语速较快，贴近生活&lt;br&gt;2.长对话 生活化的 与学术化的&lt;br&gt;3.短文 记述文与说明文&lt;br&gt;4.讲座 难度最大&lt;br&gt;5.听力和填空 &lt;/p&gt;
+&lt;h2 id=&quot;学生目前存在的问题&quot;&gt;&lt;a href=&quot;#学生目前存在的问题&quot; class=&quot;headerlink&quot; title=&quot;学生目前存在的问题&quot;&gt;&lt;/a&gt;学生目前存在的问题&lt;/h2&gt;&lt;p&gt;1.思维问题 回去继续复习考研词汇，注重拼读而不是拼写&lt;br&gt;2.发音的精准程度&lt;br&gt;3.英式发音与美式发音&lt;br&gt;4.连读的规矩&lt;br&gt;5.重读与弱读&lt;/p&gt;
+&lt;h2 id=&quot;口语题型&quot;&gt;&lt;a href=&quot;#口语题型&quot; class=&quot;headerlink&quot; title=&quot;口语题型&quot;&gt;&lt;/a&gt;口语题型&lt;/h2&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;会的和打算接下来学的&lt;br&gt;1.熟悉hadoop pig hive hbase等工具的使用，熟悉mapreduce编写基本数据分析的流程，&lt;br&gt;2.熟悉linux的基本使用&lt;br&gt;3.熟练使用java语言，有过一年多java web开发与学习的经历；熟悉python语言的
+    
+    </summary>
+    
+    
+      <category term="英语，复试" scheme="http://jellygogo.com/tags/%E8%8B%B1%E8%AF%AD%EF%BC%8C%E5%A4%8D%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数学基础</title>
+    <link href="http://jellygogo.com/2017/01/07/%E6%A6%82%E7%8E%87%E8%AE%BA%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%20%E7%9F%A9%E9%98%B5%E7%AD%89%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    <id>http://jellygogo.com/2017/01/07/概率论 数理统计 矩阵等数学基础/</id>
+    <published>2017-01-07T15:00:26.000Z</published>
+    <updated>2017-01-16T11:45:15.812Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;统计概述&quot;&gt;&lt;a href=&quot;#统计概述&quot; class=&quot;headerlink&quot; title=&quot;统计概述&quot;&gt;&lt;/a&gt;统计概述&lt;/h1&gt;&lt;p&gt;统计学可分为：描述统计学与推断统计学&lt;/p&gt;
+&lt;h1 id=&quot;统计学概念&quot;&gt;&lt;a href=&quot;#统计学概念&quot; class=&quot;headerlink&quot; title=&quot;统计学概念&quot;&gt;&lt;/a&gt;统计学概念&lt;/h1&gt;&lt;h2 id=&quot;集中趋势描述&quot;&gt;&lt;a href=&quot;#集中趋势描述&quot; class=&quot;headerlink&quot; title=&quot;集中趋势描述&quot;&gt;&lt;/a&gt;集中趋势描述&lt;/h2&gt;&lt;p&gt;均值（优点实用性强，缺点容易受极端值影响） 中位数（不受极端值影响，缺乏敏感性） 众数（代表性好，有集中趋势，不受极端值影响，但可能会有多个） 各有优劣&lt;/p&gt;
+&lt;h2 id=&quot;离散程度描述&quot;&gt;&lt;a href=&quot;#离散程度描述&quot; class=&quot;headerlink&quot; title=&quot;离散程度描述&quot;&gt;&lt;/a&gt;离散程度描述&lt;/h2&gt;&lt;p&gt;极差 最大值-最小值，简单地描述数据的范围大小&lt;br&gt;方差 数据离中心越远越离散&lt;br&gt;标准差 方差的开方&lt;/p&gt;
+&lt;h2 id=&quot;图表类型&quot;&gt;&lt;a href=&quot;#图表类型&quot; class=&quot;headerlink&quot; title=&quot;图表类型&quot;&gt;&lt;/a&gt;图表类型&lt;/h2&gt;&lt;p&gt;直方图 频数直方图。根据频数分布表，可以画出频数直方图。频数作为纵坐标，成绩作为横坐标。通过直方图可以对成绩的分布有了一个直观的印象&lt;br&gt;茎叶图：茎叶图可以在保留全部数据信息的情冴下，直观地显示出数据的分布情冴&lt;br&gt;折线图：以时间为横坐标，变量为纵坐标，反映变量随时间推秱的变化趋势&lt;br&gt;柱形图：显示一段时间内的数据变化或显示各项乊间的比较情冴&lt;br&gt;饼图（饼状图），根据各项所占百分比决定在饼图中的扇形面积。简单易懂，通俗明了，可以更加形象地看出各个项目所占的比例大小&lt;br&gt;箱线图：&lt;br&gt;下四分位数：Q1，将所有数据按照从小到大的顺序排序排在第25%位置的数字&lt;br&gt;上四分位数：Q3，将所有数据按照从小到大的顺序排序排在第75%位置的数字&lt;br&gt;四分位距：IQR，等于Q3-Q1，衡量数据离散程度的一个统计量&lt;br&gt;异常点：小于Q1－1.5IQR或大于Q3+1.5IQR的值&lt;br&gt;上边缘：除异常点以外的数据中的最大值&lt;br&gt;下边缘：除异常点以外的数据中的最小值&lt;/p&gt;
+&lt;p&gt;[图片 20170107153417.jpg]&lt;/p&gt;
+&lt;h1 id=&quot;概率基础知识&quot;&gt;&lt;a href=&quot;#概率基础知识&quot; class=&quot;headerlink&quot; title=&quot;概率基础知识&quot;&gt;&lt;/a&gt;概率基础知识&lt;/h1&gt;&lt;h2 id=&quot;概率学概念&quot;&gt;&lt;a href=&quot;#概率学概念&quot; class=&quot;headerlink&quot; title=&quot;概率学概念&quot;&gt;&lt;/a&gt;概率学概念&lt;/h2&gt;&lt;p&gt;随机试验：具有以下特点： 1. 可以在相同的条件下重复进行 2. 试验的可能结果不止一个，但在试验前可以知道所有可能结果 3. 试验前丌能确定哪个结果会出现，拥有以上3个特点的试验称为随机试验&lt;br&gt;样本空间：对于随机试验E，E的所有可能结果组成的集合称为E的样本空间，记为S。其中，S中的&lt;br&gt;元素，即E的每个可能结果，称为样本点。&lt;/p&gt;
+&lt;p&gt;事件：我们称试验E的样本空间Ｓ的某个子集为Ｅ的随机事件，简称事件。一般用大写字母Ａ，Ｂ，Ｃ……表示。&lt;br&gt;必然事件：在每个试验中一定会发生的事件&lt;br&gt;不可能事件：在每个试验中一定不会发生的事件,用∅ 表示。&lt;br&gt;事件关系：&lt;br&gt;[图片]&lt;/p&gt;
+&lt;p&gt;事件运算定律&lt;br&gt;交换律 结合律 分配率&lt;br&gt;德摩根律：&lt;br&gt;图片 20170107162859.jpg&lt;/p&gt;
+&lt;p&gt;频率：&lt;/p&gt;
+&lt;h2 id=&quot;概率模型&quot;&gt;&lt;a href=&quot;#概率模型&quot; class=&quot;headerlink&quot; title=&quot;概率模型&quot;&gt;&lt;/a&gt;概率模型&lt;/h2&gt;&lt;p&gt;古典概型：对于试验E，若满足：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;试验的样本空间只包含有限个元素&lt;/li&gt;
+&lt;li&gt;试验中每个基本事件发生的可能性相同，即每个基本事件发生的概率相等&lt;br&gt;则称这样的试验E为古典概型，也叫等可能概型&lt;br&gt;几何概型：在这个模型下，随机实验所有可能的结果是无限的，并且每个基本结果发生的概率是相同的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;条件概率&quot;&gt;&lt;a href=&quot;#条件概率&quot; class=&quot;headerlink&quot; title=&quot;条件概率&quot;&gt;&lt;/a&gt;条件概率&lt;/h2&gt;&lt;p&gt;已知某个事件A发生的条件下，另一个事件B发生的概率称为条件概率，记为P(B|A)&lt;br&gt;P（A） p（B） p(AB)&lt;br&gt;p(B|A) = p(AB)/p(A)&lt;/p&gt;
+&lt;h2 id=&quot;贝叶斯公式&quot;&gt;&lt;a href=&quot;#贝叶斯公式&quot; class=&quot;headerlink&quot; title=&quot;贝叶斯公式&quot;&gt;&lt;/a&gt;贝叶斯公式&lt;/h2&gt;&lt;p&gt;当样本空间划分为一对对立事件B和B非时&lt;br&gt;P（B|A）&lt;br&gt;= p(AB)/p(A)&lt;br&gt;=p(A|B)p(B)/[p(A|B)p(B)+p(A|B非)p（B非）]&lt;/p&gt;
+&lt;h2 id=&quot;独立性&quot;&gt;&lt;a href=&quot;#独立性&quot; class=&quot;headerlink&quot; title=&quot;独立性&quot;&gt;&lt;/a&gt;独立性&lt;/h2&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;统计概述&quot;&gt;&lt;a href=&quot;#统计概述&quot; class=&quot;headerlink&quot; title=&quot;统计概述&quot;&gt;&lt;/a&gt;统计概述&lt;/h1&gt;&lt;p&gt;统计学可分为：描述统计学与推断统计学&lt;/p&gt;
+&lt;h1 id=&quot;统计学概念&quot;&gt;&lt;a href=&quot;#统计学概念&quot; class=&quot;
+    
+    </summary>
+    
+    
+      <category term="数学，概率论，矩阵，统计" scheme="http://jellygogo.com/tags/%E6%95%B0%E5%AD%A6%EF%BC%8C%E6%A6%82%E7%8E%87%E8%AE%BA%EF%BC%8C%E7%9F%A9%E9%98%B5%EF%BC%8C%E7%BB%9F%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>R语言入门</title>
+    <link href="http://jellygogo.com/2017/01/07/R%E8%AF%AD%E8%A8%80/"/>
+    <id>http://jellygogo.com/2017/01/07/R语言/</id>
+    <published>2017-01-07T15:00:26.000Z</published>
+    <updated>2017-01-07T09:31:48.880Z</updated>
+    
+    <content type="html">&lt;p&gt;R语言基础语法&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;R语言基础语法&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="R" scheme="http://jellygogo.com/tags/R/"/>
+    
+  </entry>
   
   <entry>
     <title>Hadoop体系虚拟机安装</title>
@@ -40,7 +122,7 @@
     <link href="http://jellygogo.com/2016/12/31/New-Year-New-Beginning/"/>
     <id>http://jellygogo.com/2016/12/31/New-Year-New-Beginning/</id>
     <published>2016-12-31T09:34:51.000Z</published>
-    <updated>2016-12-31T16:30:32.991Z</updated>
+    <updated>2017-01-16T11:44:30.403Z</updated>
     
     <content type="html">&lt;h1 id=&quot;新的一年，新的开始！&quot;&gt;&lt;a href=&quot;#新的一年，新的开始！&quot; class=&quot;headerlink&quot; title=&quot;新的一年，新的开始！&quot;&gt;&lt;/a&gt;新的一年，新的开始！&lt;/h1&gt;&lt;p&gt;考研已经结束了5天了，这几天一直在休息，但是休息的时候竟然会有一种失落感，感觉自己没有目标了，唉，我四不四剑。&lt;br&gt;这次考研正常发挥，数学比较简单，专业课有点难，题量有点大，不过过线应该没有太大问题。&lt;/p&gt;
 &lt;h1 id=&quot;Now，新的征程又要开始了！&quot;&gt;&lt;a href=&quot;#Now，新的征程又要开始了！&quot; class=&quot;headerlink&quot; title=&quot;Now，新的征程又要开始了！&quot;&gt;&lt;/a&gt;Now，新的征程又要开始了！&lt;/h1&gt;&lt;p&gt;经过8个月的考研复习，以前学习的东西基本上都还给老师了，现在需要巩固复习以前学习的java hadoop python相关的东西，然后学习些新的东西。&lt;br&gt;所以，现在是时候做出下一阶段的计划和复试准备计划！&lt;/p&gt;
@@ -48,13 +130,16 @@
 &lt;p&gt;第一门：英语 听力和口语，继续记单词，每天半小时，提神醒脑算法设计，刷算法题，毕竟复试有四个题；408其他课程的学习，基础课程不能挺，按照408的基础讲义来吧，矩阵和概率-大数据的矩阵计算基础（第11期）&lt;br&gt;第二门：python学习，python在dataguru上面的python基础，爬虫，数据分析三连击&lt;br&gt;第三门：hadoop 主要是mapreduce加强，这是重心；然后熟悉pig hive、hbase这一系列的工具&lt;br&gt;第四门：机器学习 入门和了解&lt;/p&gt;
 &lt;h1 id=&quot;每天的博客写作计划，坚持下去&quot;&gt;&lt;a href=&quot;#每天的博客写作计划，坚持下去&quot; class=&quot;headerlink&quot; title=&quot;每天的博客写作计划，坚持下去&quot;&gt;&lt;/a&gt;每天的博客写作计划，坚持下去&lt;/h1&gt;&lt;p&gt;目前的书目：（有点多）&lt;br&gt;python语言程序设计&lt;br&gt;数据挖掘技术与工程实践&lt;br&gt;机器学习相关：机器学习 周志华；机器学习的哲学探索；机器学习系统设计；mahout算法解析与案例实战；Mahout in action；&lt;/p&gt;
 &lt;p&gt;hadoop相关：hadoop mapReduceV2 参考手册 ；hadoop技术内幕-深入解析yarn架构设计与实现原理  ；深入理解hadoop；hadoop技术内幕-深入解析mapreduce架构设计和实现原理；&lt;br&gt;mapreduce 2.0源码分析与编程实战；mapreduce设计模式；mahout算法解析与案例实战；Mahout in action；&lt;/p&gt;
-&lt;h2 id=&quot;杂记：BigData大数据日知录-架构与算法；大数据智能；大数据架构师指南；hadoop-mapreduce-实战手册（第一版中文）；探路大数据：海量大数据与大规模分析；大话数据挖掘；&quot;&gt;&lt;a href=&quot;#杂记：BigData大数据日知录-架构与算法；大数据智能；大数据架构师指南；hadoop-mapreduce-实战手册（第一版中文）；探路大数据：海量大数据与大规模分析；大话数据挖掘；&quot; class=&quot;headerlink&quot; title=&quot;杂记：BigData大数据日知录-架构与算法；大数据智能；大数据架构师指南；hadoop mapreduce 实战手册（第一版中文）；探路大数据：海量大数据与大规模分析；大话数据挖掘；&quot;&gt;&lt;/a&gt;杂记：BigData大数据日知录-架构与算法；大数据智能；大数据架构师指南；hadoop mapreduce 实战手册（第一版中文）；探路大数据：海量大数据与大规模分析；大话数据挖掘；&lt;/h2&gt;&lt;p&gt;需要了解的算法：&lt;br&gt;回归，时间序列分析，分类器，聚类，频繁模式挖掘，&lt;/p&gt;
+&lt;p&gt;杂记：BigData大数据日知录-架构与算法；大数据智能；大数据架构师指南；hadoop mapreduce 实战手册（第一版中文）；探路大数据：海量大数据与大规模分析；大话数据挖掘；&lt;/p&gt;
+&lt;h2 id=&quot;需要了解的算法：&quot;&gt;&lt;a href=&quot;#需要了解的算法：&quot; class=&quot;headerlink&quot; title=&quot;需要了解的算法：&quot;&gt;&lt;/a&gt;需要了解的算法：&lt;/h2&gt;&lt;p&gt;回归，时间序列分析，分类器，聚类，频繁模式挖掘，&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;需要关注的点：&lt;br&gt;主流：Map-Reduce java 程序&lt;br&gt;轻量级脚本语言：pig&lt;br&gt;SQL技巧过渡：Hive&lt;br&gt;机器学习平台：Mahout&lt;br&gt;Nosql：HBase&lt;/p&gt;
 &lt;p&gt;需要了解的工具：R SAS &lt;/p&gt;
 &lt;p&gt;下一步要报的课程：&lt;br&gt;基于案例学习bash脚本编程（第一期）1月14日 待考虑&lt;br&gt;Python网络爬虫（第四期）与&lt;br&gt;Python数据分析&lt;br&gt;机器学习（第16期）1月11日贯彻这个假期的学习；&lt;/p&gt;
 &lt;p&gt;具体课程计划：&lt;br&gt;一.hadoop&lt;br&gt;1.hadoop集群安装&lt;br&gt;2.mapreduce&lt;br&gt;3.Mahout&lt;br&gt;二.机器学习&lt;br&gt;1.机器学习先导数学课，&lt;br&gt;2.dataguru炼数成金课程&lt;br&gt;三.python&lt;br&gt;1.1.11之前python魔鬼训练营结束课程准备网络爬虫部分的课程看完&lt;br&gt;2.第二部分是python网络爬虫&lt;br&gt;3.与第二部分一起的还有python数据分析&lt;br&gt;四，读书计划&lt;br&gt;上述书单，每天坚持读书&lt;/p&gt;
-&lt;h1 id=&quot;具体计划&quot;&gt;&lt;a href=&quot;#具体计划&quot; class=&quot;headerlink&quot; title=&quot;具体计划&quot;&gt;&lt;/a&gt;具体计划&lt;/h1&gt;&lt;h2 id=&quot;第一周&quot;&gt;&lt;a href=&quot;#第一周&quot; class=&quot;headerlink&quot; title=&quot;第一周&quot;&gt;&lt;/a&gt;第一周&lt;/h2&gt;&lt;p&gt;一月一号：&lt;br&gt;早起第一件事：A出三道算法题&lt;br&gt;hadoop集群安装，pig hive hbase 等工具的安装（以前的环境删了，怎么弄也忘了）&lt;br&gt;Python语言学习第一天，&lt;br&gt;机器学习语言学习第一天，&lt;br&gt;英语尝试听力和口语，&lt;br&gt;翻看大数据数学基础课程，&lt;br&gt;第二周&lt;br&gt;第三周&lt;br&gt;第四周&lt;br&gt;第五周&lt;br&gt;第六周&lt;br&gt;考研初试成绩公布&lt;/p&gt;
+&lt;h1 id=&quot;具体计划&quot;&gt;&lt;a href=&quot;#具体计划&quot; class=&quot;headerlink&quot; title=&quot;具体计划&quot;&gt;&lt;/a&gt;具体计划&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;一月一号：&lt;br&gt;早起第一件事：A出三道算法题&lt;br&gt;hadoop集群安装，pig hive hbase 等工具的安装（以前的环境删了，怎么弄也忘了）&lt;br&gt;Python语言学习第一天，&lt;br&gt;机器学习语言学习第一天，&lt;br&gt;英语尝试听力和口语，&lt;br&gt;翻看大数据数学基础课程，&lt;br&gt;啊。。今天没安装成hadoop。。。&lt;br&gt;一月七号：&lt;br&gt;回家好几天了，终于可以开始学习了！&lt;br&gt;1月16号&lt;br&gt;在家真是堕落！今天熬夜敲代码吧！&lt;/p&gt;
+&lt;p&gt;2月15日 考研初试成绩公布&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -90,6 +175,90 @@
     
     
       <category term="考研，stop the world！" scheme="http://jellygogo.com/tags/%E8%80%83%E7%A0%94%EF%BC%8Cstop-the-world%EF%BC%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java并发实战-任务终止</title>
+    <link href="http://jellygogo.com/2016/04/24/jvm_%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/"/>
+    <id>http://jellygogo.com/2016/04/24/jvm_内存管理机制/</id>
+    <published>2016-04-23T17:06:26.000Z</published>
+    <updated>2016-04-23T14:26:21.995Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;内存区域划分&quot;&gt;&lt;a href=&quot;#内存区域划分&quot; class=&quot;headerlink&quot; title=&quot;内存区域划分&quot;&gt;&lt;/a&gt;内存区域划分&lt;/h1&gt;&lt;h2 id=&quot;程序计数区&quot;&gt;&lt;a href=&quot;#程序计数区&quot; class=&quot;headerlink&quot; title=&quot;程序计数区&quot;&gt;&lt;/a&gt;程序计数区&lt;/h2&gt;&lt;p&gt;唯一没有规定任务OutOfmemery异常的区域&lt;/p&gt;
+&lt;h2 id=&quot;java虚拟机栈&quot;&gt;&lt;a href=&quot;#java虚拟机栈&quot; class=&quot;headerlink&quot; title=&quot;java虚拟机栈&quot;&gt;&lt;/a&gt;java虚拟机栈&lt;/h2&gt;&lt;p&gt;java虚拟机栈是线程私有区域,每个方法执行时都会在java虚拟机栈中创建一个栈帧(Stack Flame)用于存储局部变量表,方法出口,操作数栈等参数&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package com.jellygogo.jvm;
+
+//Exception in thread &amp;quot;main&amp;quot; java.lang.StackOverflowError
+//通过无限调用递归方法,来模拟StackOverflowError
+public class JvmOutOfMemoryTest {
+/*
+ * -Xss128k
+ */
+
+    public static void main(String[] args) {
+        new JvmOutOfMemoryTest().stack(1);
+    }
+
+    public void stack(int i){
+        stack(++i);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;本地方法区&quot;&gt;&lt;a href=&quot;#本地方法区&quot; class=&quot;headerlink&quot; title=&quot;本地方法区&quot;&gt;&lt;/a&gt;本地方法区&lt;/h2&gt;&lt;p&gt;与java虚拟机栈类似,区别是执行native方法&lt;/p&gt;
+&lt;h2 id=&quot;java堆&quot;&gt;&lt;a href=&quot;#java堆&quot; class=&quot;headerlink&quot; title=&quot;java堆&quot;&gt;&lt;/a&gt;java堆&lt;/h2&gt;&lt;p&gt;所有线程共享,此内存区域唯一目的是存放方法实例.&lt;br&gt;java堆可以分为新生代和老年代&lt;/p&gt;
+&lt;p&gt;java堆溢出异常测试&lt;br&gt;只需要不断创建对象就可以模拟出这种现象&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package com.jellygogo.jvm;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class JvmOutOfMemoryTest {
+/*
+ * -Xms10m -Xmx10m
+ */
+
+    public static void main(String[] args) {
+        List l = new ArrayList&amp;lt;&amp;gt;();
+        while(true)
+        l.add(new JvmOutOfMemoryTest());
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;方法区&quot;&gt;&lt;a href=&quot;#方法区&quot; class=&quot;headerlink&quot; title=&quot;方法区&quot;&gt;&lt;/a&gt;方法区&lt;/h2&gt;&lt;p&gt;所有线程共享的区域,存储已被类加载的类信息,常量,静态变量.&lt;/p&gt;
+&lt;h2 id=&quot;运行时常量池&quot;&gt;&lt;a href=&quot;#运行时常量池&quot; class=&quot;headerlink&quot; title=&quot;运行时常量池&quot;&gt;&lt;/a&gt;运行时常量池&lt;/h2&gt;&lt;p&gt;属于方法区的一部分,储存编译器生成的字面量与符号引用&lt;/p&gt;
+&lt;h1 id=&quot;垃圾收集器&quot;&gt;&lt;a href=&quot;#垃圾收集器&quot; class=&quot;headerlink&quot; title=&quot;垃圾收集器&quot;&gt;&lt;/a&gt;垃圾收集器&lt;/h1&gt;&lt;p&gt;常用的垃圾收集算法：&lt;br&gt;标记-清除算法：&lt;br&gt;复制算法：新生代算法&lt;br&gt;标记-整理：&lt;br&gt;分代收集算法：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/2016/04/Collectors.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;内存分配策略&quot;&gt;&lt;a href=&quot;#内存分配策略&quot; class=&quot;headerlink&quot; title=&quot;内存分配策略&quot;&gt;&lt;/a&gt;内存分配策略&lt;/h1&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;内存区域划分&quot;&gt;&lt;a href=&quot;#内存区域划分&quot; class=&quot;headerlink&quot; title=&quot;内存区域划分&quot;&gt;&lt;/a&gt;内存区域划分&lt;/h1&gt;&lt;h2 id=&quot;程序计数区&quot;&gt;&lt;a href=&quot;#程序计数区&quot; class=&quot;headerlink&quot; title=
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
+    
+      <category term="并发" scheme="http://jellygogo.com/tags/%E5%B9%B6%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java并发实战-任务终止</title>
+    <link href="http://jellygogo.com/2016/04/24/java%E5%B9%B6%E5%8F%91%E5%AE%9E%E6%88%98_%E4%BB%BB%E5%8A%A1%E7%BB%88%E6%AD%A2/"/>
+    <id>http://jellygogo.com/2016/04/24/java并发实战_任务终止/</id>
+    <published>2016-04-23T17:06:26.000Z</published>
+    <updated>2016-04-23T13:07:55.670Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
+    
+      <category term="并发" scheme="http://jellygogo.com/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
@@ -303,90 +472,6 @@ class MyTask3 implements Callable&amp;lt;String&amp;gt; {
   </entry>
   
   <entry>
-    <title>java并发实战-任务终止</title>
-    <link href="http://jellygogo.com/2016/04/24/java%E5%B9%B6%E5%8F%91%E5%AE%9E%E6%88%98_%E4%BB%BB%E5%8A%A1%E7%BB%88%E6%AD%A2/"/>
-    <id>http://jellygogo.com/2016/04/24/java并发实战_任务终止/</id>
-    <published>2016-04-23T17:06:26.000Z</published>
-    <updated>2016-04-23T13:07:55.670Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
-    
-      <category term="并发" scheme="http://jellygogo.com/tags/%E5%B9%B6%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java并发实战-任务终止</title>
-    <link href="http://jellygogo.com/2016/04/24/jvm_%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/"/>
-    <id>http://jellygogo.com/2016/04/24/jvm_内存管理机制/</id>
-    <published>2016-04-23T17:06:26.000Z</published>
-    <updated>2016-04-23T14:26:21.995Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;内存区域划分&quot;&gt;&lt;a href=&quot;#内存区域划分&quot; class=&quot;headerlink&quot; title=&quot;内存区域划分&quot;&gt;&lt;/a&gt;内存区域划分&lt;/h1&gt;&lt;h2 id=&quot;程序计数区&quot;&gt;&lt;a href=&quot;#程序计数区&quot; class=&quot;headerlink&quot; title=&quot;程序计数区&quot;&gt;&lt;/a&gt;程序计数区&lt;/h2&gt;&lt;p&gt;唯一没有规定任务OutOfmemery异常的区域&lt;/p&gt;
-&lt;h2 id=&quot;java虚拟机栈&quot;&gt;&lt;a href=&quot;#java虚拟机栈&quot; class=&quot;headerlink&quot; title=&quot;java虚拟机栈&quot;&gt;&lt;/a&gt;java虚拟机栈&lt;/h2&gt;&lt;p&gt;java虚拟机栈是线程私有区域,每个方法执行时都会在java虚拟机栈中创建一个栈帧(Stack Flame)用于存储局部变量表,方法出口,操作数栈等参数&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package com.jellygogo.jvm;
-
-//Exception in thread &amp;quot;main&amp;quot; java.lang.StackOverflowError
-//通过无限调用递归方法,来模拟StackOverflowError
-public class JvmOutOfMemoryTest {
-/*
- * -Xss128k
- */
-
-    public static void main(String[] args) {
-        new JvmOutOfMemoryTest().stack(1);
-    }
-
-    public void stack(int i){
-        stack(++i);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;本地方法区&quot;&gt;&lt;a href=&quot;#本地方法区&quot; class=&quot;headerlink&quot; title=&quot;本地方法区&quot;&gt;&lt;/a&gt;本地方法区&lt;/h2&gt;&lt;p&gt;与java虚拟机栈类似,区别是执行native方法&lt;/p&gt;
-&lt;h2 id=&quot;java堆&quot;&gt;&lt;a href=&quot;#java堆&quot; class=&quot;headerlink&quot; title=&quot;java堆&quot;&gt;&lt;/a&gt;java堆&lt;/h2&gt;&lt;p&gt;所有线程共享,此内存区域唯一目的是存放方法实例.&lt;br&gt;java堆可以分为新生代和老年代&lt;/p&gt;
-&lt;p&gt;java堆溢出异常测试&lt;br&gt;只需要不断创建对象就可以模拟出这种现象&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package com.jellygogo.jvm;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class JvmOutOfMemoryTest {
-/*
- * -Xms10m -Xmx10m
- */
-
-    public static void main(String[] args) {
-        List l = new ArrayList&amp;lt;&amp;gt;();
-        while(true)
-        l.add(new JvmOutOfMemoryTest());
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;方法区&quot;&gt;&lt;a href=&quot;#方法区&quot; class=&quot;headerlink&quot; title=&quot;方法区&quot;&gt;&lt;/a&gt;方法区&lt;/h2&gt;&lt;p&gt;所有线程共享的区域,存储已被类加载的类信息,常量,静态变量.&lt;/p&gt;
-&lt;h2 id=&quot;运行时常量池&quot;&gt;&lt;a href=&quot;#运行时常量池&quot; class=&quot;headerlink&quot; title=&quot;运行时常量池&quot;&gt;&lt;/a&gt;运行时常量池&lt;/h2&gt;&lt;p&gt;属于方法区的一部分,储存编译器生成的字面量与符号引用&lt;/p&gt;
-&lt;h1 id=&quot;垃圾收集器&quot;&gt;&lt;a href=&quot;#垃圾收集器&quot; class=&quot;headerlink&quot; title=&quot;垃圾收集器&quot;&gt;&lt;/a&gt;垃圾收集器&lt;/h1&gt;&lt;p&gt;常用的垃圾收集算法：&lt;br&gt;标记-清除算法：&lt;br&gt;复制算法：新生代算法&lt;br&gt;标记-整理：&lt;br&gt;分代收集算法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/img/2016/04/Collectors.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;内存分配策略&quot;&gt;&lt;a href=&quot;#内存分配策略&quot; class=&quot;headerlink&quot; title=&quot;内存分配策略&quot;&gt;&lt;/a&gt;内存分配策略&lt;/h1&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;内存区域划分&quot;&gt;&lt;a href=&quot;#内存区域划分&quot; class=&quot;headerlink&quot; title=&quot;内存区域划分&quot;&gt;&lt;/a&gt;内存区域划分&lt;/h1&gt;&lt;h2 id=&quot;程序计数区&quot;&gt;&lt;a href=&quot;#程序计数区&quot; class=&quot;headerlink&quot; title=
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
-    
-      <category term="并发" scheme="http://jellygogo.com/tags/%E5%B9%B6%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
     <title>hbase学习</title>
     <link href="http://jellygogo.com/2016/04/19/hbase_learn/"/>
     <id>http://jellygogo.com/2016/04/19/hbase_learn/</id>
@@ -411,6 +496,34 @@ public class JvmOutOfMemoryTest {
       <category term="hbase" scheme="http://jellygogo.com/tags/hbase/"/>
     
       <category term="java" scheme="http://jellygogo.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pig学习</title>
+    <link href="http://jellygogo.com/2016/04/19/pig_learn/"/>
+    <id>http://jellygogo.com/2016/04/19/pig_learn/</id>
+    <published>2016-04-18T17:06:26.000Z</published>
+    <updated>2016-04-18T05:28:52.324Z</updated>
+    
+    <content type="html">&lt;p&gt;grunt&amp;gt; cat hdfs://h1:9000/user/grip/toolSample.txt&lt;br&gt;2016 99&lt;br&gt;2015 6&lt;br&gt;2016 999&lt;br&gt;2015 5&lt;/p&gt;
+&lt;p&gt;grunt&amp;gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ using PigStorage(‘ ‘) as (year,max) ;&lt;/p&gt;
+&lt;p&gt;grunt&amp;gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ as (year,max) using PigStorage(‘ ‘);&lt;br&gt;2016-04-17 22:26:19,929 [main] ERROR org.apache.pig.tools.grunt.Grunt - ERROR 1200: &lt;line 65=&quot;&quot; 16,=&quot;&quot; column=&quot;&quot;&gt;&lt;/line&gt;  mismatched input ‘using’ expecting SEMI_COLON&lt;br&gt;Details at logfile: /home/grip/hadoop-2.5.2/pig_1460955057730.log&lt;br&gt;grunt&amp;gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ using PigStorage(‘ ‘) as (year,max) ;&lt;br&gt;2016-04-17 22:26:57,098 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS&lt;br&gt;grunt&amp;gt; dump a;&lt;br&gt;2016-04-17 22:27:05,950 [main] INFO  org.apache.pig.tools.pigstats.ScriptState - Pig features used in the script: UNKNOWN&lt;br&gt;2016-04-17 22:27:05,951 [main] INFO  org.apache.pig.newplan.logical.optimizer.LogicalPlanOptimizer - {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, PartitionFilterOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter], RULES_DISABLED=[FilterLogicExpressionSimplifier]}&lt;br&gt;2016-04-17 22:27:06,028 [main] WARN  org.apache.pig.data.SchemaTupleBackend - SchemaTupleBackend has already been initialized&lt;br&gt;2016-04-17 22:27:06,047 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1&lt;br&gt;2016-04-17 22:27:06,047 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1&lt;br&gt;2016-04-17 22:27:06,140 [main] INFO  org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter - Saved output of task ‘attempt&lt;strong&gt;0001_m_000001_1’ to hdfs://h1:9000/tmp/temp342437142/tmp293532517/_temporary/0/task&lt;/strong&gt;0001_m_000001&lt;br&gt;2016-04-17 22:27:06,180 [main] WARN  org.apache.pig.data.SchemaTupleBackend - SchemaTupleBackend has already been initialized&lt;br&gt;2016-04-17 22:27:06,185 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1&lt;br&gt;2016-04-17 22:27:06,185 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1&lt;br&gt;(2016,99)&lt;br&gt;(2015,6)&lt;br&gt;(2016,999)&lt;br&gt;(2015,5)&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;grunt&amp;gt; cat hdfs://h1:9000/user/grip/toolSample.txt&lt;br&gt;2016 99&lt;br&gt;2015 6&lt;br&gt;2016 999&lt;br&gt;2015 5&lt;/p&gt;
+&lt;p&gt;grunt&amp;gt; a = load ‘hdfs://h1:900
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
+    
+      <category term="算法" scheme="http://jellygogo.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="排序" scheme="http://jellygogo.com/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
@@ -442,34 +555,6 @@ public class JvmOutOfMemoryTest {
       <category term="算法" scheme="http://jellygogo.com/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="搜索" scheme="http://jellygogo.com/tags/%E6%90%9C%E7%B4%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pig学习</title>
-    <link href="http://jellygogo.com/2016/04/19/pig_learn/"/>
-    <id>http://jellygogo.com/2016/04/19/pig_learn/</id>
-    <published>2016-04-18T17:06:26.000Z</published>
-    <updated>2016-04-18T05:28:52.324Z</updated>
-    
-    <content type="html">&lt;p&gt;grunt&amp;gt; cat hdfs://h1:9000/user/grip/toolSample.txt&lt;br&gt;2016 99&lt;br&gt;2015 6&lt;br&gt;2016 999&lt;br&gt;2015 5&lt;/p&gt;
-&lt;p&gt;grunt&amp;gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ using PigStorage(‘ ‘) as (year,max) ;&lt;/p&gt;
-&lt;p&gt;grunt&amp;gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ as (year,max) using PigStorage(‘ ‘);&lt;br&gt;2016-04-17 22:26:19,929 [main] ERROR org.apache.pig.tools.grunt.Grunt - ERROR 1200: &lt;line 65=&quot;&quot; 16,=&quot;&quot; column=&quot;&quot;&gt;&lt;/line&gt;  mismatched input ‘using’ expecting SEMI_COLON&lt;br&gt;Details at logfile: /home/grip/hadoop-2.5.2/pig_1460955057730.log&lt;br&gt;grunt&amp;gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ using PigStorage(‘ ‘) as (year,max) ;&lt;br&gt;2016-04-17 22:26:57,098 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS&lt;br&gt;grunt&amp;gt; dump a;&lt;br&gt;2016-04-17 22:27:05,950 [main] INFO  org.apache.pig.tools.pigstats.ScriptState - Pig features used in the script: UNKNOWN&lt;br&gt;2016-04-17 22:27:05,951 [main] INFO  org.apache.pig.newplan.logical.optimizer.LogicalPlanOptimizer - {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, PartitionFilterOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter], RULES_DISABLED=[FilterLogicExpressionSimplifier]}&lt;br&gt;2016-04-17 22:27:06,028 [main] WARN  org.apache.pig.data.SchemaTupleBackend - SchemaTupleBackend has already been initialized&lt;br&gt;2016-04-17 22:27:06,047 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1&lt;br&gt;2016-04-17 22:27:06,047 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1&lt;br&gt;2016-04-17 22:27:06,140 [main] INFO  org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter - Saved output of task ‘attempt&lt;strong&gt;0001_m_000001_1’ to hdfs://h1:9000/tmp/temp342437142/tmp293532517/_temporary/0/task&lt;/strong&gt;0001_m_000001&lt;br&gt;2016-04-17 22:27:06,180 [main] WARN  org.apache.pig.data.SchemaTupleBackend - SchemaTupleBackend has already been initialized&lt;br&gt;2016-04-17 22:27:06,185 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1&lt;br&gt;2016-04-17 22:27:06,185 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1&lt;br&gt;(2016,99)&lt;br&gt;(2015,6)&lt;br&gt;(2016,999)&lt;br&gt;(2015,5)&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;grunt&amp;gt; cat hdfs://h1:9000/user/grip/toolSample.txt&lt;br&gt;2016 99&lt;br&gt;2015 6&lt;br&gt;2016 999&lt;br&gt;2015 5&lt;/p&gt;
-&lt;p&gt;grunt&amp;gt; a = load ‘hdfs://h1:900
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
-    
-      <category term="算法" scheme="http://jellygogo.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="排序" scheme="http://jellygogo.com/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   

@@ -88,7 +88,7 @@
 
   <footer class="footer">
   <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
-  <p>JellyGoGo Blog &copy; 2016</p>
+  <p>JellyGoGo Blog &copy; 2017</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
   <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
@@ -121,6 +121,163 @@
     <div class="container body-wrap">
       
   <ul class="post-list">
+  
+    <li class="post-list-item">
+  <article id="post-pig_learn" class="article article-type-post" itemscope itemprop="blogPost">
+    
+      
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/04/19/pig_learn/">pig学习</a>
+    </h3>
+  
+
+
+
+      <div class="post-meat flex-row">
+        <div class="flex-col">
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+</div>
+        <time datetime="2016-04-18T17:06:26.000Z" itemprop="datePublished" class="post-tiem">
+  2016-04-18
+</time>
+      </div>
+      <div class="post-content" itemprop="postContent" >
+        
+          <p>grunt&gt; cat hdfs://h1:9000/user/grip/toolSample.txt<br>2016 99<br>2015 6<br>2016 999<br>2015 5</p>
+<p>grunt&gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ using PigStorage(‘ ‘) as (year,max) ;</p>
+<p>grunt&gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ as (year,max) using PigStorage(‘ ‘);<br>2016-04-17 22:26:19,929 [main] ERROR org.apache.pig.tools.grunt.Grunt - ERROR 1200: <line 65="" 16,="" column=""></line>  mismatched input ‘using’ expecting SEMI_COLON<br>Details at logfile: /home/grip/hadoop-2.5.2/pig_1460955057730.log<br>grunt&gt; a = load ‘hdfs://h1:9000/user/grip/toolSample.txt’ using PigStorage(‘ ‘) as (year,max) ;<br>2016-04-17 22:26:57,098 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS<br>grunt&gt; dump a;<br>2016-04-17 22:27:05,950 [main] INFO  org.apache.pig.tools.pigstats.ScriptState - Pig features used in the script: UNKNOWN<br>2016-04-17 22:27:05,951 [main] INFO  org.apache.pig.newplan.logical.optimizer.LogicalPlanOptimizer - {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, PartitionFilterOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter], RULES_DISABLED=[FilterLogicExpressionSimplifier]}<br>2016-04-17 22:27:06,028 [main] WARN  org.apache.pig.data.SchemaTupleBackend - SchemaTupleBackend has already been initialized<br>2016-04-17 22:27:06,047 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1<br>2016-04-17 22:27:06,047 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1<br>2016-04-17 22:27:06,140 [main] INFO  org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter - Saved output of task ‘attempt<strong>0001_m_000001_1’ to hdfs://h1:9000/tmp/temp342437142/tmp293532517/_temporary/0/task</strong>0001_m_000001<br>2016-04-17 22:27:06,180 [main] WARN  org.apache.pig.data.SchemaTupleBackend - SchemaTupleBackend has already been initialized<br>2016-04-17 22:27:06,185 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1<br>2016-04-17 22:27:06,185 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1<br>(2016,99)<br>(2015,6)<br>(2016,999)<br>(2015,5)</p>
+
+        
+      </div>
+      <div class="post-footer clearfix">
+        <a href="/2016/04/19/pig_learn/" class="post-more waves-button-light">MORE</a>
+      </div>
+    
+
+  </article>
+
+
+</li>
+  
+    <li class="post-list-item">
+  <article id="post-常用数据搜索算法总结" class="article article-type-post" itemscope itemprop="blogPost">
+    
+      
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/04/19/常用数据搜索算法总结/">常用数据查找(搜索)算法总结</a>
+    </h3>
+  
+
+
+
+      <div class="post-meat flex-row">
+        <div class="flex-col">
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+</div>
+        <time datetime="2016-04-18T17:06:26.000Z" itemprop="datePublished" class="post-tiem">
+  2016-04-18
+</time>
+      </div>
+      <div class="post-content" itemprop="postContent" >
+        
+          <p>散列表<br>静态散列与动态散列 </p>
+<p>散列是一个非常有用的、非常基础的数据结构，在数据的查找方面尤其重要，应用的非常广泛。然而，任何事物都有两面性，散列也存在缺点，即数据的局部集中性会使散列的性能急剧下降，且越集中，性能越低。<br>数据集中，即搜索键在通过hash函数运算后，得到同一个结果，指向同一个桶，这时便产生了数据冲突。<br>通常解决数据冲突的方法有：拉链法(open hashing)和开地址法(open addressing)。拉链法我们用的非常多，即存在冲突时，简单的将元素链在当前桶的最后元素的尾部。开放地址法有线性探测再散列、二次线性探测再散列、再hash等方法。<br>在HashMap中采用拉链法,在每个桶后面使用一个链表储存冲突的数据<br>以上介绍的解决冲突的方法，存在一个前提：hash表(又称散列表)的桶的数目保持不变，即hash表在初始化时指定一个数，以后在使用的过程中，只允许在其中添加、删除、查找元素等操作，而不允许改变桶的数目。<br>在实际的应用中，当hash表较小，元素个数不多时，采用以上方法完全可以应付。但是，一旦元素较多，或数据存在一定的偏斜性(数据集中分布在某个桶上)时，以上方法不足以解决这一问题。我们引入一种称之为动态散列的方法：在hash表的元素增长的同时，动态的调整hash桶的数目<br>挖坑:动态哈希表~~<br>散列表:<a href="http://blog.sina.com.cn/s/blog_5e4516af01019frj.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_5e4516af01019frj.html</a></p>
+<p>布隆过滤器</p>
+<p>布隆过滤器原理:<a href="http://www.cnblogs.com/haippy/archive/2012/07/13/2590351.html" target="_blank" rel="external">http://www.cnblogs.com/haippy/archive/2012/07/13/2590351.html</a><br>布隆过滤器java代码:<a href="http://blog.csdn.net/hwwzyh/article/details/38944513" target="_blank" rel="external">http://blog.csdn.net/hwwzyh/article/details/38944513</a></p>
+<p>B树即二叉搜索树：<br>1.所有非叶子结点至多拥有两个儿子（Left和Right）；<br>2.所有结点存储一个关键字；<br>3.非叶子结点的左指针指向小于其关键字的子树，右指针指向大于其关键字的子树；<br>B-树是一种多路搜索树（并不是二叉的）<br>B+树B-树的一种变种,在B-树基础上为所有叶子结点增加一个链指针<br>B*树,B+树的一种变种,为非叶节点的中间节点增加一个链指针</p>
+<p><a href="http://www.cnblogs.com/oldhorse/archive/2009/11/16/1604009.html" target="_blank" rel="external">http://www.cnblogs.com/oldhorse/archive/2009/11/16/1604009.html</a><br>java二叉树实现:<a href="http://blog.csdn.net/cdnight/article/details/11266969" target="_blank" rel="external">http://blog.csdn.net/cdnight/article/details/11266969</a><br>AVL树<br>红黑树</p>
+
+        
+      </div>
+      <div class="post-footer clearfix">
+        <a href="/2016/04/19/常用数据搜索算法总结/" class="post-more waves-button-light">MORE</a>
+      </div>
+    
+
+  </article>
+
+
+</li>
+  
+    <li class="post-list-item">
+  <article id="mapreduce-hiveLearn" class="article article-type-mapreduce" itemscope itemprop="blogPost">
+    
+      
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/04/13/hiveLearn/">Hive学习</a>
+    </h3>
+  
+
+
+
+      <div class="post-meat flex-row">
+        <div class="flex-col">
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hive/">hive</a></li></ul>
+</div>
+        <time datetime="2016-04-13T12:50:55.000Z" itemprop="datePublished" class="post-tiem">
+  2016-04-13
+</time>
+      </div>
+      <div class="post-content" itemprop="postContent" >
+        
+          <p>hive数据仓库,基于mapreduce计算模型，结构化数据的离线分析。<br>hive 应用场景:对搜索日志数据进行统计分析。<br>集团搜索刚上线不久，日志量并不大 。这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，<br>包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。<br>基于 Hive ，我们将这些数据按天为单位建表，每天一个表，后台脚本根据时间戳将每小时同步过来的 5 台前端机的日志数据合并成一个日志文件，导入 Hive 系统，每小时同步的日志数据<br>被追加到当天数据表中，导入完成后，当天各项统计项将被重新计算并输出统计结果。<br>以上需求若直接基于 hadoop 开发，需要自行管理数据，针对多个统计需求开发不同的 map/reduce 运算任务，对合并、排序等多项操作进行定制，并检测任务运行状态，工作量并不小。但<br>使用 Hive ，从导入到分析、排序、去重、结果输出，这些操作都可以运用 hql 语句来解决，一条语句经过处理被解析成几个任务来运行，即使是关键词访问量增量这种需要同时访问多天数<br>据的较为复杂的需求也能通过表关联这样的语句自动完 成，节省了大量工作量。</p>
+<p>参考博客:<a href="http://www.cnblogs.com/zhwl/p/3654346.html" target="_blank" rel="external">http://www.cnblogs.com/zhwl/p/3654346.html</a></p>
+<h2 id="hive基础操作"><a href="#hive基础操作" class="headerlink" title="hive基础操作"></a>hive基础操作</h2><p>hive导入数据方法:<a href="http://blog.csdn.net/lifuxiangcaohui/article/details/40588929" target="_blank" rel="external">http://blog.csdn.net/lifuxiangcaohui/article/details/40588929</a><br>    hive&gt; dfs -cat hdfs://h1:9000/user/grip/word.txt</p>
+<pre><code>hive&gt; create database test;
+OK
+Time taken: 8.764 seconds
+
+hive&gt; use test;
+OK
+Time taken: 1.91 seconds
+
+hive&gt;
+hive&gt; set hivevar:v=name;
+hive&gt; create table tabletest(id int,${hivevar:v} string) ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;\t&apos; ;
+OK
+Time taken: 15.879 seconds
+
+hive&gt; describe tabletest;
+OK
+id                      int                                    
+name                    string                                 
+Time taken: 4.328 seconds, Fetched: 2 row(s)
+
+[grip@h1 tData]$ cat hivedata.txt
+101     jelly
+102     gogo
+
+hive (test)&gt; load data local inpath &quot;/home/grip/tData/hivedata.txt&quot; into table tabletest;
+Loading data to table test.tabletest
+OK
+Time taken: 2.252 seconds
+hive (test)&gt; select * from tabletest;
+OK
+101     jelly
+102     gogo
+Time taken: 0.569 seconds, Fetched: 2 row(s)
+</code></pre><h2 id="wordcount-hive-Demo"><a href="#wordcount-hive-Demo" class="headerlink" title="wordcount hive Demo"></a>wordcount hive Demo</h2><p>create database wordcount;</p>
+
+        
+      </div>
+      <div class="post-footer clearfix">
+        <a href="/2016/04/13/hiveLearn/" class="post-more waves-button-light">MORE</a>
+      </div>
+    
+
+  </article>
+
+
+</li>
   
     <li class="post-list-item">
   <article id="post-常用排序算法总结" class="article article-type-post" itemscope itemprop="blogPost">
