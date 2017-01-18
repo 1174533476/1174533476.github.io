@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jellygogo.com/"/>
-  <updated>2017-01-07T09:31:48.880Z</updated>
+  <updated>2017-01-18T05:39:48.787Z</updated>
   <id>http://jellygogo.com/</id>
   
   <author>
@@ -16,33 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>R语言入门</title>
-    <link href="http://jellygogo.com/2017/01/07/R%E8%AF%AD%E8%A8%80/"/>
-    <id>http://jellygogo.com/2017/01/07/R语言/</id>
-    <published>2017-01-07T15:00:26.000Z</published>
-    <updated>2017-01-07T09:31:48.880Z</updated>
-    
-    <content type="html">&lt;p&gt;R语言基础语法&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;R语言基础语法&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-      <category term="R" scheme="http://jellygogo.com/tags/R/"/>
-    
-  </entry>
-  
-  <entry>
     <title>数学基础</title>
     <link href="http://jellygogo.com/2017/01/07/%E6%A6%82%E7%8E%87%E8%AE%BA%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%20%E7%9F%A9%E9%98%B5%E7%AD%89%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
     <id>http://jellygogo.com/2017/01/07/概率论 数理统计 矩阵等数学基础/</id>
     <published>2017-01-07T15:00:26.000Z</published>
-    <updated>2017-01-18T04:49:14.391Z</updated>
+    <updated>2017-01-18T05:39:48.787Z</updated>
     
     <content type="html">&lt;h1 id=&quot;统计概述&quot;&gt;&lt;a href=&quot;#统计概述&quot; class=&quot;headerlink&quot; title=&quot;统计概述&quot;&gt;&lt;/a&gt;统计概述&lt;/h1&gt;&lt;p&gt;统计学可分为：描述统计学与推断统计学&lt;/p&gt;
 &lt;h1 id=&quot;统计学概念&quot;&gt;&lt;a href=&quot;#统计学概念&quot; class=&quot;headerlink&quot; title=&quot;统计学概念&quot;&gt;&lt;/a&gt;统计学概念&lt;/h1&gt;&lt;h2 id=&quot;集中趋势描述&quot;&gt;&lt;a href=&quot;#集中趋势描述&quot; class=&quot;headerlink&quot; title=&quot;集中趋势描述&quot;&gt;&lt;/a&gt;集中趋势描述&lt;/h2&gt;&lt;p&gt;均值（优点实用性强，缺点容易受极端值影响） 中位数（不受极端值影响，缺乏敏感性） 众数（代表性好，有集中趋势，不受极端值影响，但可能会有多个） 各有优劣&lt;/p&gt;
@@ -63,7 +41,13 @@
 &lt;h2 id=&quot;独立性&quot;&gt;&lt;a href=&quot;#独立性&quot; class=&quot;headerlink&quot; title=&quot;独立性&quot;&gt;&lt;/a&gt;独立性&lt;/h2&gt;&lt;h2 id=&quot;随机变量&quot;&gt;&lt;a href=&quot;#随机变量&quot; class=&quot;headerlink&quot; title=&quot;随机变量&quot;&gt;&lt;/a&gt;随机变量&lt;/h2&gt;&lt;p&gt; 分为离散型与连续型&lt;br&gt;用分布律,概率密度和分布函数来表示&lt;/p&gt;
 &lt;h2 id=&quot;两点分布（0-1）分布&quot;&gt;&lt;a href=&quot;#两点分布（0-1）分布&quot; class=&quot;headerlink&quot; title=&quot;两点分布（0-1）分布&quot;&gt;&lt;/a&gt;两点分布（0-1）分布&lt;/h2&gt;&lt;p&gt;试验的可能结果只分为两种情况&lt;/p&gt;
 &lt;h2 id=&quot;二项分布&quot;&gt;&lt;a href=&quot;#二项分布&quot; class=&quot;headerlink&quot; title=&quot;二项分布&quot;&gt;&lt;/a&gt;二项分布&lt;/h2&gt;&lt;p&gt;二项分布是离散情况下的正态分布。&lt;/p&gt;
-&lt;h2 id=&quot;分布函数&quot;&gt;&lt;a href=&quot;#分布函数&quot; class=&quot;headerlink&quot; title=&quot;分布函数&quot;&gt;&lt;/a&gt;分布函数&lt;/h2&gt;&lt;h2 id=&quot;正态分布&quot;&gt;&lt;a href=&quot;#正态分布&quot; class=&quot;headerlink&quot; title=&quot;正态分布&quot;&gt;&lt;/a&gt;正态分布&lt;/h2&gt;</content>
+&lt;h2 id=&quot;分布函数&quot;&gt;&lt;a href=&quot;#分布函数&quot; class=&quot;headerlink&quot; title=&quot;分布函数&quot;&gt;&lt;/a&gt;分布函数&lt;/h2&gt;&lt;h2 id=&quot;正态分布&quot;&gt;&lt;a href=&quot;#正态分布&quot; class=&quot;headerlink&quot; title=&quot;正态分布&quot;&gt;&lt;/a&gt;正态分布&lt;/h2&gt;&lt;h2 id=&quot;二维随机变量&quot;&gt;&lt;a href=&quot;#二维随机变量&quot; class=&quot;headerlink&quot; title=&quot;二维随机变量&quot;&gt;&lt;/a&gt;二维随机变量&lt;/h2&gt;&lt;p&gt;一般，设E是一个随机试验，它的样本空间是S={e}，设X=X{e}和Y={e}是定义在S上的&lt;br&gt;随机变量，由X与Y构成的向量（X,Y）叫做二维随机向量或是二维随机变量（Two&lt;br&gt;dimensional random vector）&lt;/p&gt;
+&lt;h2 id=&quot;联合分布函数&quot;&gt;&lt;a href=&quot;#联合分布函数&quot; class=&quot;headerlink&quot; title=&quot;联合分布函数&quot;&gt;&lt;/a&gt;联合分布函数&lt;/h2&gt;&lt;p&gt;设（X,Y）是二维随机变量，对于任意实数x，y，二元函数：&lt;br&gt;F(x,y)=P{(X≤x)∪(Y≤y)}=P{X≤x,Y≤y}&lt;br&gt;称为二维随机变量（X,Y）的联合分布函数(Joint probability distribution)&lt;/p&gt;
+&lt;h2 id=&quot;联合分布律&quot;&gt;&lt;a href=&quot;#联合分布律&quot; class=&quot;headerlink&quot; title=&quot;联合分布律&quot;&gt;&lt;/a&gt;联合分布律&lt;/h2&gt;&lt;p&gt;对于离散型的二维随机变量（X,Y）的所有可能取值为（xi,yi），I,j=1,2,……，称P{X=xi,Y=yi}=pij，i,j=1,2，…… 为随机变量X和Y的联合分布律（ Joint distribution law ）&lt;/p&gt;
+&lt;p&gt;联合分布可以唯一地确定边缘分布和条件分布&lt;/p&gt;
+&lt;h2 id=&quot;条件分布&quot;&gt;&lt;a href=&quot;#条件分布&quot; class=&quot;headerlink&quot; title=&quot;条件分布&quot;&gt;&lt;/a&gt;条件分布&lt;/h2&gt;&lt;h2 id=&quot;边缘分布&quot;&gt;&lt;a href=&quot;#边缘分布&quot; class=&quot;headerlink&quot; title=&quot;边缘分布&quot;&gt;&lt;/a&gt;边缘分布&lt;/h2&gt;&lt;p&gt;边缘分布律具有一维分布律的性质&lt;br&gt;联合分布律唯一决定边缘分布律. 具体求法是将联合分布律写成表格形式, 然后各行分&lt;br&gt;别相加得关于X的分布律；各列相加得Y的分布律&lt;/p&gt;
+&lt;h1 id=&quot;数学期望&quot;&gt;&lt;a href=&quot;#数学期望&quot; class=&quot;headerlink&quot; title=&quot;数学期望&quot;&gt;&lt;/a&gt;数学期望&lt;/h1&gt;&lt;p&gt;随机变量的期望值=均值&lt;br&gt;例如&lt;br&gt;X的期望值：8&lt;em&gt;0.3+9&lt;/em&gt;0.1+10&lt;em&gt;0.6=9.3&lt;br&gt;Y的期望值：8&lt;/em&gt;0.2+9&lt;em&gt;0.5+10&lt;/em&gt;0.3=9.1&lt;br&gt;概率*值的连加和&lt;br&gt;二项分布的数学期望&lt;br&gt;连续型随机变量的数学期望&lt;br&gt;均匀分布的数学期望&lt;br&gt;正态分布的数学期望&lt;/p&gt;
+&lt;h2 id=&quot;数学期望的性质&quot;&gt;&lt;a href=&quot;#数学期望的性质&quot; class=&quot;headerlink&quot; title=&quot;数学期望的性质&quot;&gt;&lt;/a&gt;数学期望的性质&lt;/h2&gt;</content>
     
     <summary type="html">
     
@@ -127,11 +111,11 @@
   </entry>
   
   <entry>
-    <title>Hadoop从零开始重学</title>
-    <link href="http://jellygogo.com/2016/12/31/Hadoop%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%87%8D%E5%AD%A6/"/>
-    <id>http://jellygogo.com/2016/12/31/Hadoop从零开始重学/</id>
+    <title>Hadoop从零开始重学1</title>
+    <link href="http://jellygogo.com/2016/12/31/Hadoop%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%87%8D%E5%AD%A6(1)hadoop%20pig%20hive%20hbase%E5%AE%89%E8%A3%85/"/>
+    <id>http://jellygogo.com/2016/12/31/Hadoop从零开始重学(1)hadoop pig hive hbase安装/</id>
     <published>2016-12-31T15:52:21.000Z</published>
-    <updated>2017-01-17T15:09:39.182Z</updated>
+    <updated>2017-01-18T12:32:31.163Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;不论何时，请勿好高骛远！写给曾经自我膨胀的我！&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&quot;hadoop基础与安装&quot;&gt;&lt;a href=&quot;#hadoop基础与安装&quot; class=&quot;headerlink&quot; title=&quot;hadoop基础与安装&quot;&gt;&lt;/a&gt;hadoop基础与安装&lt;/h1&gt;&lt;h2 id=&quot;hadoop子项目家族&quot;&gt;&lt;a href=&quot;#hadoop子项目家族&quot; class=&quot;headerlink&quot; title=&quot;hadoop子项目家族&quot;&gt;&lt;/a&gt;hadoop子项目家族&lt;/h2&gt;&lt;p&gt;我接触与使用过的系列&lt;/p&gt;
@@ -140,7 +124,7 @@
 &lt;h1 id=&quot;hadoop的完全分布式安装&quot;&gt;&lt;a href=&quot;#hadoop的完全分布式安装&quot; class=&quot;headerlink&quot; title=&quot;hadoop的完全分布式安装&quot;&gt;&lt;/a&gt;hadoop的完全分布式安装&lt;/h1&gt;&lt;p&gt;在虚拟机下安装三台linux主机；对之实现ssh免秘密登录；创建grid用户作为hadoop安装用户；&lt;/p&gt;
 &lt;p&gt;hadoop1.x完全分布式模式的安装和配置&lt;br&gt;配置hosts文件&lt;br&gt;建立hadoop运行账号&lt;br&gt;配置ssh免密码连入&lt;br&gt;下载幵解压hadoop安装包&lt;br&gt;配置namenode，修改site文件&lt;br&gt;配置hadoop-env.sh&lt;br&gt;配置masters和slaves文件&lt;br&gt;向各节点复制hadoop&lt;br&gt;格式化namenode&lt;br&gt;吭劢hadoop&lt;br&gt;用jps检验各后台迚程是否成功启动&lt;/p&gt;
 &lt;p&gt;hadoop2.x安装&lt;br&gt;安装JDK&lt;br&gt;编辑hosts文件&lt;br&gt;关闭防火墙&lt;br&gt;部署免密码ssh&lt;br&gt;下载hadoop 2.x幵解压&lt;br&gt;修改配置文件&lt;br&gt;分步hadoop到各个节点&lt;br&gt;启动集群&lt;/p&gt;
-&lt;p&gt;涉及到的配置文件有7个：&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/hadoop-env.sh&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/yarn-env.sh&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/slaves&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/core-site.xml&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/hdfs-site.xml&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/mapred-site.xml&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/yarn-site.xml&lt;br&gt;以上个别文件默认不存在的，可以复制相应的template文件获得。&lt;br&gt;&lt;a href=&quot;http://www.w2bc.com/Article/19645&quot; title=&quot;详细配置&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.w2bc.com/Article/19645&lt;/a&gt;&lt;br&gt;格式化namenode：./bin/hdfs namenode –format&lt;br&gt;吭劢hdfs: ./sbin/start-dfs.sh&lt;br&gt;此时在h1上面运行的迚程有：namenode，secondarynamenode&lt;br&gt;h2和h3上面运行的迚程有：datanode&lt;br&gt;吭劢yarn: ./sbin/start-yarn.sh&lt;br&gt;此时在h1上运行的迚程有：namenode，secondarynamenode，resourcemanager&lt;br&gt;h2和h3上面运行的迚程有：datanode，nodemanager&lt;br&gt;ps：scp -r hadoop-2.5.2 grid@h1:/home/grid/hadoop &lt;/p&gt;
+&lt;p&gt;涉及到的配置文件有7个：&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/hadoop-env.sh&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/yarn-env.sh&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/slaves&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/core-site.xml&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/hdfs-site.xml&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/mapred-site.xml&lt;br&gt;~/hadoop-2.2.0/etc/hadoop/yarn-site.xml&lt;br&gt;以上个别文件默认不存在的，可以复制相应的template文件获得。&lt;br&gt;&lt;a href=&quot;http://www.w2bc.com/Article/19645&quot; title=&quot;详细配置&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.w2bc.com/Article/19645&lt;/a&gt;&lt;br&gt;格式化namenode：./bin/hdfs namenode –format&lt;br&gt;启动hdfs: ./sbin/start-dfs.sh&lt;br&gt;此时在h1上面运行的迚程有：namenode，secondarynamenode&lt;br&gt;h2和h3上面运行的迚程有：datanode&lt;br&gt;吭劢yarn: ./sbin/start-yarn.sh&lt;br&gt;此时在h1上运行的迚程有：namenode，secondarynamenode，resourcemanager&lt;br&gt;h2和h3上面运行的迚程有：datanode，nodemanager&lt;br&gt;ps：scp -r hadoop-2.5.2 grid@h1:/home/grid/hadoop &lt;/p&gt;
 &lt;p&gt;终于~安装成功&lt;/p&gt;
 &lt;h1 id=&quot;HDFS&quot;&gt;&lt;a href=&quot;#HDFS&quot; class=&quot;headerlink&quot; title=&quot;HDFS&quot;&gt;&lt;/a&gt;HDFS&lt;/h1&gt;&lt;p&gt;NameNode&lt;br&gt;DataNode&lt;br&gt;事务日志&lt;br&gt;映像文件&lt;br&gt;SecondaryNameNode&lt;/p&gt;
 &lt;h2 id=&quot;读取数据流程&quot;&gt;&lt;a href=&quot;#读取数据流程&quot; class=&quot;headerlink&quot; title=&quot;读取数据流程&quot;&gt;&lt;/a&gt;读取数据流程&lt;/h2&gt;&lt;p&gt;客户端要访问HDFS中的一个文件&lt;br&gt;首先从namenode获得组成返个文件的数据块位置列表&lt;br&gt;根据列表知道存储数据块的datanode&lt;br&gt;访问datanode获取数据&lt;br&gt;Namenode并不直接参与数据实际传输&lt;/p&gt;
@@ -158,7 +142,10 @@
 &lt;p&gt;Name: 192.168.146.101:50010 (h2)&lt;br&gt;Hostname: h2&lt;br&gt;Decommission Status : Normal&lt;br&gt;Configured Capacity: 20073938944 (18.70 GB)&lt;br&gt;DFS Used: 20480 (20 KB)&lt;br&gt;Non DFS Used: 4643905536 (4.32 GB)&lt;br&gt;DFS Remaining: 15430012928 (14.37 GB)&lt;br&gt;DFS Used%: 0.00%&lt;br&gt;DFS Remaining%: 76.87%&lt;br&gt;Configured Cache Capacity: 0 (0 B)&lt;br&gt;Cache Used: 0 (0 B)&lt;br&gt;Cache Remaining: 0 (0 B)&lt;br&gt;Cache Used%: 100.00%&lt;br&gt;Cache Remaining%: 0.00%&lt;br&gt;Xceivers: 1&lt;br&gt;Last contact: Tue Jan 17 04:50:31 PST 2017&lt;/p&gt;
 &lt;h1 id=&quot;Pig安装与基本操作&quot;&gt;&lt;a href=&quot;#Pig安装与基本操作&quot; class=&quot;headerlink&quot; title=&quot;Pig安装与基本操作&quot;&gt;&lt;/a&gt;Pig安装与基本操作&lt;/h1&gt;&lt;h2 id=&quot;Grunt-shell命令&quot;&gt;&lt;a href=&quot;#Grunt-shell命令&quot; class=&quot;headerlink&quot; title=&quot;Grunt shell命令&quot;&gt;&lt;/a&gt;Grunt shell命令&lt;/h2&gt;&lt;p&gt;“cat” … 输出&lt;br&gt;“clear” …&lt;br&gt;“fs” …&lt;br&gt;“sh” …  &lt;strong&gt;执行操作系统命令&lt;/strong&gt;&lt;br&gt;    grunt&amp;gt; sh jps&lt;br&gt;    5156 SecondaryNameNode&lt;br&gt;    34325 RunJar&lt;br&gt;    34441 Jps&lt;br&gt;    4877 NameNode&lt;br&gt;“cd” …  打开&lt;br&gt;“cp” …&lt;br&gt;“copyFromLocal” … 从本地输入&lt;br&gt;“copyToLocal” …    输出到本地&lt;br&gt;“dump” …&lt;br&gt;“\d” …&lt;br&gt;“describe” …&lt;br&gt;“\de” …&lt;br&gt;“aliases” …&lt;br&gt;“explain” …&lt;br&gt;“\e” …&lt;br&gt;“help” …&lt;br&gt;“history” …&lt;br&gt;“kill” …&lt;br&gt;“ls” …  显示列表内的信息&lt;br&gt;“mv” …&lt;br&gt;“mkdir” …&lt;br&gt;“pwd” …&lt;br&gt;“quit” …&lt;br&gt;“\q” …&lt;br&gt;“register” …&lt;br&gt;“rm” …&lt;br&gt;“rmf” …&lt;br&gt;“set” …&lt;br&gt;“illustrate” …&lt;br&gt;“\i” …&lt;br&gt;“run” …&lt;br&gt;“exec” …&lt;br&gt;“%default” …&lt;br&gt;“%declare” …&lt;br&gt;“scriptDone” …&lt;br&gt;“” …&lt;br&gt;“” …&lt;/p&gt;
 &lt;p&gt;&lt;eol&gt; …&lt;br&gt;“;” …&lt;/eol&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Pig里面进行操作&quot;&gt;&lt;a href=&quot;#Pig里面进行操作&quot; class=&quot;headerlink&quot; title=&quot;Pig里面进行操作&quot;&gt;&lt;/a&gt;Pig里面进行操作&lt;/h2&gt;</content>
+&lt;h2 id=&quot;pig数据模型&quot;&gt;&lt;a href=&quot;#pig数据模型&quot; class=&quot;headerlink&quot; title=&quot;pig数据模型&quot;&gt;&lt;/a&gt;pig数据模型&lt;/h2&gt;&lt;p&gt;Bag：表&lt;br&gt;Tuple：行，记录&lt;br&gt;Field：属性&lt;br&gt;Pig不要求同一个bag里面的各个tuple有相同数量或相同类型的field&lt;/p&gt;
+&lt;h2 id=&quot;Pig-latin常用语句&quot;&gt;&lt;a href=&quot;#Pig-latin常用语句&quot; class=&quot;headerlink&quot; title=&quot;Pig latin常用语句&quot;&gt;&lt;/a&gt;Pig latin常用语句&lt;/h2&gt;&lt;p&gt;LOAD：指出载入数据的方法&lt;br&gt;FOREACH：逐行扫描迚行某种处理&lt;br&gt;FILTER：过滤行&lt;br&gt;DUMP：把结果显示到屏幕&lt;br&gt;STORE：把结果保存到文件&lt;/p&gt;
+&lt;h2 id=&quot;Pig里面进行操作&quot;&gt;&lt;a href=&quot;#Pig里面进行操作&quot; class=&quot;headerlink&quot; title=&quot;Pig里面进行操作&quot;&gt;&lt;/a&gt;Pig里面进行操作&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://guoyunsky.iteye.com/blog/1317084&quot; title=&quot;各种sql在pig中的实现&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://guoyunsky.iteye.com/blog/1317084&lt;/a&gt;&lt;/p&gt;
+</content>
     
     <summary type="html">
     
@@ -179,7 +166,7 @@
     <link href="http://jellygogo.com/2016/12/31/Python-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A01/"/>
     <id>http://jellygogo.com/2016/12/31/Python-基础学习1/</id>
     <published>2016-12-31T15:00:26.000Z</published>
-    <updated>2017-01-18T04:25:27.022Z</updated>
+    <updated>2017-01-18T04:57:07.083Z</updated>
     
     <content type="html">&lt;h1 id=&quot;基础语法部分&quot;&gt;&lt;a href=&quot;#基础语法部分&quot; class=&quot;headerlink&quot; title=&quot;基础语法部分&quot;&gt;&lt;/a&gt;基础语法部分&lt;/h1&gt;&lt;p&gt;1.tab缩进语法，不像其他语言用{}&lt;br&gt;2.不需要声明变量&lt;br&gt;3.常用的语法（1）函数 函数参数  条件语句&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;##函数 函数参数  条件语句
@@ -336,7 +323,8 @@ map[3] = 10086
 [10, 12, 14, 16, 18] &amp;lt;type &amp;apos;list&amp;apos;&amp;gt;
 &amp;lt;generator object &amp;lt;genexpr&amp;gt; at 0x02A3D968&amp;gt; &amp;lt;type &amp;apos;generator&amp;apos;&amp;gt; 10 12 
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;区别是一个返回的是列表,一个是迭代器&lt;br&gt;表达式区别就是 []列表 与 ()迭代器&lt;/p&gt;
-&lt;p&gt;Lambda表达式&lt;/p&gt;
+&lt;h2 id=&quot;Lambda表达式&quot;&gt;&lt;a href=&quot;#Lambda表达式&quot; class=&quot;headerlink&quot; title=&quot;Lambda表达式&quot;&gt;&lt;/a&gt;Lambda表达式&lt;/h2&gt;&lt;p&gt;lambda x: express for x&lt;br&gt;a = lambda x,y: x+y&lt;/p&gt;
+&lt;p&gt;特点&lt;br&gt;只有一行语法&lt;br&gt;没有return语句&lt;br&gt;没有函数名&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -408,90 +396,6 @@ map[3] = 10086
     
     
       <category term="考研，stop the world！" scheme="http://jellygogo.com/tags/%E8%80%83%E7%A0%94%EF%BC%8Cstop-the-world%EF%BC%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java并发实战-任务终止</title>
-    <link href="http://jellygogo.com/2016/04/24/java%E5%B9%B6%E5%8F%91%E5%AE%9E%E6%88%98_%E4%BB%BB%E5%8A%A1%E7%BB%88%E6%AD%A2/"/>
-    <id>http://jellygogo.com/2016/04/24/java并发实战_任务终止/</id>
-    <published>2016-04-23T17:06:26.000Z</published>
-    <updated>2016-04-23T13:07:55.670Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
-    
-      <category term="并发" scheme="http://jellygogo.com/tags/%E5%B9%B6%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java并发实战-任务终止</title>
-    <link href="http://jellygogo.com/2016/04/24/jvm_%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/"/>
-    <id>http://jellygogo.com/2016/04/24/jvm_内存管理机制/</id>
-    <published>2016-04-23T17:06:26.000Z</published>
-    <updated>2016-04-23T14:26:21.995Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;内存区域划分&quot;&gt;&lt;a href=&quot;#内存区域划分&quot; class=&quot;headerlink&quot; title=&quot;内存区域划分&quot;&gt;&lt;/a&gt;内存区域划分&lt;/h1&gt;&lt;h2 id=&quot;程序计数区&quot;&gt;&lt;a href=&quot;#程序计数区&quot; class=&quot;headerlink&quot; title=&quot;程序计数区&quot;&gt;&lt;/a&gt;程序计数区&lt;/h2&gt;&lt;p&gt;唯一没有规定任务OutOfmemery异常的区域&lt;/p&gt;
-&lt;h2 id=&quot;java虚拟机栈&quot;&gt;&lt;a href=&quot;#java虚拟机栈&quot; class=&quot;headerlink&quot; title=&quot;java虚拟机栈&quot;&gt;&lt;/a&gt;java虚拟机栈&lt;/h2&gt;&lt;p&gt;java虚拟机栈是线程私有区域,每个方法执行时都会在java虚拟机栈中创建一个栈帧(Stack Flame)用于存储局部变量表,方法出口,操作数栈等参数&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package com.jellygogo.jvm;
-
-//Exception in thread &amp;quot;main&amp;quot; java.lang.StackOverflowError
-//通过无限调用递归方法,来模拟StackOverflowError
-public class JvmOutOfMemoryTest {
-/*
- * -Xss128k
- */
-
-    public static void main(String[] args) {
-        new JvmOutOfMemoryTest().stack(1);
-    }
-
-    public void stack(int i){
-        stack(++i);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;本地方法区&quot;&gt;&lt;a href=&quot;#本地方法区&quot; class=&quot;headerlink&quot; title=&quot;本地方法区&quot;&gt;&lt;/a&gt;本地方法区&lt;/h2&gt;&lt;p&gt;与java虚拟机栈类似,区别是执行native方法&lt;/p&gt;
-&lt;h2 id=&quot;java堆&quot;&gt;&lt;a href=&quot;#java堆&quot; class=&quot;headerlink&quot; title=&quot;java堆&quot;&gt;&lt;/a&gt;java堆&lt;/h2&gt;&lt;p&gt;所有线程共享,此内存区域唯一目的是存放方法实例.&lt;br&gt;java堆可以分为新生代和老年代&lt;/p&gt;
-&lt;p&gt;java堆溢出异常测试&lt;br&gt;只需要不断创建对象就可以模拟出这种现象&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package com.jellygogo.jvm;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class JvmOutOfMemoryTest {
-/*
- * -Xms10m -Xmx10m
- */
-
-    public static void main(String[] args) {
-        List l = new ArrayList&amp;lt;&amp;gt;();
-        while(true)
-        l.add(new JvmOutOfMemoryTest());
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;方法区&quot;&gt;&lt;a href=&quot;#方法区&quot; class=&quot;headerlink&quot; title=&quot;方法区&quot;&gt;&lt;/a&gt;方法区&lt;/h2&gt;&lt;p&gt;所有线程共享的区域,存储已被类加载的类信息,常量,静态变量.&lt;/p&gt;
-&lt;h2 id=&quot;运行时常量池&quot;&gt;&lt;a href=&quot;#运行时常量池&quot; class=&quot;headerlink&quot; title=&quot;运行时常量池&quot;&gt;&lt;/a&gt;运行时常量池&lt;/h2&gt;&lt;p&gt;属于方法区的一部分,储存编译器生成的字面量与符号引用&lt;/p&gt;
-&lt;h1 id=&quot;垃圾收集器&quot;&gt;&lt;a href=&quot;#垃圾收集器&quot; class=&quot;headerlink&quot; title=&quot;垃圾收集器&quot;&gt;&lt;/a&gt;垃圾收集器&lt;/h1&gt;&lt;p&gt;常用的垃圾收集算法：&lt;br&gt;标记-清除算法：&lt;br&gt;复制算法：新生代算法&lt;br&gt;标记-整理：&lt;br&gt;分代收集算法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/img/2016/04/Collectors.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;内存分配策略&quot;&gt;&lt;a href=&quot;#内存分配策略&quot; class=&quot;headerlink&quot; title=&quot;内存分配策略&quot;&gt;&lt;/a&gt;内存分配策略&lt;/h1&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;内存区域划分&quot;&gt;&lt;a href=&quot;#内存区域划分&quot; class=&quot;headerlink&quot; title=&quot;内存区域划分&quot;&gt;&lt;/a&gt;内存区域划分&lt;/h1&gt;&lt;h2 id=&quot;程序计数区&quot;&gt;&lt;a href=&quot;#程序计数区&quot; class=&quot;headerlink&quot; title=
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
-    
-      <category term="并发" scheme="http://jellygogo.com/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
@@ -694,6 +598,90 @@ class MyTask3 implements Callable&amp;lt;String&amp;gt; {
     <summary type="html">
     
       &lt;h1 id=&quot;1-延时任务与周期任务&quot;&gt;&lt;a href=&quot;#1-延时任务与周期任务&quot; class=&quot;headerlink&quot; title=&quot;1.延时任务与周期任务&quot;&gt;&lt;/a&gt;1.延时任务与周期任务&lt;/h1&gt;&lt;p&gt;DelayQueue类的主要作用：是一个无界的BlockingQue
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
+    
+      <category term="并发" scheme="http://jellygogo.com/tags/%E5%B9%B6%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java并发实战-任务终止</title>
+    <link href="http://jellygogo.com/2016/04/24/jvm_%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/"/>
+    <id>http://jellygogo.com/2016/04/24/jvm_内存管理机制/</id>
+    <published>2016-04-23T17:06:26.000Z</published>
+    <updated>2016-04-23T14:26:21.995Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;内存区域划分&quot;&gt;&lt;a href=&quot;#内存区域划分&quot; class=&quot;headerlink&quot; title=&quot;内存区域划分&quot;&gt;&lt;/a&gt;内存区域划分&lt;/h1&gt;&lt;h2 id=&quot;程序计数区&quot;&gt;&lt;a href=&quot;#程序计数区&quot; class=&quot;headerlink&quot; title=&quot;程序计数区&quot;&gt;&lt;/a&gt;程序计数区&lt;/h2&gt;&lt;p&gt;唯一没有规定任务OutOfmemery异常的区域&lt;/p&gt;
+&lt;h2 id=&quot;java虚拟机栈&quot;&gt;&lt;a href=&quot;#java虚拟机栈&quot; class=&quot;headerlink&quot; title=&quot;java虚拟机栈&quot;&gt;&lt;/a&gt;java虚拟机栈&lt;/h2&gt;&lt;p&gt;java虚拟机栈是线程私有区域,每个方法执行时都会在java虚拟机栈中创建一个栈帧(Stack Flame)用于存储局部变量表,方法出口,操作数栈等参数&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package com.jellygogo.jvm;
+
+//Exception in thread &amp;quot;main&amp;quot; java.lang.StackOverflowError
+//通过无限调用递归方法,来模拟StackOverflowError
+public class JvmOutOfMemoryTest {
+/*
+ * -Xss128k
+ */
+
+    public static void main(String[] args) {
+        new JvmOutOfMemoryTest().stack(1);
+    }
+
+    public void stack(int i){
+        stack(++i);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;本地方法区&quot;&gt;&lt;a href=&quot;#本地方法区&quot; class=&quot;headerlink&quot; title=&quot;本地方法区&quot;&gt;&lt;/a&gt;本地方法区&lt;/h2&gt;&lt;p&gt;与java虚拟机栈类似,区别是执行native方法&lt;/p&gt;
+&lt;h2 id=&quot;java堆&quot;&gt;&lt;a href=&quot;#java堆&quot; class=&quot;headerlink&quot; title=&quot;java堆&quot;&gt;&lt;/a&gt;java堆&lt;/h2&gt;&lt;p&gt;所有线程共享,此内存区域唯一目的是存放方法实例.&lt;br&gt;java堆可以分为新生代和老年代&lt;/p&gt;
+&lt;p&gt;java堆溢出异常测试&lt;br&gt;只需要不断创建对象就可以模拟出这种现象&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package com.jellygogo.jvm;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class JvmOutOfMemoryTest {
+/*
+ * -Xms10m -Xmx10m
+ */
+
+    public static void main(String[] args) {
+        List l = new ArrayList&amp;lt;&amp;gt;();
+        while(true)
+        l.add(new JvmOutOfMemoryTest());
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;方法区&quot;&gt;&lt;a href=&quot;#方法区&quot; class=&quot;headerlink&quot; title=&quot;方法区&quot;&gt;&lt;/a&gt;方法区&lt;/h2&gt;&lt;p&gt;所有线程共享的区域,存储已被类加载的类信息,常量,静态变量.&lt;/p&gt;
+&lt;h2 id=&quot;运行时常量池&quot;&gt;&lt;a href=&quot;#运行时常量池&quot; class=&quot;headerlink&quot; title=&quot;运行时常量池&quot;&gt;&lt;/a&gt;运行时常量池&lt;/h2&gt;&lt;p&gt;属于方法区的一部分,储存编译器生成的字面量与符号引用&lt;/p&gt;
+&lt;h1 id=&quot;垃圾收集器&quot;&gt;&lt;a href=&quot;#垃圾收集器&quot; class=&quot;headerlink&quot; title=&quot;垃圾收集器&quot;&gt;&lt;/a&gt;垃圾收集器&lt;/h1&gt;&lt;p&gt;常用的垃圾收集算法：&lt;br&gt;标记-清除算法：&lt;br&gt;复制算法：新生代算法&lt;br&gt;标记-整理：&lt;br&gt;分代收集算法：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/2016/04/Collectors.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;内存分配策略&quot;&gt;&lt;a href=&quot;#内存分配策略&quot; class=&quot;headerlink&quot; title=&quot;内存分配策略&quot;&gt;&lt;/a&gt;内存分配策略&lt;/h1&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;内存区域划分&quot;&gt;&lt;a href=&quot;#内存区域划分&quot; class=&quot;headerlink&quot; title=&quot;内存区域划分&quot;&gt;&lt;/a&gt;内存区域划分&lt;/h1&gt;&lt;h2 id=&quot;程序计数区&quot;&gt;&lt;a href=&quot;#程序计数区&quot; class=&quot;headerlink&quot; title=
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://jellygogo.com/tags/java/"/>
+    
+      <category term="并发" scheme="http://jellygogo.com/tags/%E5%B9%B6%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java并发实战-任务终止</title>
+    <link href="http://jellygogo.com/2016/04/24/java%E5%B9%B6%E5%8F%91%E5%AE%9E%E6%88%98_%E4%BB%BB%E5%8A%A1%E7%BB%88%E6%AD%A2/"/>
+    <id>http://jellygogo.com/2016/04/24/java并发实战_任务终止/</id>
+    <published>2016-04-23T17:06:26.000Z</published>
+    <updated>2016-04-23T13:07:55.670Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
     
     </summary>
     
@@ -1864,6 +1852,35 @@ public String getRoot() {
     
     
       <category term="闲话扯淡" scheme="http://jellygogo.com/tags/%E9%97%B2%E8%AF%9D%E6%89%AF%E6%B7%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop从零开始重学1</title>
+    <link href="http://jellygogo.com/2016/01/18/Hadoop%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%87%8D%E5%AD%A6(2)MapReduce%E6%8E%A2%E7%B4%A2/"/>
+    <id>http://jellygogo.com/2016/01/18/Hadoop从零开始重学(2)MapReduce探索/</id>
+    <published>2016-01-18T15:52:21.000Z</published>
+    <updated>2017-01-18T14:01:10.537Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;不论何时，请勿好高骛远！写给曾经自我膨胀的我！&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;MapReduce来了&quot;&gt;&lt;a href=&quot;#MapReduce来了&quot; class=&quot;headerlink&quot; title=&quot;MapReduce来了&quot;&gt;&lt;/a&gt;MapReduce来了&lt;/h1&gt;&lt;p&gt;Map-Reduce提供快速并行计算能力，这种能力可以随着&lt;br&gt;节点数的增加线性递增&lt;br&gt;Map-reduce的思想就是“分而治之”&lt;/p&gt;
+&lt;h2 id=&quot;MapReduce概述&quot;&gt;&lt;a href=&quot;#MapReduce概述&quot; class=&quot;headerlink&quot; title=&quot;MapReduce概述&quot;&gt;&lt;/a&gt;MapReduce概述&lt;/h2&gt;&lt;p&gt;在hadoop中文件通过输入格式(input format)处理成一系列的输入split&lt;/p&gt;
+&lt;h2 id=&quot;map&quot;&gt;&lt;a href=&quot;#map&quot; class=&quot;headerlink&quot; title=&quot;map&quot;&gt;&lt;/a&gt;map&lt;/h2&gt;&lt;p&gt;map过程分为4步&lt;br&gt;1.record reader&lt;br&gt;将输入数据转换为记录,但不负责解析记录,只是把数据转换为key/value对,并传递给mapper处理&lt;br&gt;2.Mapper&lt;br&gt;Mapper负责“分”，即把复杂的任务分解为若干个“简单的任务”执行&lt;br&gt;“简单的任务”有几个含义：1 数据戒计算规模相对于原任务要大大缩小；2 就近计算，即会被分配到存放了所需数据的节点迚行计算；3 这些小任务可以幵行计算，彼此间几乎没有依赖关系&lt;br&gt;3.combiner&lt;br&gt;4.partitioner&lt;/p&gt;
+&lt;h2 id=&quot;reduce&quot;&gt;&lt;a href=&quot;#reduce&quot; class=&quot;headerlink&quot; title=&quot;reduce&quot;&gt;&lt;/a&gt;reduce&lt;/h2&gt;&lt;p&gt;reduce过程也分为4步&lt;br&gt;1.shuffle 混排&lt;br&gt;2.sort 排序&lt;/p&gt;
+&lt;h2 id=&quot;3-Reducer&quot;&gt;&lt;a href=&quot;#3-Reducer&quot; class=&quot;headerlink&quot; title=&quot;3.Reducer&quot;&gt;&lt;/a&gt;3.Reducer&lt;/h2&gt;&lt;p&gt;对map阶段的结果进行汇总Reducer的数目由mapred-site.xml配置文件里的项目mapred.reduce.tasks决定。缺&lt;br&gt;省值为1，用户可以覆盖设置&lt;br&gt;4.输出格式 output format&lt;/p&gt;
+&lt;h1 id=&quot;MRUnit测试&quot;&gt;&lt;a href=&quot;#MRUnit测试&quot; class=&quot;headerlink&quot; title=&quot;MRUnit测试&quot;&gt;&lt;/a&gt;MRUnit测试&lt;/h1&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;不论何时，请勿好高骛远！写给曾经自我膨胀的我！&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;MapReduce来了&quot;&gt;&lt;a href=&quot;#MapReduce来了&quot; class=&quot;headerlink&quot; title=&quot;MapReduce来了&quot;&gt;&lt;/a&gt;MapRe
+    
+    </summary>
+    
+    
+      <category term="hadoop" scheme="http://jellygogo.com/tags/hadoop/"/>
+    
+      <category term="MapReduce" scheme="http://jellygogo.com/tags/MapReduce/"/>
     
   </entry>
   

@@ -29,7 +29,7 @@ def  fun():
     type(bool)
     if (a&amp;gt;1000) :
         print">
-<meta property="og:updated_time" content="2017-01-18T04:25:27.022Z">
+<meta property="og:updated_time" content="2017-01-18T04:57:07.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 基础语法知识">
 <meta name="twitter:description" content="基础语法部分1.tab缩进语法，不像其他语言用{}2.不需要声明变量3.常用的语法（1）函数 函数参数  条件语句
@@ -197,7 +197,7 @@ def  fun():
 
           
           <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基础语法部分"><span class="post-toc-text">基础语法部分</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#python数据结构"><span class="post-toc-text">python数据结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-元组tuple"><span class="post-toc-text">1.元组tuple</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-列表list"><span class="post-toc-text">2.列表list</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-字典-dict"><span class="post-toc-text">3.字典 dict</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-集合-set"><span class="post-toc-text">4.集合 set</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#深复制与浅复制"><span class="post-toc-text">深复制与浅复制</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#python表达式"><span class="post-toc-text">python表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运算表达式"><span class="post-toc-text">运算表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三元表达式"><span class="post-toc-text">三元表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列表解析表达式"><span class="post-toc-text">列表解析表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成器表达式"><span class="post-toc-text">生成器表达式</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基础语法部分"><span class="post-toc-text">基础语法部分</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#python数据结构"><span class="post-toc-text">python数据结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-元组tuple"><span class="post-toc-text">1.元组tuple</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-列表list"><span class="post-toc-text">2.列表list</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-字典-dict"><span class="post-toc-text">3.字典 dict</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-集合-set"><span class="post-toc-text">4.集合 set</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#深复制与浅复制"><span class="post-toc-text">深复制与浅复制</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#python表达式"><span class="post-toc-text">python表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运算表达式"><span class="post-toc-text">运算表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三元表达式"><span class="post-toc-text">三元表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列表解析表达式"><span class="post-toc-text">列表解析表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成器表达式"><span class="post-toc-text">生成器表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lambda表达式"><span class="post-toc-text">Lambda表达式</span></a></li></ol></li></ol>
           </nav>
           
         </aside>
@@ -359,14 +359,15 @@ map[3] = 10086
 [10, 12, 14, 16, 18] &lt;type &apos;list&apos;&gt;
 &lt;generator object &lt;genexpr&gt; at 0x02A3D968&gt; &lt;type &apos;generator&apos;&gt; 10 12 
 </code></pre><p>区别是一个返回的是列表,一个是迭代器<br>表达式区别就是 []列表 与 ()迭代器</p>
-<p>Lambda表达式</p>
+<h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><p>lambda x: express for x<br>a = lambda x,y: x+y</p>
+<p>特点<br>只有一行语法<br>没有return语句<br>没有函数名</p>
 </div>
 
             
 <nav class="post-nav flex-row">
   <div class="flex-col waves-block prev">
     
-      <a href="/2016/12/31/Hadoop从零开始重学/" title="Hadoop从零开始重学" id="post-prev" class="post-nav-link">
+      <a href="/2016/12/31/Hadoop从零开始重学(1)hadoop pig hive hbase安装/" title="Hadoop从零开始重学1" id="post-prev" class="post-nav-link">
         <i class="icon icon-chevron-left"></i>
         <span class="article-nav-title">上一篇</span>
       </a>
@@ -402,7 +403,23 @@ map[3] = 10086
 		 || document.getElementsByTagName('body')[0]).appendChild(ds);
 	})();
 	</script>
+	<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 	<!-- 多说公共JS代码 end -->
+	
 </div>
 
 

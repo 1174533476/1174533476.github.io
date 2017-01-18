@@ -3,23 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>转移到github的第一篇博客 | JellyGoGo Blog | 扯淡,发呆,思考之处</title>
+  <title>Hadoop从零开始重学1 | JellyGoGo Blog | 扯淡,发呆,思考之处</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="闲话扯淡">
-  <meta name="description" content="写在前面的话以前的故事以前也在csdn写过博客,都是一些学习笔记之类的东西,断断续续的写了一段时间,这期间伴随我学习spring源码,高性能MySQL等一些东西,期间慢慢接触到github这个东东,虽然感觉很神奇但是苦于英文疲软,一直没敢开这个坑.现在慢慢的接触开源项目越来越多,不得不接触她((✿◡‿◡))了,这次使用github也算是对github的入门了.
-现在的打算发现自己不完善的地方很多,">
+  <meta name="keywords" content="hadoop,MapReduce">
+  <meta name="description" content="不论何时，请勿好高骛远！写给曾经自我膨胀的我！
+MapReduce来了Map-Reduce提供快速并行计算能力，这种能力可以随着节点数的增加线性递增Map-reduce的思想就是“分而治之”
+MapReduce概述在hadoop中文件通过输入格式(input format)处理成一系列的输入split
+mapmap过程分为4步1.record reader将输入数据转换为记录,但不负责解析记录,只">
 <meta property="og:type" content="article">
-<meta property="og:title" content="转移到github的第一篇博客">
-<meta property="og:url" content="http://jellygogo.com/2016/03/16/转移到github的第一篇博客/index.html">
+<meta property="og:title" content="Hadoop从零开始重学1">
+<meta property="og:url" content="http://jellygogo.com/2016/01/18/Hadoop从零开始重学(2)MapReduce探索/index.html">
 <meta property="og:site_name" content="JellyGoGo Blog">
-<meta property="og:description" content="写在前面的话以前的故事以前也在csdn写过博客,都是一些学习笔记之类的东西,断断续续的写了一段时间,这期间伴随我学习spring源码,高性能MySQL等一些东西,期间慢慢接触到github这个东东,虽然感觉很神奇但是苦于英文疲软,一直没敢开这个坑.现在慢慢的接触开源项目越来越多,不得不接触她((✿◡‿◡))了,这次使用github也算是对github的入门了.
-现在的打算发现自己不完善的地方很多,">
-<meta property="og:updated_time" content="2016-03-16T14:41:22.000Z">
+<meta property="og:description" content="不论何时，请勿好高骛远！写给曾经自我膨胀的我！
+MapReduce来了Map-Reduce提供快速并行计算能力，这种能力可以随着节点数的增加线性递增Map-reduce的思想就是“分而治之”
+MapReduce概述在hadoop中文件通过输入格式(input format)处理成一系列的输入split
+mapmap过程分为4步1.record reader将输入数据转换为记录,但不负责解析记录,只">
+<meta property="og:updated_time" content="2017-01-18T14:01:10.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="转移到github的第一篇博客">
-<meta name="twitter:description" content="写在前面的话以前的故事以前也在csdn写过博客,都是一些学习笔记之类的东西,断断续续的写了一段时间,这期间伴随我学习spring源码,高性能MySQL等一些东西,期间慢慢接触到github这个东东,虽然感觉很神奇但是苦于英文疲软,一直没敢开这个坑.现在慢慢的接触开源项目越来越多,不得不接触她((✿◡‿◡))了,这次使用github也算是对github的入门了.
-现在的打算发现自己不完善的地方很多,">
+<meta name="twitter:title" content="Hadoop从零开始重学1">
+<meta name="twitter:description" content="不论何时，请勿好高骛远！写给曾经自我膨胀的我！
+MapReduce来了Map-Reduce提供快速并行计算能力，这种能力可以随着节点数的增加线性递增Map-reduce的思想就是“分而治之”
+MapReduce概述在hadoop中文件通过输入格式(input format)处理成一系列的输入split
+mapmap过程分为4步1.record reader将输入数据转换为记录,但不负责解析记录,只">
   
     <link rel="alternative" href="/atom.xml" title="JellyGoGo Blog" type="application/atom+xml">
   
@@ -107,7 +113,7 @@
         <a href="javascript:;" class="header-icon waves-circle-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">转移到github的第一篇博客</div>
+        <div class="flex-col header-title ellipsis">Hadoop从零开始重学1</div>
         
         <a href="javascript:;" class="header-icon waves-circle-light" id="menu-share">
             <i class="icon icon-lg icon-share-alt"></i>
@@ -117,18 +123,18 @@
 </header>
 <header class="content-header">
   <div class="container">
-    <h1 class="author">转移到github的第一篇博客</h1>
-    <h5 class="subtitle">2016-03-16</h5>
+    <h1 class="author">Hadoop从零开始重学1</h1>
+    <h5 class="subtitle">2016-01-18</h5>
   </div>
 </header>
 
     <div class="container body-wrap">
       
-  <article id="[]-转移到github的第一篇博客" class="article article-type-[]" itemscope itemprop="blogPost">
+  <article id="post-Hadoop从零开始重学(2)MapReduce探索" class="article article-type-post" itemscope itemprop="blogPost">
     
       <div class="post-meat flex-row">
         <div class="flex-col">
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闲话扯淡/">闲话扯淡</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MapReduce/">MapReduce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li></ul>
 </div>
       </div>
       <div class="post-body">
@@ -136,7 +142,7 @@
         <aside class="post-widget" id="post-widget">
 
           
-          <div class="post-share" id="post-share" data-title="转移到github的第一篇博客" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/03/16/转移到github的第一篇博客/index.html">
+          <div class="post-share" id="post-share" data-title="Hadoop从零开始重学1" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/01/18/Hadoop从零开始重学(2)MapReduce探索/index.html">
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
@@ -176,38 +182,32 @@
 
           
           <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#写在前面的话"><span class="post-toc-text">写在前面的话</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以前的故事"><span class="post-toc-text">以前的故事</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#现在的打算"><span class="post-toc-text">现在的打算</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以后的打算"><span class="post-toc-text">以后的打算</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MapReduce来了"><span class="post-toc-text">MapReduce来了</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MapReduce概述"><span class="post-toc-text">MapReduce概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#map"><span class="post-toc-text">map</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#reduce"><span class="post-toc-text">reduce</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Reducer"><span class="post-toc-text">3.Reducer</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MRUnit测试"><span class="post-toc-text">MRUnit测试</span></a></li></ol>
           </nav>
           
         </aside>
 
         <div class="post-main">
 
-            <div class="post-content" itemprop="postContent"><h1 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h1><h2 id="以前的故事"><a href="#以前的故事" class="headerlink" title="以前的故事"></a>以前的故事</h2><p>以前也在csdn写过博客,都是一些学习笔记之类的东西,断断续续的写了一段时间,这期间伴随我学习spring源码,高性能MySQL等一些东西,期间慢慢接触到github这个东东,虽然感觉很神奇但是苦于英文疲软,一直没敢开这个坑.现在慢慢的接触开源项目越来越多,不得不接触她((✿◡‿◡))了,这次使用github也算是对github的入门了.</p>
-<h2 id="现在的打算"><a href="#现在的打算" class="headerlink" title="现在的打算"></a>现在的打算</h2><p>发现自己不完善的地方很多,自我感觉很差,下面列举下目前感觉到的缺点</p>
-<blockquote>
-<p>基础知识不好,特别是算法基础(全心专注外功,没有好好修炼过内功)<br>英文能力差,阅读github的 <a href="https://guides.github.com/activities/hello-world/" title="hello world链接" target="_blank" rel="external">helloworld</a>的文档都不流畅,上面写10分钟读完的,我tm快读了20分钟<br>懒,间歇性懒癌<br>选择性遗忘症</p>
-</blockquote>
-<h2 id="以后的打算"><a href="#以后的打算" class="headerlink" title="以后的打算"></a>以后的打算</h2><p>现在是大三了,还有一年半毕业,是时候要为自己的就业做打算了,目前我学习的重点是大数据研发,愿与君共勉</p>
-<p>博客写作计划:每周至少用心写一篇,坚持最难得,希望我能坚持下去(怀疑)</p>
-</div>
+            <div class="post-content" itemprop="postContent"><p><strong>不论何时，请勿好高骛远！写给曾经自我膨胀的我！</strong></p>
+<h1 id="MapReduce来了"><a href="#MapReduce来了" class="headerlink" title="MapReduce来了"></a>MapReduce来了</h1><p>Map-Reduce提供快速并行计算能力，这种能力可以随着<br>节点数的增加线性递增<br>Map-reduce的思想就是“分而治之”</p>
+<h2 id="MapReduce概述"><a href="#MapReduce概述" class="headerlink" title="MapReduce概述"></a>MapReduce概述</h2><p>在hadoop中文件通过输入格式(input format)处理成一系列的输入split</p>
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p>map过程分为4步<br>1.record reader<br>将输入数据转换为记录,但不负责解析记录,只是把数据转换为key/value对,并传递给mapper处理<br>2.Mapper<br>Mapper负责“分”，即把复杂的任务分解为若干个“简单的任务”执行<br>“简单的任务”有几个含义：1 数据戒计算规模相对于原任务要大大缩小；2 就近计算，即会被分配到存放了所需数据的节点迚行计算；3 这些小任务可以幵行计算，彼此间几乎没有依赖关系<br>3.combiner<br>4.partitioner</p>
+<h2 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h2><p>reduce过程也分为4步<br>1.shuffle 混排<br>2.sort 排序</p>
+<h2 id="3-Reducer"><a href="#3-Reducer" class="headerlink" title="3.Reducer"></a>3.Reducer</h2><p>对map阶段的结果进行汇总Reducer的数目由mapred-site.xml配置文件里的项目mapred.reduce.tasks决定。缺<br>省值为1，用户可以覆盖设置<br>4.输出格式 output format</p>
+<h1 id="MRUnit测试"><a href="#MRUnit测试" class="headerlink" title="MRUnit测试"></a>MRUnit测试</h1></div>
 
             
 <nav class="post-nav flex-row">
   <div class="flex-col waves-block prev">
     
-      <a href="/2016/03/17/Hadoop气象数据下载小程序/" title="Hadoop气象数据下载小程序" id="post-prev" class="post-nav-link">
+      <a href="/2016/03/16/转移到github的第一篇博客/" title="转移到github的第一篇博客" id="post-prev" class="post-nav-link">
         <i class="icon icon-chevron-left"></i>
         <span class="article-nav-title">上一篇</span>
       </a>
     
   </div>
   <div class="flex-col waves-block next">
-    
-      <a href="/2016/01/18/Hadoop从零开始重学(2)MapReduce探索/" title="Hadoop从零开始重学1" id="post-next" class="post-nav-link">
-        <span class="article-nav-title">下一篇</span>
-        <i class="icon icon-chevron-right"></i>
-      </a>
     
   </div>
 
@@ -218,7 +218,7 @@
             
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="转移到github的第一篇博客" data-title="转移到github的第一篇博客" data-url="http://jellygogo.com/2016/03/16/转移到github的第一篇博客/index.html"></div>
+	<div class="ds-thread" data-thread-key="Hadoop从零开始重学(2)MapReduce探索" data-title="Hadoop从零开始重学1" data-url="http://jellygogo.com/2016/01/18/Hadoop从零开始重学(2)MapReduce探索/index.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -271,7 +271,7 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-circle-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<div class="global-share" id="global-share" data-title="转移到github的第一篇博客" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/03/16/转移到github的第一篇博客/index.html">
+<div class="global-share" id="global-share" data-title="Hadoop从零开始重学1" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/01/18/Hadoop从零开始重学(2)MapReduce探索/index.html">
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>

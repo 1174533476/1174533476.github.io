@@ -123,230 +123,6 @@
   <ul class="post-list">
   
     <li class="post-list-item">
-  <article id="post-java并发实战_多任务执行" class="article article-type-post" itemscope itemprop="blogPost">
-    
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/04/24/java并发实战_多任务执行/">java并发实战-多任务执行</a>
-    </h3>
-  
-
-
-
-      <div class="post-meat flex-row">
-        <div class="flex-col">
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并发/">并发</a></li></ul>
-</div>
-        <time datetime="2016-04-23T17:06:26.000Z" itemprop="datePublished" class="post-tiem">
-  2016-04-23
-</time>
-      </div>
-      <div class="post-content" itemprop="postContent" >
-        
-          <h1 id="1-延时任务与周期任务"><a href="#1-延时任务与周期任务" class="headerlink" title="1.延时任务与周期任务"></a>1.延时任务与周期任务</h1><p>DelayQueue类的主要作用：是一个无界的BlockingQueue，用于放置实现了Delayed接口的对象，其中的对象只能在其到期时才能从队列中取走。这种队列是有序的，即队头对象的延迟到期时间最长<br>.DelayQueue队列中保存的是实现了Delayed接口的实现类，里面必须实现getDelay()和compareTo()方法，<br>前者用于返回与此对象相关的剩余延迟时间，以给定的时间单位表示<br>compareTo()方法用于进行队列内部的排序</p>
-<p>Delayed 元素的一个无界阻塞队列，只有在延迟期满时才能从中提取元素。该队列的头部 是延迟期满后保存时间最长的 Delayed 元素。如果延迟都还没有期满，则队列没有头部，并且 poll 将返回 null。当一个元素的 getDelay(TimeUnit.NANOSECONDS) 方法返回一个小于等于 0 的值时，将发生到期。即使无法使用 take 或 poll 移除未到期的元素，也不会将这些元素作为正常元素对待。例如，size 方法同时返回到期和未到期元素的计数。此队列不允许使用 null 元素。 </p>
-<pre><code>package com.jellygogo.basejava;
-
-import java.util.concurrent.Callable;
-import java.util.concurrent.DelayQueue;
-import java.util.concurrent.Delayed;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-
-public class DelayQueueTest {
-
-    public static void main(String[] args) {
-        ExecutorService exec = Executors.newFixedThreadPool(10);
-        DelayQueue&lt;MyTask&gt; queue = new DelayQueue&lt;&gt;();
-        queue.add(new MyTask(1000, &quot;Task1:1s:&quot;));
-        queue.add(new MyTask(9000, &quot;Task2:9s:&quot;));
-        queue.add(new MyTask(3000, &quot;Task3:3s:&quot;));
-        try {
-            while (!queue.isEmpty()) {
-                MyTask my =  queue.take();
-                Future&lt;String&gt; future = exec.submit(my);
-                System.out.println(&quot;start thread&quot;+my.getTaskName());
-                System.out.println(future.get(4,TimeUnit.SECONDS ));
-                System.out.println(&quot;end thread&quot;+my.getTaskName());
-                if (queue.isEmpty()) {
-                    System.out.println(&quot;Empty!&quot;);
-                    break;
-                }
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-
-        }catch (TimeoutException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            System.out.println(&quot;超时!&quot;);
-        }
-        System.out.println(&quot;main Thread end&quot;);
-    }
-}
-
-class MyTask implements Delayed, Callable&lt;String&gt; {
-
-    private long waitTime;
-    private String taskName;
-    private long endTime;
-    public MyTask(long waitTime, String taskName) {
-        this.waitTime = waitTime;
-        this.taskName = taskName;
-        this.endTime = System.currentTimeMillis() + waitTime;
-    }
-    public long getDelay(TimeUnit unit) {
-        return this.endTime - System.currentTimeMillis();
-    }
-    public String call() throws Exception {
-        // sleep waitTime 
-        System.out.println(this.taskName + &quot;sleep before&quot;);
-        //wait(100);
-        Thread.sleep(this.waitTime);
-        System.out.println(this.taskName + &quot;sleep end&quot;);
-        return &quot;SUCCESS&quot;;
-    }
-
-    public int compareTo(Delayed o) {
-        MyTask other = (MyTask) o;
-        return endTime - other.endTime &gt; 0 ? 1 : 0;
-    }
-    public String getTaskName() {
-        return taskName;
-    }
-
-}
-</code></pre><p>Demo 解释.<br>例子中使用了Future get(long timeout, TimeUnit unit) 这个方法,指如果在规定时间内不能get()到结果,就抛异常<br>一个很实用的例子:<a href="http://blog.csdn.net/yjl49/article/details/7088121" target="_blank" rel="external">http://blog.csdn.net/yjl49/article/details/7088121</a></p>
-<h1 id="2-CompletionService-Executor与BlockingQueue"><a href="#2-CompletionService-Executor与BlockingQueue" class="headerlink" title="2.CompletionService:Executor与BlockingQueue"></a>2.CompletionService:Executor与BlockingQueue</h1><p>CompletionService是结合了BlockingQueue</p>
-<p>Demo2</p>
-<pre><code>package com.jellygogo.basejava;
-
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorCompletionService;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-public class CompletionServiceTest {
-
-    public static void main(String[] args) {
-        ExecutorService exec = Executors.newFixedThreadPool(10);
-        ExecutorCompletionService&lt;String&gt; cs = new ExecutorCompletionService&lt;&gt;(exec);
-        cs.submit(new MyTask(1000, &quot;Task1:1s:&quot;));
-        cs.submit(new MyTask(9000, &quot;Task2:9s:&quot;));
-        cs.submit(new MyTask(3000, &quot;Task3:3s:&quot;));
-        int size = 3;
-        while (size--==0) {
-            System.out.println(&quot;start thread&quot;);
-            try {
-                System.out.println(cs.take());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println(&quot;end thread&quot;);
-        }
-    }
-}
-
-class MyTask2 implements Callable&lt;String&gt; {
-
-    private long waitTime;
-    private String taskName;
-    public MyTask2(long waitTime, String taskName) {
-        this.waitTime = waitTime;
-        this.taskName = taskName;
-    }
-    public String call() throws Exception {
-        System.out.println(this.taskName + &quot;sleep before&quot;);
-        Thread.sleep(this.waitTime);
-        System.out.println(this.taskName + &quot;sleep end&quot;);
-        return &quot;SUCCESS&quot;;
-    }
-
-    public String getTaskName() {
-        return taskName;
-    }
-
-}
-</code></pre><p>此种方法不能设定获取时间,不如第一种灵活,但是更容易实现</p>
-<h1 id="3-invokeAll"><a href="#3-invokeAll" class="headerlink" title="3.invokeAll"></a>3.invokeAll</h1><p>此种方法更容易实现,而且能解决第二种出现的弊端</p>
-<pre><code>package com.jellygogo.basejava;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-
-public class InvokaAll {
-
-    public static void main(String[] args) {
-        ExecutorService exec = Executors.newFixedThreadPool(10);
-        List&lt;MyTask3&gt; list = new ArrayList&lt;&gt;();
-        list.add(new MyTask3(1000, &quot;Task1:1s:&quot;));
-        list.add(new MyTask3(10000, &quot;Task2:9s:&quot;));
-        list.add(new MyTask3(3000, &quot;Task3:3s:&quot;));
-        try {
-            List&lt;Future&lt;String&gt;&gt; futures = exec.invokeAll(list,4,TimeUnit.SECONDS );
-            for(Future f:futures){
-                try {
-                    System.out.println(f.get());
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                }
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-}
-
-class MyTask3 implements Callable&lt;String&gt; {
-
-    private long waitTime;
-    private String taskName;
-    public MyTask3(long waitTime, String taskName) {
-        this.waitTime = waitTime;
-        this.taskName = taskName;
-    }
-    public String call() throws Exception {
-        System.out.println(this.taskName + &quot;sleep before&quot;+&quot;wait:&quot;+waitTime);
-        Thread.sleep(waitTime);
-        System.out.println(this.taskName + &quot;sleep end&quot;);
-        return &quot;SUCCESS&quot;;
-    }
-
-    public String getTaskName() {
-        return taskName;
-    }
-
-}
-</code></pre>
-        
-      </div>
-      <div class="post-footer clearfix">
-        <a href="/2016/04/24/java并发实战_多任务执行/" class="post-more waves-button-light">MORE</a>
-      </div>
-    
-
-  </article>
-
-
-</li>
-  
-    <li class="post-list-item">
   <article id="post-常用数据搜索算法总结" class="article article-type-post" itemscope itemprop="blogPost">
     
       
@@ -1614,6 +1390,49 @@ public String getRoot() {
       </div>
       <div class="post-footer clearfix">
         <a href="/2016/03/16/转移到github的第一篇博客/" class="post-more waves-button-light">MORE</a>
+      </div>
+    
+
+  </article>
+
+
+</li>
+  
+    <li class="post-list-item">
+  <article id="post-Hadoop从零开始重学(2)MapReduce探索" class="article article-type-post" itemscope itemprop="blogPost">
+    
+      
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/01/18/Hadoop从零开始重学(2)MapReduce探索/">Hadoop从零开始重学1</a>
+    </h3>
+  
+
+
+
+      <div class="post-meat flex-row">
+        <div class="flex-col">
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MapReduce/">MapReduce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li></ul>
+</div>
+        <time datetime="2016-01-18T15:52:21.000Z" itemprop="datePublished" class="post-tiem">
+  2016-01-18
+</time>
+      </div>
+      <div class="post-content" itemprop="postContent" >
+        
+          <p><strong>不论何时，请勿好高骛远！写给曾经自我膨胀的我！</strong></p>
+<h1 id="MapReduce来了"><a href="#MapReduce来了" class="headerlink" title="MapReduce来了"></a>MapReduce来了</h1><p>Map-Reduce提供快速并行计算能力，这种能力可以随着<br>节点数的增加线性递增<br>Map-reduce的思想就是“分而治之”</p>
+<h2 id="MapReduce概述"><a href="#MapReduce概述" class="headerlink" title="MapReduce概述"></a>MapReduce概述</h2><p>在hadoop中文件通过输入格式(input format)处理成一系列的输入split</p>
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p>map过程分为4步<br>1.record reader<br>将输入数据转换为记录,但不负责解析记录,只是把数据转换为key/value对,并传递给mapper处理<br>2.Mapper<br>Mapper负责“分”，即把复杂的任务分解为若干个“简单的任务”执行<br>“简单的任务”有几个含义：1 数据戒计算规模相对于原任务要大大缩小；2 就近计算，即会被分配到存放了所需数据的节点迚行计算；3 这些小任务可以幵行计算，彼此间几乎没有依赖关系<br>3.combiner<br>4.partitioner</p>
+<h2 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h2><p>reduce过程也分为4步<br>1.shuffle 混排<br>2.sort 排序</p>
+<h2 id="3-Reducer"><a href="#3-Reducer" class="headerlink" title="3.Reducer"></a>3.Reducer</h2><p>对map阶段的结果进行汇总Reducer的数目由mapred-site.xml配置文件里的项目mapred.reduce.tasks决定。缺<br>省值为1，用户可以覆盖设置<br>4.输出格式 output format</p>
+<h1 id="MRUnit测试"><a href="#MRUnit测试" class="headerlink" title="MRUnit测试"></a>MRUnit测试</h1>
+        
+      </div>
+      <div class="post-footer clearfix">
+        <a href="/2016/01/18/Hadoop从零开始重学(2)MapReduce探索/" class="post-more waves-button-light">MORE</a>
       </div>
     
 
