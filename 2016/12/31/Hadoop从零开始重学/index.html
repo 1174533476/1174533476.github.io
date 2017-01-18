@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hadoop从零开始重学 | JellyGoGo Blog | 扯淡,发呆,思考之处</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="hadoop,安装，虚拟机">
+  <meta name="description" content="不论何时，请勿好高骛远！写给曾经自我膨胀的我！
+hadoop基础与安装hadoop子项目家族我接触与使用过的系列
+streaming使得命令行脚本都可以通过streaming来调用mapreduce框架HDFS:Namenode：HDFS的守护程序Secondary NamenodeDataNode：数据节点JobTracker：用于处理作业的后台程序TaskTracker：与DataNode结合">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hadoop从零开始重学">
+<meta property="og:url" content="http://jellygogo.com/2016/12/31/Hadoop从零开始重学/index.html">
+<meta property="og:site_name" content="JellyGoGo Blog">
+<meta property="og:description" content="不论何时，请勿好高骛远！写给曾经自我膨胀的我！
+hadoop基础与安装hadoop子项目家族我接触与使用过的系列
+streaming使得命令行脚本都可以通过streaming来调用mapreduce框架HDFS:Namenode：HDFS的守护程序Secondary NamenodeDataNode：数据节点JobTracker：用于处理作业的后台程序TaskTracker：与DataNode结合">
+<meta property="og:updated_time" content="2017-01-17T15:09:39.182Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hadoop从零开始重学">
+<meta name="twitter:description" content="不论何时，请勿好高骛远！写给曾经自我膨胀的我！
+hadoop基础与安装hadoop子项目家族我接触与使用过的系列
+streaming使得命令行脚本都可以通过streaming来调用mapreduce框架HDFS:Namenode：HDFS的守护程序Secondary NamenodeDataNode：数据节点JobTracker：用于处理作业的后台程序TaskTracker：与DataNode结合">
+  
+    <link rel="alternative" href="/atom.xml" title="JellyGoGo Blog" type="application/atom+xml">
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner">
+  <a href="javascript:;" class="header-icon waves-circle-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="./" class="avatar"><img src="/img/logo.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">Gordon Young</h5>
+        <a href="mailto:undefined" title="yangguodong1995@gmail.com" class="mail">yangguodong1995@gmail.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <ul class="nav">
+    
+        <li class="waves-block">
+          <a href="/"  >
+            <i class="icon icon-lg icon-home"></i>
+            Home
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/archives"  >
+            <i class="icon icon-lg icon-archives"></i>
+            Archives
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/tags"  >
+            <i class="icon icon-lg icon-tags"></i>
+            Tags
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="https://github.com/1174533476" target="_blank" >
+            <i class="icon icon-lg icon-github"></i>
+            Github
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="https://www.facebook.com/anikaarnoldrujc" target="_blank" >
+            <i class="icon icon-lg icon-facebook"></i>
+            Facebook
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/about"  >
+            <i class="icon icon-lg icon-link"></i>
+            about
+          </a>
+        </li>
+    
+  </ul>
+
+  <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>JellyGoGo Blog &copy; 2017</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-circle-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hadoop从零开始重学</div>
+        
+        <a href="javascript:;" class="header-icon waves-circle-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">Hadoop从零开始重学</h1>
+    <h5 class="subtitle">2016-12-31</h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      
+  <article id="post-Hadoop从零开始重学" class="article article-type-post" itemscope itemprop="blogPost">
+    
+      <div class="post-meat flex-row">
+        <div class="flex-col">
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安装，虚拟机/">安装，虚拟机</a></li></ul>
+</div>
+      </div>
+      <div class="post-body">
+
+        <aside class="post-widget" id="post-widget">
+
+          
+          <div class="post-share" id="post-share" data-title="Hadoop从零开始重学" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/12/31/Hadoop从零开始重学/index.html">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+          
+
+          
+          <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#hadoop基础与安装"><span class="post-toc-text">hadoop基础与安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hadoop子项目家族"><span class="post-toc-text">hadoop子项目家族</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#streaming"><span class="post-toc-text">streaming</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#hadoop的完全分布式安装"><span class="post-toc-text">hadoop的完全分布式安装</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#HDFS"><span class="post-toc-text">HDFS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#读取数据流程"><span class="post-toc-text">读取数据流程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写入数据流程"><span class="post-toc-text">写入数据流程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hdfs常用命令"><span class="post-toc-text">hdfs常用命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Pig安装与基本操作"><span class="post-toc-text">Pig安装与基本操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Grunt-shell命令"><span class="post-toc-text">Grunt shell命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Pig里面进行操作"><span class="post-toc-text">Pig里面进行操作</span></a></li></ol></li></ol>
+          </nav>
+          
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" itemprop="postContent"><p><strong>不论何时，请勿好高骛远！写给曾经自我膨胀的我！</strong></p>
+<h1 id="hadoop基础与安装"><a href="#hadoop基础与安装" class="headerlink" title="hadoop基础与安装"></a>hadoop基础与安装</h1><h2 id="hadoop子项目家族"><a href="#hadoop子项目家族" class="headerlink" title="hadoop子项目家族"></a>hadoop子项目家族</h2><p>我接触与使用过的系列</p>
+<h2 id="streaming"><a href="#streaming" class="headerlink" title="streaming"></a>streaming</h2><p>使得命令行脚本都可以通过streaming来调用mapreduce框架<br>HDFS:<br>Namenode：HDFS的守护程序<br>Secondary Namenode<br>DataNode：数据节点<br>JobTracker：用于处理作业的后台程序<br>TaskTracker：与DataNode结合，管理各自节点上的task<br>HBase： 非关系型数据库<br>Pig：与hive类似，编写快速查找的命令 轻量级脚本语言<br>Hive：使可以使用sql语言来查找数据<br>MAPReduce模型：<br>Mahout机器学习平台</p>
+<p>ZooKeeper</p>
+<h1 id="hadoop的完全分布式安装"><a href="#hadoop的完全分布式安装" class="headerlink" title="hadoop的完全分布式安装"></a>hadoop的完全分布式安装</h1><p>在虚拟机下安装三台linux主机；对之实现ssh免秘密登录；创建grid用户作为hadoop安装用户；</p>
+<p>hadoop1.x完全分布式模式的安装和配置<br>配置hosts文件<br>建立hadoop运行账号<br>配置ssh免密码连入<br>下载幵解压hadoop安装包<br>配置namenode，修改site文件<br>配置hadoop-env.sh<br>配置masters和slaves文件<br>向各节点复制hadoop<br>格式化namenode<br>吭劢hadoop<br>用jps检验各后台迚程是否成功启动</p>
+<p>hadoop2.x安装<br>安装JDK<br>编辑hosts文件<br>关闭防火墙<br>部署免密码ssh<br>下载hadoop 2.x幵解压<br>修改配置文件<br>分步hadoop到各个节点<br>启动集群</p>
+<p>涉及到的配置文件有7个：<br>~/hadoop-2.2.0/etc/hadoop/hadoop-env.sh<br>~/hadoop-2.2.0/etc/hadoop/yarn-env.sh<br>~/hadoop-2.2.0/etc/hadoop/slaves<br>~/hadoop-2.2.0/etc/hadoop/core-site.xml<br>~/hadoop-2.2.0/etc/hadoop/hdfs-site.xml<br>~/hadoop-2.2.0/etc/hadoop/mapred-site.xml<br>~/hadoop-2.2.0/etc/hadoop/yarn-site.xml<br>以上个别文件默认不存在的，可以复制相应的template文件获得。<br><a href="http://www.w2bc.com/Article/19645" title="详细配置" target="_blank" rel="external">http://www.w2bc.com/Article/19645</a><br>格式化namenode：./bin/hdfs namenode –format<br>吭劢hdfs: ./sbin/start-dfs.sh<br>此时在h1上面运行的迚程有：namenode，secondarynamenode<br>h2和h3上面运行的迚程有：datanode<br>吭劢yarn: ./sbin/start-yarn.sh<br>此时在h1上运行的迚程有：namenode，secondarynamenode，resourcemanager<br>h2和h3上面运行的迚程有：datanode，nodemanager<br>ps：scp -r hadoop-2.5.2 grid@h1:/home/grid/hadoop </p>
+<p>终于~安装成功</p>
+<h1 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h1><p>NameNode<br>DataNode<br>事务日志<br>映像文件<br>SecondaryNameNode</p>
+<h2 id="读取数据流程"><a href="#读取数据流程" class="headerlink" title="读取数据流程"></a>读取数据流程</h2><p>客户端要访问HDFS中的一个文件<br>首先从namenode获得组成返个文件的数据块位置列表<br>根据列表知道存储数据块的datanode<br>访问datanode获取数据<br>Namenode并不直接参与数据实际传输</p>
+<h2 id="写入数据流程"><a href="#写入数据流程" class="headerlink" title="写入数据流程"></a>写入数据流程</h2><p>客户端请求namenode创建新文件<br>客户端将数据写入DFSOutputStream<br>建立pipeline依次将目标数据块写入各个datanode，建立多个副本</p>
+<h2 id="hdfs常用命令"><a href="#hdfs常用命令" class="headerlink" title="hdfs常用命令"></a>hdfs常用命令</h2><p>查看目录<br>[grid@h1 hadoop-2.5.2]$ bin/hadoop fs -ls /<br>Found 1 items<br>-rw-r–r–   3 grid supergroup         12 2017-01-16 10:21 /test</p>
+<p>上传<br>bin/hadoop fs -put test.txt ./in</p>
+<p>将HDFS的文件复制到本地<br>bin/hadoop fs -get /fromHDFS /filesystem</p>
+<p>删除HDFS下面的文档<br>bin/hadoop fs -rmr /fromHDFS</p>
+<p>输出某个文件的内容<br>[grid@h1 hadoop-2.5.2]$ bin/hadoop fs -cat /test<br>hello world</p>
+<p>查看HDFS基本统计信息<br>[grid@h1 hadoop-2.5.2]$ bin/hadoop dfsadmin -report<br>DEPRECATED: Use of this script to execute hdfs command is deprecated.<br>Instead use the hdfs command for it.</p>
+<p>Configured Capacity: 40147877888 (37.39 GB)<br>Present Capacity: 31229685760 (29.08 GB)<br>DFS Remaining: 31229644800 (29.08 GB)<br>DFS Used: 40960 (40 KB)<br>DFS Used%: 0.00%<br>Under replicated blocks: 1<br>Blocks with corrupt replicas: 0<br>Missing blocks: 0</p>
+<hr>
+<p>Live datanodes (2):</p>
+<p>Name: 192.168.146.100:50010 (h3)<br>Hostname: h3<br>Decommission Status : Normal<br>Configured Capacity: 20073938944 (18.70 GB)<br>DFS Used: 20480 (20 KB)<br>Non DFS Used: 4274286592 (3.98 GB)<br>DFS Remaining: 15799631872 (14.71 GB)<br>DFS Used%: 0.00%<br>DFS Remaining%: 78.71%<br>Configured Cache Capacity: 0 (0 B)<br>Cache Used: 0 (0 B)<br>Cache Remaining: 0 (0 B)<br>Cache Used%: 100.00%<br>Cache Remaining%: 0.00%<br>Xceivers: 1<br>Last contact: Tue Jan 17 04:50:33 PST 2017</p>
+<p>Name: 192.168.146.101:50010 (h2)<br>Hostname: h2<br>Decommission Status : Normal<br>Configured Capacity: 20073938944 (18.70 GB)<br>DFS Used: 20480 (20 KB)<br>Non DFS Used: 4643905536 (4.32 GB)<br>DFS Remaining: 15430012928 (14.37 GB)<br>DFS Used%: 0.00%<br>DFS Remaining%: 76.87%<br>Configured Cache Capacity: 0 (0 B)<br>Cache Used: 0 (0 B)<br>Cache Remaining: 0 (0 B)<br>Cache Used%: 100.00%<br>Cache Remaining%: 0.00%<br>Xceivers: 1<br>Last contact: Tue Jan 17 04:50:31 PST 2017</p>
+<h1 id="Pig安装与基本操作"><a href="#Pig安装与基本操作" class="headerlink" title="Pig安装与基本操作"></a>Pig安装与基本操作</h1><h2 id="Grunt-shell命令"><a href="#Grunt-shell命令" class="headerlink" title="Grunt shell命令"></a>Grunt shell命令</h2><p>“cat” … 输出<br>“clear” …<br>“fs” …<br>“sh” …  <strong>执行操作系统命令</strong><br>    grunt&gt; sh jps<br>    5156 SecondaryNameNode<br>    34325 RunJar<br>    34441 Jps<br>    4877 NameNode<br>“cd” …  打开<br>“cp” …<br>“copyFromLocal” … 从本地输入<br>“copyToLocal” …    输出到本地<br>“dump” …<br>“\d” …<br>“describe” …<br>“\de” …<br>“aliases” …<br>“explain” …<br>“\e” …<br>“help” …<br>“history” …<br>“kill” …<br>“ls” …  显示列表内的信息<br>“mv” …<br>“mkdir” …<br>“pwd” …<br>“quit” …<br>“\q” …<br>“register” …<br>“rm” …<br>“rmf” …<br>“set” …<br>“illustrate” …<br>“\i” …<br>“run” …<br>“exec” …<br>“%default” …<br>“%declare” …<br>“scriptDone” …<br>“” …<br>“” …</p>
+<p><eol> …<br>“;” …</eol></p>
+<h2 id="Pig里面进行操作"><a href="#Pig里面进行操作" class="headerlink" title="Pig里面进行操作"></a>Pig里面进行操作</h2></div>
+
+            
+<nav class="post-nav flex-row">
+  <div class="flex-col waves-block prev">
+    
+      <a href="/2016/12/31/机器学习基础1/" title="机器学习（1）" id="post-prev" class="post-nav-link">
+        <i class="icon icon-chevron-left"></i>
+        <span class="article-nav-title">上一篇</span>
+      </a>
+    
+  </div>
+  <div class="flex-col waves-block next">
+    
+      <a href="/2016/12/31/Python-基础学习1/" title="Python 基础语法知识" id="post-next" class="post-nav-link">
+        <span class="article-nav-title">下一篇</span>
+        <i class="icon icon-chevron-right"></i>
+      </a>
+    
+  </div>
+
+</nav>
+
+
+
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Hadoop从零开始重学" data-title="Hadoop从零开始重学" data-url="http://jellygogo.com/2016/12/31/Hadoop从零开始重学/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"jellygogo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+        </div>
+
+      </div>
+
+    
+
+  </article>
+
+
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-circle-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<div class="global-share" id="global-share" data-title="Hadoop从零开始重学" data-pic="/img/logo.jpg" data-summary="扯淡,发呆,思考之处" data-url="http://jellygogo.com/2016/12/31/Hadoop从零开始重学/index.html">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/javascript">
+var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cspan id='cnzz_stat_icon_1257998795' style='display:none' %3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257998795%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+
+
+
+</body>
+</html>
